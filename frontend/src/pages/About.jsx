@@ -1,14 +1,13 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 
 export default function About() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0d1117] text-white">
-      <Navbar />
+    
 
       <main className="flex-grow py-20 px-6 max-w-5xl mx-auto text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-3">About Us</h1>
-        <h2 className="text-gray-400 mb-10 text-lg">Über uns</h2>
+        
 
         <div className="text-left space-y-10">
           <div>
@@ -41,7 +40,7 @@ export default function About() {
         </div>
       </main>
 
-      <Footer />
+      
     </div>
   );
 }

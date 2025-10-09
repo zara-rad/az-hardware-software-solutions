@@ -1,19 +1,16 @@
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 import { MapPin, Phone, Mail } from "lucide-react";
 
 export default function Contact() {
   return (
     <div className="min-h-screen flex flex-col bg-[#0d1117] text-white">
-      <Navbar />
+
 
       <main className="flex-grow py-20 px-6 max-w-6xl mx-auto">
         <h1 className="text-4xl md:text-5xl font-bold mb-3 text-center md:text-left">
           Contact Us
         </h1>
-        <h2 className="text-gray-400 mb-12 text-center md:text-left">
-          Kontakt
-        </h2>
+     
 
         <div className="grid md:grid-cols-2 gap-12">
           {/* فرم تماس */}
@@ -22,7 +19,7 @@ export default function Contact() {
               <label className="block text-sm mb-2">Name</label>
               <input
                 type="text"
-                placeholder="Ihr Name"
+                placeholder="Name"
                 className="w-full p-3 rounded bg-[#161b22] border border-gray-700 text-gray-200 focus:outline-none focus:border-green-500"
               />
             </div>
@@ -31,7 +28,7 @@ export default function Contact() {
               <label className="block text-sm mb-2">Email</label>
               <input
                 type="email"
-                placeholder="E-Mail-Adresse"
+                placeholder="E-Mail-Adress"
                 className="w-full p-3 rounded bg-[#161b22] border border-gray-700 text-gray-200 focus:outline-none focus:border-green-500"
               />
             </div>
@@ -40,7 +37,7 @@ export default function Contact() {
               <label className="block text-sm mb-2">Message</label>
               <textarea
                 rows="5"
-                placeholder="Nachricht"
+                placeholder="Message"
                 className="w-full p-3 rounded bg-[#161b22] border border-gray-700 text-gray-200 focus:outline-none focus:border-green-500 resize-none"
               ></textarea>
             </div>
@@ -52,12 +49,7 @@ export default function Contact() {
               >
                 Submit
               </button>
-              <button
-                type="button"
-                className="flex-1 border border-gray-600 hover:bg-gray-800 py-3 rounded font-medium transition"
-              >
-                Senden
-              </button>
+             
             </div>
           </form>
 
@@ -79,7 +71,6 @@ export default function Contact() {
         </div>
       </main>
 
-      <Footer />
     </div>
   );
 }
