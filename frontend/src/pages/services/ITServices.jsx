@@ -1,7 +1,30 @@
 import { motion } from "framer-motion";
 import { Server, Network, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
 
 export default function ITServices() {
+  const services = [
+    {
+      icon: <Server className="w-14 h-14 text-green-400 mb-3" />,
+      title: "Server & System Administration",
+      text: "Setup, optimization, and monitoring of servers for small and medium businesses.",
+      link: "/services/it/server",
+    },
+    {
+      icon: <Network className="w-14 h-14 text-green-400 mb-3" />,
+      title: "Network Setup & Security",
+      text: "Reliable LAN/WAN configuration, VPN solutions, and firewall management.",
+      link: "/services/it/network",
+    },
+    {
+      icon: <ShieldCheck className="w-14 h-14 text-green-400 mb-3" />,
+      title: "IT Support & Maintenance",
+      text: "Professional on-site or remote IT support for day-to-day operations.",
+      link: "/services/it/support",
+    },
+  ];
+
   return (
     <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden min-h-screen">
       {/* 🌌 Animated Background */}
@@ -30,32 +53,25 @@ export default function ITServices() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
         >
-          Reliable system administration, secure networks, and professional
-          IT support — tailored for modern businesses.
+          Reliable system administration, secure networks, and professional IT
+          support — tailored for modern businesses.
         </motion.p>
       </section>
+      {/* 🔙 Back to Services */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 mb-8">
+        <Link
+          to="/services"
+          className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
+        >
+          <ArrowLeft className="w-5 h-5" /> Back to Services
+        </Link>
+      </div>
 
       {/* 🔹 Main Content */}
       <main className="relative z-10 flex-grow max-w-6xl mx-auto px-6 pb-10 space-y-12">
         {/* Services Overview */}
         <div className="grid md:grid-cols-3 gap-8">
-          {[
-            {
-              icon: <Server className="w-14 h-14 text-green-400 mb-3" />,
-              title: "Server & System Administration",
-              text: "Setup, optimization, and monitoring of servers for small and medium businesses.",
-            },
-            {
-              icon: <Network className="w-14 h-14 text-green-400 mb-3" />,
-              title: "Network Setup & Security",
-              text: "Reliable LAN/WAN configuration, VPN solutions, and firewall management.",
-            },
-            {
-              icon: <ShieldCheck className="w-14 h-14 text-green-400 mb-3" />,
-              title: "IT Support & Maintenance",
-              text: "Professional on-site or remote IT support for day-to-day operations.",
-            },
-          ].map((s, i) => (
+          {services.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
@@ -68,7 +84,16 @@ export default function ITServices() {
               <h3 className="text-xl font-semibold mb-2 text-white">
                 {s.title}
               </h3>
-              <p className="text-gray-400 text-sm leading-relaxed">{s.text}</p>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                {s.text}
+              </p>
+
+              <Link
+                to={s.link}
+                className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+              >
+                Learn More
+              </Link>
             </motion.div>
           ))}
         </div>

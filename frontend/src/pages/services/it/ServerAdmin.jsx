@@ -20,24 +20,24 @@ export default function ServerAdmin() {
           Server & System Administration
         </motion.h1>
         <p className="text-gray-400 max-w-2xl">
-          Setup, optimization, and monitoring of secure, high-performance servers.
+          Setup, optimization, and maintenance of reliable and secure servers.
         </p>
       </section>
 
       {/* 🔹 Content */}
       <main className="relative z-10 flex-grow max-w-4xl mx-auto px-6 pb-10 space-y-6 text-gray-300 leading-relaxed">
         <p>
-          We provide expert configuration and maintenance for Linux and Windows
-          servers — ensuring stability, performance, and security for your
-          business systems.
+          Our server administration services ensure your business systems run efficiently and securely. 
+          From setup to ongoing maintenance, we manage everything so you can focus on growth.
         </p>
+
         <ul className="list-disc list-inside space-y-2 text-gray-400">
-          <li>Server setup & virtualization (VMware, Hyper-V, Proxmox)</li>
-          <li>Active Directory, DNS, DHCP configuration</li>
-          <li>Backup, monitoring, and maintenance plans</li>
+          <li>Server installation & optimization (Linux / Windows)</li>
+          <li>Active Directory, DNS, DHCP management</li>
+          <li>Backup, monitoring, and virtualization setup</li>
         </ul>
 
-        {/* 🔙 Back to IT Services */}
+        {/* 🔙 Back Button */}
         <div className="pt-8">
           <Link
             to="/services/it"
