@@ -2,10 +2,25 @@ import Hero from "../components/Hero";
 import Services from "./Services";
 import OverviewLinks from "../components/OverviewLinks";
 import { motion } from "framer-motion";
+import { Helmet } from "react-helmet-async";
 
 export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col bg-[#0d1117] text-white overflow-hidden">
+      <Helmet>
+        <title>AZ Hardware — IT & Web Solutions in Berlin</title>
+        <meta
+          name="description"
+          content="Professional IT services, web and software development, and hardware solutions in Berlin. Reliable, fast, and tailored to your business needs."
+        />
+        <meta
+          name="keywords"
+          content="IT services, web development, hardware solutions, Berlin, system administration, AZ Hardware"
+        />
+        <meta name="author" content="AZ Hardware" />
+        <link rel="canonical" href="https://www.az-hardware.de/" />
+      </Helmet>
+
       {/* 🔹 Animated Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#102030] to-[#0d1117] overflow-hidden">
         <motion.div

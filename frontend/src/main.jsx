@@ -28,8 +28,9 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+     <HelmetProvider>
     <ScrollProvider>
-          <HelmetProvider>
+         
 
       <BrowserRouter>
         <Routes>
@@ -65,8 +66,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Route>
         </Routes>
       </BrowserRouter>
-          </HelmetProvider>
+         
 
     </ScrollProvider>
+     </HelmetProvider>
   </React.StrictMode>
 );
