@@ -1,63 +1,49 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { scroller } from "react-scroll";
 import { useEffect } from "react";
 
 export default function Footer() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   const handleSmoothNavigation = (path) => {
-    if (location.pathname === path) {
-      scrollToTop();
-    } else {
+    if (location.pathname === path) scrollToTop();
+    else {
       navigate(path);
-      // بعد از رفتن به صفحه‌ی جدید، نرم بالا بره
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      }, 400);
+      setTimeout(scrollToTop, 400);
     }
   };
 
   return (
-    <footer className="bg-[#0d1117] border-t border-gray-800 py-6 text-center text-gray-400">
-      <nav className="flex justify-center gap-6 mb-4">
-        <span
-          onClick={() => handleSmoothNavigation("/")}
-          className="hover:text-white cursor-pointer"
-        >
-          Home
-        </span>
-        <span
-          onClick={() => handleSmoothNavigation("/about")}
-          className="hover:text-white cursor-pointer"
-        >
-          About
-        </span>
-        <span
-          onClick={() => handleSmoothNavigation("/contact")}
-          className="hover:text-white cursor-pointer"
-        >
-          Contact
-        </span>
-        <span
-          onClick={() => handleSmoothNavigation("/datenschutz")}
-          className="hover:text-white cursor-pointer"
-        >
-          Privacy Policy
-        </span>
-        <span
-          onClick={() => handleSmoothNavigation("/impressum")}
-          className="hover:text-white cursor-pointer"
-        >
-          Legal Notice
-        </span>
+    <footer className="bg-[#0d1117] border-t border-gray-800 py-6 text-center text-gray-400 shadow-[0_-4px_15px_rgba(0,0,0,0.3)]">
+      {/* 🔹 Navigation Links */}
+      <nav className="flex flex-wrap justify-center gap-8 mb-4 text-sm md:text-base font-medium">
+        {[
+          { label: "Home", path: "/" },
+          { label: "Services", path: "/services" },
+          { label: "About", path: "/about" },
+          { label: "Contact", path: "/contact" },
+          { label: "Privacy Policy", path: "/datenschutz" },
+          { label: "Legal Notice", path: "/impressum" },
+        ].map((item) => (
+          <span
+            key={item.path}
+            onClick={() => handleSmoothNavigation(item.path)}
+            className="hover:text-white cursor-pointer hover:scale-[1.05] transition-all duration-200 relative after:content-[''] after:absolute after:left-0 after:-bottom-[3px] after:w-0 after:h-[2px] after:bg-cyan-400 hover:after:w-full after:transition-all after:duration-300"
+          >
+            {item.label}
+          </span>
+        ))}
       </nav>
+
+      {/* 🔹 Copyright */}
       <p className="text-sm text-gray-500">
-        © 2025 AZ Hardware & Software Solutions — Berlin
+        © {new Date().getFullYear()}{" "}
+        <span className="text-white font-semibold">
+          AZ Hardware & Software Solutions
+        </span>{" "}
+        — Berlin
       </p>
     </footer>
   );

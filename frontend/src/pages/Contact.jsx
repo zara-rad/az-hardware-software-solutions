@@ -1,23 +1,42 @@
 import { MapPin, Phone, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#0d1117] text-white pt-28 px-6">
-      <main className="flex-grow max-w-6xl mx-auto w-full">
+    <div className="relative flex flex-col bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0d1117] text-white overflow-hidden pt-24 px-6 pb-6">
+      {/* 🌌 پس‌زمینه‌ی نور متحرک */}
+      <motion.div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.07)_0%,transparent_70%)] blur-3xl"
+        animate={{ opacity: [0.4, 0.8, 0.4], scale: [1, 1.2, 1] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      <main className="relative max-w-6xl mx-auto w-full z-10 flex-grow">
         {/* ===== Title ===== */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text">
+        <motion.div
+          className="text-center mb-10"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(0,255,180,0.3)]">
             Get in Touch
           </h1>
           <p className="text-gray-400 text-lg">
             We’d love to hear from you — let’s build something great together.
           </p>
-        </div>
+        </motion.div>
 
         {/* ===== Grid Layout ===== */}
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid md:grid-cols-2 gap-6">
           {/* ===== Contact Form ===== */}
-          <form className="bg-[#161b22] rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.3)] p-8 border border-gray-800 hover:shadow-[0_0_25px_rgba(34,197,94,0.15)] transition-all duration-300 space-y-6">
+          <motion.form
+            className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.4)] p-8 border border-gray-800 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-all duration-300 space-y-6"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Name
@@ -51,18 +70,26 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            <button
+            <motion.button
               type="submit"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.96 }}
               className="w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all duration-300"
             >
               Send Message
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
 
           {/* ===== Contact Info ===== */}
-          <div className="flex flex-col justify-center bg-[#161b22] rounded-2xl border border-gray-800 p-8 shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.15)] transition-all duration-300 space-y-8">
+          <motion.div
+            className="flex flex-col justify-center bg-[#161b22]/80 backdrop-blur-md rounded-2xl border border-gray-800 p-8 shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_20px_rgba(0,255,180,0.2)] transition-all duration-300 space-y-6"
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
             <div>
-              <h2 className="text-2xl font-bold mb-4 text-green-400">
+              <h2 className="text-2xl font-bold mb-3 text-green-400">
                 Contact Information
               </h2>
               <p className="text-gray-400">
@@ -70,7 +97,7 @@ export default function Contact() {
               </p>
             </div>
 
-            <div className="space-y-5 text-gray-300">
+            <div className="space-y-4 text-gray-300">
               <div className="flex items-center gap-3">
                 <MapPin className="text-green-400" />
                 <span>Berlin, Germany</span>
@@ -85,10 +112,10 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="pt-6 border-t border-gray-700 text-sm text-gray-500">
+            <div className="pt-4 border-t border-gray-700 text-sm text-gray-500">
               <p>Available: Mon–Fri · 9:00–18:00 (CET)</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </main>
     </div>
