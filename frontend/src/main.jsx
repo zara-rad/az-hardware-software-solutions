@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
+
 import App from "./App";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -27,6 +29,8 @@ import "./index.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ScrollProvider>
+          <HelmetProvider>
+
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<App />}>
@@ -61,6 +65,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           </Route>
         </Routes>
       </BrowserRouter>
+          </HelmetProvider>
+
     </ScrollProvider>
   </React.StrictMode>
 );
