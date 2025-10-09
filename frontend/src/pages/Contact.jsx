@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Contact() {
   return (
-    <div className="relative flex flex-col bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0d1117] text-white overflow-hidden pt-24 px-6 pb-6">
+    <div className="relative flex flex-col min-h-[100dvh] bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0d1117] text-white overflow-y-auto pt-24 px-6 pb-10">
       {/* 🌌 پس‌زمینه‌ی نور متحرک */}
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.07)_0%,transparent_70%)] blur-3xl"
@@ -11,7 +11,7 @@ export default function Contact() {
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      <main className="relative max-w-6xl mx-auto w-full z-10 flex-grow">
+      <main className="relative max-w-6xl mx-auto w-full z-10 flex-grow space-y-10">
         {/* ===== Title ===== */}
         <motion.div
           className="text-center mb-10"
@@ -28,7 +28,7 @@ export default function Contact() {
         </motion.div>
 
         {/* ===== Grid Layout ===== */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-8">
           {/* ===== Quote Request Form ===== */}
           <motion.form
             onSubmit={(e) => {
@@ -41,7 +41,6 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            {/* 🔹 Name */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Name
@@ -53,7 +52,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* 🔹 Email */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Email
@@ -65,7 +63,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* 🔹 Service Type */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Service Type
@@ -80,7 +77,6 @@ export default function Contact() {
               </select>
             </div>
 
-            {/* 🔹 Estimated Budget */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Estimated Budget
@@ -92,7 +88,6 @@ export default function Contact() {
               />
             </div>
 
-            {/* 🔹 Message */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Project Details
@@ -104,7 +99,6 @@ export default function Contact() {
               ></textarea>
             </div>
 
-            {/* 🔹 Submit Button */}
             <motion.button
               type="submit"
               whileHover={{ scale: 1.03 }}

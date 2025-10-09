@@ -23,52 +23,49 @@ import DeviceSales from "./pages/services/hardware/DeviceSales";
 import Installation from "./pages/services/hardware/Installation";
 import Maintenance from "./pages/services/hardware/Maintenance";
 
+import ScrollToTop from "./components/ScrollToTop";   // ✅ اینو اضافه کن
 import { ScrollProvider } from "./ScrollContext";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-     <HelmetProvider>
     <ScrollProvider>
-         
-
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<App />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="services" element={<Services />} />
-            <Route path="services/it" element={<ITServices />} />
-            <Route path="services/it/server" element={<ServerAdmin />} />
-            <Route path="services/it/network" element={<NetworkSetup />} />
-            <Route path="services/it/support" element={<ITSupport />} />
-            <Route path="services/web" element={<WebDevelopment />} />
-            <Route path="services/web/frontend" element={<FrontendDev />} />
-            <Route path="services/web/backend" element={<BackendDev />} />
-            <Route
-              path="services/web/fullstack"
-              element={<FullstackSolutions />}
-            />
-
-            <Route path="services/hardware" element={<HardwareSolutions />} />
-            <Route path="services/hardware/sales" element={<DeviceSales />} />
-            <Route
-              path="services/hardware/installation"
-              element={<Installation />}
-            />
-            <Route
-              path="services/hardware/maintenance"
-              element={<Maintenance />}
-            />
-            <Route path="contact" element={<Contact />} />
-            <Route path="impressum" element={<Impressum />} />
-            <Route path="datenschutz" element={<PrivacyPolicy />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-         
-
+      <HelmetProvider>
+        <BrowserRouter>
+          <ScrollToTop /> {/* ✅ این خط باعث میشه همیشه بره بالا */}
+          <Routes>
+            <Route path="/" element={<App />}>
+              <Route index element={<Home />} />
+              <Route path="about" element={<About />} />
+              <Route path="services" element={<Services />} />
+              <Route path="services/it" element={<ITServices />} />
+              <Route path="services/it/server" element={<ServerAdmin />} />
+              <Route path="services/it/network" element={<NetworkSetup />} />
+              <Route path="services/it/support" element={<ITSupport />} />
+              <Route path="services/web" element={<WebDevelopment />} />
+              <Route path="services/web/frontend" element={<FrontendDev />} />
+              <Route path="services/web/backend" element={<BackendDev />} />
+              <Route
+                path="services/web/fullstack"
+                element={<FullstackSolutions />}
+              />
+              <Route path="services/hardware" element={<HardwareSolutions />} />
+              <Route path="services/hardware/sales" element={<DeviceSales />} />
+              <Route
+                path="services/hardware/installation"
+                element={<Installation />}
+              />
+              <Route
+                path="services/hardware/maintenance"
+                element={<Maintenance />}
+              />
+              <Route path="contact" element={<Contact />} />
+              <Route path="impressum" element={<Impressum />} />
+              <Route path="datenschutz" element={<PrivacyPolicy />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </HelmetProvider>
     </ScrollProvider>
-     </HelmetProvider>
   </React.StrictMode>
 );
