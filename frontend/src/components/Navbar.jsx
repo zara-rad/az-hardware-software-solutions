@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link as RouterLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,30 +8,42 @@ export default function Navbar() {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
+  const linkClass = ({ isActive }) =>
+    `relative hover:text-white transition duration-200 ${
+      isActive
+        ? "text-white after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-cyan-400"
+        : "text-gray-300"
+    } hover:scale-[1.08]`;
+
   return (
-    <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117] text-white fixed w-full z-50">
-      {/* Logo */}
-      <div className="flex items-center gap-2">
-        <span className="text-2xl font-bold">AZ</span>
-        <span className="text-sm text-gray-400">
-          Hardware & Software Solutions
-        </span>
+    <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117] text-white fixed w-full z-50 shadow-lg">
+      {/* ✅ Custom Logo */}
+      <div className="flex items-center">
+        <span className="text-3xl font-extrabold tracking-tight mr-2">AZ</span>
+        <div className="flex flex-col leading-[0.9]">
+          <span className="text-xl font-light tracking-[0.2em]">
+            HARDWARE
+          </span>
+          <span className="text-[10px] text-gray-400 uppercase tracking-[0.35em]">
+            FORYX ENGINE COMPONENTS
+          </span>
+        </div>
       </div>
 
-      {/* Desktop Menu */}
-      <nav className="hidden md:flex gap-6 text-gray-300">
-        <RouterLink to="/" className="hover:text-white">
+      {/* ✅ Desktop Menu */}
+      <nav className="hidden md:flex gap-8 text-gray-300 font-medium">
+        <NavLink to="/" className={linkClass}>
           Home
-        </RouterLink>
-        <RouterLink to="/about" className="hover:text-white">
-          About
-        </RouterLink>
-        <RouterLink to="/services" className="hover:text-white">
+        </NavLink>
+        <NavLink to="/services" className={linkClass}>
           Services
-        </RouterLink>
-        <RouterLink to="/contact" className="hover:text-white">
+        </NavLink>
+        <NavLink to="/about" className={linkClass}>
+          About
+        </NavLink>
+        <NavLink to="/contact" className={linkClass}>
           Contact
-        </RouterLink>
+        </NavLink>
 
         <button
           onClick={() => setLang(lang === "EN" ? "DE" : "EN")}
@@ -41,7 +53,7 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Menu Button */}
+      {/* ✅ Mobile Menu Button */}
       <button
         className="md:hidden text-gray-300 hover:text-white"
         onClick={toggleMenu}
@@ -49,37 +61,26 @@ export default function Navbar() {
         {menuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Dropdown */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-[#161b22] border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300">
-          <RouterLink
-            to="/"
-            onClick={toggleMenu}
-            className="px-6 py-3 hover:bg-gray-800 transition"
-          >
-            Home
-          </RouterLink>
-          <RouterLink
-            to="/about"
-            onClick={toggleMenu}
-            className="px-6 py-3 hover:bg-gray-800 transition"
-          >
-            About
-          </RouterLink>
-          <RouterLink
-            to="/services"
-            onClick={toggleMenu}
-            className="px-6 py-3 hover:bg-gray-800 transition"
-          >
-            Services
-          </RouterLink>
-          <RouterLink
-            to="/contact"
-            onClick={toggleMenu}
-            className="px-6 py-3 hover:bg-gray-800 transition"
-          >
-            Contact
-          </RouterLink>
+          {["/", "/services", "/about", "/contact"].map((path, i) => {
+            const labels = ["Home", "Services", "About", "Contact"];
+            return (
+              <NavLink
+                key={path}
+                to={path}
+                onClick={toggleMenu}
+                className={({ isActive }) =>
+                  `px-6 py-3 hover:bg-gray-800 transition ${
+                    isActive ? "bg-gray-800 text-white" : ""
+                  }`
+                }
+              >
+                {labels[i]}
+              </NavLink>
+            );
+          })}
 
           <button
             onClick={() => {
