@@ -1,5 +1,6 @@
 import { Monitor, Code2, Cog } from "lucide-react";
 import { motion } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export default function Services() {
   const services = [
@@ -7,22 +8,32 @@ export default function Services() {
       icon: <Monitor className="w-14 h-14 text-green-400 mb-4" />,
       title: "IT Services",
       desc: "System administration, network setup, and managed IT support.",
+      link: "/services/it",
     },
     {
       icon: <Code2 className="w-14 h-14 text-green-400 mb-4" />,
       title: "Web & Software Development",
       desc: "Modern websites, ERP systems, and custom software solutions.",
+      link: "/services/web",
     },
     {
       icon: <Cog className="w-14 h-14 text-green-400 mb-4" />,
       title: "Hardware Solutions",
       desc: "Device sales, installation, and ongoing maintenance.",
+      link: "/services/hardware",
     },
   ];
 
   return (
-    <section className="relative py-24 px-6 text-center border-t border-gray-800">
-      {/* 🔹 عنوان بخش */}
+    <section className="relative py-24 px-6 text-center border-t border-gray-800 overflow-hidden bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0d1117]">
+      {/* 🌌 Light Animation Background */}
+      <motion.div
+        className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.06)_0%,transparent_70%)] blur-3xl"
+        animate={{ opacity: [0.4, 0.8, 0.4], scale: [1, 1.15, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+      />
+
+      {/* 🔹 Section Title */}
       <motion.div
         className="relative z-10 mb-16"
         initial={{ opacity: 0, y: 40 }}
@@ -38,7 +49,7 @@ export default function Services() {
         </p>
       </motion.div>
 
-      {/* 🔹 کارت‌ها */}
+      {/* 🔹 Service Cards */}
       <div className="relative z-10 grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
         {services.map((service, index) => (
           <motion.div
@@ -48,28 +59,30 @@ export default function Services() {
             transition={{ delay: index * 0.2, duration: 0.8 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.04 }}
-            className="group p-10 rounded-2xl bg-[#161b22]/80 border border-gray-800 hover:border-green-400 backdrop-blur-sm hover:shadow-[0_0_25px_rgba(34,197,94,0.2)] transition-all duration-300 flex flex-col items-center"
+            className="group p-10 rounded-2xl bg-[#161b22]/80 border border-gray-800 hover:border-green-400 backdrop-blur-sm hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300 flex flex-col items-center"
           >
             <motion.div
               className="mb-4"
               whileHover={{ rotate: 10 }}
-              transition={{ type: 'spring', stiffness: 200 }}
+              transition={{ type: "spring", stiffness: 200 }}
             >
               {service.icon}
             </motion.div>
+
             <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-green-400 transition-colors duration-300">
               {service.title}
             </h3>
+
             <p className="text-gray-400 text-sm leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
               {service.desc}
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+
+            <NavLink
+              to={service.link}
               className="bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
             >
               Learn More
-            </motion.button>
+            </NavLink>
           </motion.div>
         ))}
       </div>

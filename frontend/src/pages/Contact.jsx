@@ -20,23 +20,28 @@ export default function Contact() {
           transition={{ duration: 1 }}
         >
           <h1 className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(0,255,180,0.3)]">
-            Get in Touch
+            Request a Quote
           </h1>
           <p className="text-gray-400 text-lg">
-            We’d love to hear from you — let’s build something great together.
+            Tell us what you need — we’ll get back to you with a custom offer.
           </p>
         </motion.div>
 
         {/* ===== Grid Layout ===== */}
         <div className="grid md:grid-cols-2 gap-6">
-          {/* ===== Contact Form ===== */}
+          {/* ===== Quote Request Form ===== */}
           <motion.form
+            onSubmit={(e) => {
+              e.preventDefault();
+              console.log("Quote submitted!");
+            }}
             className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.4)] p-8 border border-gray-800 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-all duration-300 space-y-6"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            {/* 🔹 Name */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Name
@@ -48,6 +53,7 @@ export default function Contact() {
               />
             </div>
 
+            {/* 🔹 Email */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
                 Email
@@ -59,24 +65,53 @@ export default function Contact() {
               />
             </div>
 
+            {/* 🔹 Service Type */}
             <div>
               <label className="block text-sm font-medium mb-2 text-gray-300">
-                Message
+                Service Type
+              </label>
+              <select
+                className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+              >
+                <option value="">Select a service...</option>
+                <option>IT Services</option>
+                <option>Web & Software Development</option>
+                <option>Hardware Solutions</option>
+              </select>
+            </div>
+
+            {/* 🔹 Estimated Budget */}
+            <div>
+              <label className="block text-sm font-medium mb-2 text-gray-300">
+                Estimated Budget
+              </label>
+              <input
+                type="text"
+                placeholder="e.g. €1,000 - €5,000"
+                className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition"
+              />
+            </div>
+
+            {/* 🔹 Message */}
+            <div>
+              <label className="block text-sm font-medium mb-2 text-gray-300">
+                Project Details
               </label>
               <textarea
                 rows="5"
-                placeholder="Write your message..."
+                placeholder="Tell us about your project goals..."
                 className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-green-500 focus:ring-1 focus:ring-green-500 resize-none transition"
               ></textarea>
             </div>
 
+            {/* 🔹 Submit Button */}
             <motion.button
               type="submit"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.96 }}
               className="w-full py-3 rounded-lg font-semibold bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all duration-300"
             >
-              Send Message
+              Send Request
             </motion.button>
           </motion.form>
 

@@ -4,17 +4,24 @@ export default function About() {
   return (
     <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden">
       {/* 🔹 Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#102030] to-[#0d1117] overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117] via-[#102030] to-[#0f151c]" />
+        {/* ✅ رنگ انتهایی از #0f151c بجای #0d1117 تا با فوتر blend شه */}
+
         <motion.div
           className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.1)_0%,transparent_70%)]"
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         />
+
         <motion.div
           className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(0,200,255,0.08)_0%,transparent_70%)]"
           animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.8, 0.4] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         />
+
+        {/* ✅ لایه‌ی نرم انتهایی برای اتصال گرادینت به فوتر */}
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-b from-transparent to-[#0d1117]" />
       </div>
 
       {/* 🔹 Hero Section */}
@@ -41,7 +48,6 @@ export default function About() {
 
       {/* 🔹 Main Content */}
       <main className="relative z-10 flex-grow max-w-6xl mx-auto px-6 pb-8 space-y-10 md:space-y-12">
-        {/* Company Overview */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +67,6 @@ export default function About() {
           </p>
         </motion.div>
 
-        {/* Vision & Mission */}
         <div className="grid md:grid-cols-2 gap-6 pb-4">
           {[
             {

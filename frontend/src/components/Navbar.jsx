@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [lang, setLang] = useState("EN");
-  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
@@ -18,8 +18,11 @@ export default function Navbar() {
 
   return (
     <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117]/95 backdrop-blur-sm text-white fixed w-full z-50 shadow-[0_2px_15px_rgba(0,255,180,0.05)]">
-      {/* ✅ Custom Logo */}
-      <div className="flex items-center cursor-pointer select-none">
+      {/* ✅ Clickable Logo (redirects to Home) */}
+      <div
+        onClick={() => navigate("/")}
+        className="flex items-center cursor-pointer select-none"
+      >
         <span className="text-3xl font-extrabold tracking-tight mr-2 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]">
           AZ
         </span>
@@ -66,9 +69,7 @@ export default function Navbar() {
 
       {/* ✅ Mobile Dropdown */}
       {menuOpen && (
-        <div
-          className="absolute top-16 left-0 w-full bg-[#161b22]/95 backdrop-blur-sm border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] animate-fadeIn"
-        >
+        <div className="absolute top-16 left-0 w-full bg-[#161b22]/95 backdrop-blur-sm border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] animate-fadeIn">
           {["/", "/services", "/about", "/contact"].map((path, i) => {
             const labels = ["Home", "Services", "About", "Contact"];
             return (
