@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -9,7 +9,7 @@ export default function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117] text-white relative">
+    <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117] text-white fixed w-full z-50">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <span className="text-2xl font-bold">AZ</span>
@@ -20,10 +20,18 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <nav className="hidden md:flex gap-6 text-gray-300">
-        <Link to="/" className="hover:text-white">Home</Link>
-        <Link to="/about" className="hover:text-white">About</Link>
-        <Link to="/services" className="hover:text-white">Services</Link>
-        <Link to="/contact" className="hover:text-white">Contact</Link>
+        <RouterLink to="/" className="hover:text-white">
+          Home
+        </RouterLink>
+        <RouterLink to="/about" className="hover:text-white">
+          About
+        </RouterLink>
+        <RouterLink to="/services" className="hover:text-white">
+          Services
+        </RouterLink>
+        <RouterLink to="/contact" className="hover:text-white">
+          Contact
+        </RouterLink>
 
         <button
           onClick={() => setLang(lang === "EN" ? "DE" : "EN")}
@@ -41,37 +49,38 @@ export default function Navbar() {
         {menuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
 
-      {/* Mobile Sidebar */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-[#161b22] border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300">
-          <Link
+          <RouterLink
             to="/"
             onClick={toggleMenu}
             className="px-6 py-3 hover:bg-gray-800 transition"
           >
             Home
-          </Link>
-          <Link
+          </RouterLink>
+          <RouterLink
             to="/about"
             onClick={toggleMenu}
             className="px-6 py-3 hover:bg-gray-800 transition"
           >
             About
-          </Link>
-          <Link
+          </RouterLink>
+          <RouterLink
             to="/services"
             onClick={toggleMenu}
             className="px-6 py-3 hover:bg-gray-800 transition"
           >
             Services
-          </Link>
-          <Link
+          </RouterLink>
+          <RouterLink
             to="/contact"
             onClick={toggleMenu}
             className="px-6 py-3 hover:bg-gray-800 transition"
           >
             Contact
-          </Link>
+          </RouterLink>
+
           <button
             onClick={() => {
               setLang(lang === "EN" ? "DE" : "EN");

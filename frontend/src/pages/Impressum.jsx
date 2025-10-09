@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export default function Impressum() {
   return (
@@ -89,7 +88,7 @@ export default function Impressum() {
         </section>
       </main>
 
-      <Footer />
+   
     </div>
   );
 }
