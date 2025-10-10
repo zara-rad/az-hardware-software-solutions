@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative z-10 flex flex-col items-center justify-center text-center py-28 px-6 bg-transparent text-white overflow-hidden">
       {/* 🌟 نور پس‌زمینه با لایه پایین‌تر */}
       <motion.div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-2xl opacity-40 -z-10"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-2xl opacity-40 -z-30"
         animate={{ scale: [1, 1.1, 1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
