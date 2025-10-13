@@ -11,7 +11,7 @@ export default function ContactInfo() {
       viewport={{ once: true }}
     >
       <div>
-        <h2 className="text-2xl font-bold mb-3 text-green-400">Contact Information</h2>
+        <h2 className="text-2xl font-bold mb-3 text-gray-400">Contact Information</h2>
         <p className="text-gray-400">
           Feel free to reach out via phone, email, or visit us in person.
         </p>
