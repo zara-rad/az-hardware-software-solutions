@@ -25,7 +25,7 @@ export default function OverviewLinks() {
   ];
 
   return (
-    <section className="relative py-24 px-6 bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0d1117] border-t border-gray-800 overflow-hidden">
+    <section className="relative py-10 px-6 bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0d1117] border-t border-gray-800 overflow-hidden">
       {/* ✨ پس‌زمینه نور ملایم */}
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.07)_0%,transparent_70%)] blur-3xl"

@@ -1,8 +1,11 @@
 import { Monitor, Code2, Cog } from "lucide-react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Services() {
+  const location = useLocation();
+  const isStandalone = location.pathname === "/services";
+
   const services = [
     {
       icon: Monitor,
@@ -25,11 +28,19 @@ export default function Services() {
   ];
 
   return (
-    <div className="relative flex flex-col min-h-screen bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0f151c] text-white overflow-hidden">
+    <div
+      className={`relative flex flex-col ${
+        isStandalone ? "min-h-screen" : ""
+      } bg-gradient-to-b from-[#0d1117] via-[#101a25] to-[#0f151c] text-white overflow-hidden`}
+    >
       {/* 🌌 Light Glow Layer */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.05)_0%,transparent_70%)] blur-3xl animate-pulse opacity-60"></div>
 
-      <section className="relative z-10 py-24 px-6 text-center border-t border-gray-800">
+      <section
+        className={`relative z-10 ${
+          isStandalone ? "py-20" : "py-10"
+        } px-6 text-center border-t border-gray-800`}
+      >
         {/* 🔹 Section Title */}
         <div
           className="relative z-10 mb-16"
