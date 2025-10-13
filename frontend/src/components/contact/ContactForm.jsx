@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast"; // ✅ اضافه شد برای toast زیبا
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -18,22 +19,34 @@ export default function ContactForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    // 🚀 Toast شروع ارسال
+    toast.loading("Sending message...", { id: "contact" });
+
     try {
       const res = await fetch("http://localhost:5050/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+
       const data = await res.json();
+
       if (data.success) {
-        alert("✅ Message sent successfully!");
-        setFormData({ name: "", email: "", service: "", budget: "", message: "" });
+        toast.success("✅ Message sent successfully!", { id: "contact" });
+        setFormData({
+          name: "",
+          email: "",
+          service: "",
+          budget: "",
+          message: "",
+        });
       } else {
-        alert("⚠️ Something went wrong!");
+        toast.error("⚠️ Something went wrong!", { id: "contact" });
       }
     } catch (err) {
       console.error(err);
-      alert("❌ Failed to send message.");
+      toast.error("❌ Failed to send message.", { id: "contact" });
     } finally {
       setLoading(false);
     }
@@ -68,7 +81,9 @@ export default function ContactForm() {
       />
 
       <div>
-        <label className="block text-sm font-medium mb-2 text-gray-300">Service Type</label>
+        <label className="block text-sm font-medium mb-2 text-gray-300">
+          Service Type
+        </label>
         <select
           name="service"
           value={formData.service}
@@ -106,7 +121,9 @@ export default function ContactForm() {
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.96 }}
         className={`w-full py-3 rounded-lg font-semibold ${
-          loading ? "bg-gray-600 cursor-not-allowed" : "bg-gradient-to-r from-green-500 to-cyan-500"
+          loading
+            ? "bg-gray-600 cursor-not-allowed"
+            : "bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400"
         } text-white shadow-lg transition-all duration-300`}
       >
         {loading ? "Sending..." : "Send Request"}
@@ -128,7 +145,9 @@ function InputField({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium mb-2 text-gray-300">{label}</label>
+      <label className="block text-sm font-medium mb-2 text-gray-300">
+        {label}
+      </label>
       {textarea ? (
         <textarea
           name={name}
@@ -137,7 +156,7 @@ function InputField({
           rows="5"
           required={required}
           placeholder={placeholder}
-          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 resize-none"
+          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
         ></textarea>
       ) : (
         <input
@@ -147,7 +166,7 @@ function InputField({
           onChange={onChange}
           required={required}
           placeholder={placeholder}
-          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500"
+          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-green-500"
         />
       )}
     </div>
