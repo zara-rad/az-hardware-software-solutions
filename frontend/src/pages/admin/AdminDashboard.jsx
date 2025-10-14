@@ -16,13 +16,18 @@ export default function AdminDashboard() {
     direction: "desc",
   });
 
-  // 🟢 Load messages initially
+  // 🟢 در زمان mount، تاریخ چاپ رو در body قرار بده و پیام‌ها رو واکشی کن
   useEffect(() => {
+    document.body.setAttribute(
+      "data-print-date",
+      new Date().toLocaleString()
+    );
+
     const token = localStorage.getItem("adminToken");
     if (token) fetchMessages(token);
   }, []);
 
-  // 📥 Fetch messages from backend
+  // 📥 دریافت پیام‌ها از سرور
   const fetchMessages = async (token) => {
     try {
       setLoading(true);
@@ -44,7 +49,7 @@ export default function AdminDashboard() {
     }
   };
 
-  // 📊 Sort logic
+  // 📊 مرتب‌سازی
   const handleSort = (key) => {
     setSortConfig((prev) =>
       prev.key === key
@@ -53,7 +58,7 @@ export default function AdminDashboard() {
     );
   };
 
-  // 🗑 Delete message
+  // 🗑 حذف پیام
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this message?")) return;
     const token = localStorage.getItem("adminToken");
@@ -74,31 +79,31 @@ export default function AdminDashboard() {
     }
   };
 
-  // 🔄 Refresh messages
+  // 🔄 بروزرسانی دستی
   const handleRefresh = () => {
     const token = localStorage.getItem("adminToken");
     if (token) fetchMessages(token);
   };
 
-  // 🚪 Logout
+  // 🚪 خروج از حساب
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
     window.location.reload();
   };
 
-  // 🔍 Filter & Sort combined
+  // 🔍 فیلتر بر اساس نام، ایمیل و سرویس
   const filteredMessages = messages.filter((m) => {
     const matchesText =
       m.name?.toLowerCase().includes(filter.toLowerCase()) ||
       m.email?.toLowerCase().includes(filter.toLowerCase());
-    const matchesService =
-      !serviceFilter || m.service === serviceFilter;
+    const matchesService = !serviceFilter || m.service === serviceFilter;
     return matchesText && matchesService;
   });
 
+  // 🔽 مرتب‌سازی پیام‌ها
   const sortedMessages = [...filteredMessages].sort((a, b) => {
     const { key, direction } = sortConfig;
-    let order = direction === "asc" ? 1 : -1;
+    const order = direction === "asc" ? 1 : -1;
 
     if (key === "name" || key === "service")
       return a[key]?.localeCompare(b[key] || "") * order;

@@ -46,6 +46,13 @@ export default function AdminHeader({
 
       <div className="flex gap-2">
         <button
+          onClick={() => window.print()}
+          className="px-4 py-2 bg-green-600 hover:bg-green-500 rounded-lg text-white font-semibold transition-all duration-200"
+        >
+          🖨 Print
+        </button>
+
+        <button
           onClick={onRefresh}
           disabled={loading}
           className="px-4 py-2 bg-cyan-600 hover:bg-cyan-500 rounded-lg text-white font-semibold transition-all duration-200 disabled:opacity-50"

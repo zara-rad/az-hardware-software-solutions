@@ -1,9 +1,14 @@
-// AdminTable.jsx
-export default function AdminTable({ messages, handleSort, sortConfig, handleDelete, setSelectedMsg }) {
+export default function AdminTable({
+  messages,
+  handleSort,
+  sortConfig,
+  handleDelete,
+  setSelectedMsg,
+}) {
   return (
-    <div className="overflow-x-auto shadow-[0_0_20px_rgba(0,255,180,0.15)] rounded-xl border border-gray-800 bg-[#11161d]/70 backdrop-blur-sm">
+    <div className="print:block overflow-x-auto md:overflow-visible shadow-[0_0_20px_rgba(0,255,180,0.15)] rounded-xl border border-gray-800 bg-[#11161d]/70 backdrop-blur-sm">
       <table className="w-full text-sm md:text-base">
-        <thead className="bg-[#161b22] text-gray-300 uppercase text-xs md:text-sm select-none">
+        <thead className="bg-[#161b22] text-gray-100 uppercase text-xs md:text-sm select-none">
           <tr>
             <th
               className="p-3 text-left cursor-pointer hover:text-green-400"
@@ -41,7 +46,7 @@ export default function AdminTable({ messages, handleSort, sortConfig, handleDel
                   : "▼"
                 : ""}
             </th>
-            <th className="p-3 text-right">Actions</th>
+            <th className="p-3 text-right no-print">Actions</th>
           </tr>
         </thead>
 
@@ -51,26 +56,48 @@ export default function AdminTable({ messages, handleSort, sortConfig, handleDel
               key={msg._id}
               onClick={() => setSelectedMsg(msg)}
               className={`cursor-pointer ${
-                i % 2 === 0 ? "bg-[#0e131a]" : "bg-[#101821]"
-              } border-t border-gray-800 hover:bg-[#1a2430]/80 transition duration-200`}
+                i % 2 === 0 ? "bg-[#0f1724]" : "bg-[#131b29]"
+              } border-t border-gray-800 hover:bg-[#1a2432]/80 transition duration-200`}
             >
-              <td className="p-3 font-medium text-gray-100">{msg.name}</td>
-              <td className="p-3 text-cyan-400">{msg.email}</td>
-              <td className="p-3 text-green-400">{msg.service || "-"}</td>
-              <td className="p-3 text-gray-300">{msg.budget || "-"}</td>
-              <td className="p-3 text-gray-200 whitespace-pre-wrap truncate max-w-[200px]">
-                {msg.message}
+              {/* 🟢 Name */}
+              <td className="p-3 font-semibold text-white">{msg.name}</td>
+
+              {/* 🔵 Email */}
+              <td className="p-3 text-cyan-300 hover:text-cyan-200 transition">
+                {msg.email}
               </td>
-              <td className="p-3 text-gray-400">
+
+              {/* 🟢 Service */}
+              <td className="p-3 text-green-400 font-medium">
+                {msg.service || "-"}
+              </td>
+
+              {/* 💸 Budget */}
+              <td className="p-3 text-white font-semibold">
+                {msg.budget || "-"}
+              </td>
+
+              {/* 💬 Message */}
+              <td
+                className="p-3 text-gray-100 text-sm leading-snug whitespace-pre-wrap max-w-[300px]"
+                style={{ lineHeight: "1.5", wordBreak: "break-word" }}
+              >
+                {msg.message || "-"}
+              </td>
+
+              {/* 📅 Date */}
+              <td className="p-3 text-gray-200 text-sm">
                 {new Date(msg.createdAt).toLocaleString()}
               </td>
-              <td className="p-3 text-right">
+
+              {/* ❌ Delete Button */}
+              <td className="p-3 text-right no-print">
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
                     handleDelete(msg._id);
                   }}
-                  className="px-3 py-1 text-sm bg-red-500/70 hover:bg-red-600 rounded-lg font-semibold text-white transition"
+                  className="px-3 py-1 text-sm bg-red-500/80 hover:bg-red-600 rounded-lg font-semibold text-white transition"
                 >
                   Delete
                 </button>
