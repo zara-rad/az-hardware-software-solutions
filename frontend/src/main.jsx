@@ -24,6 +24,7 @@ import FullstackSolutions from "./pages/services/web/FullstackSolutions";
 import DeviceSales from "./pages/services/hardware/DeviceSales";
 import Installation from "./pages/services/hardware/Installation";
 import Maintenance from "./pages/services/hardware/Maintenance";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 // 📂 Components & Context
 import ScrollToTop from "./components/ScrollToTop";
@@ -59,6 +60,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
                 path="services/hardware/installation"
                 element={<Installation />}
               />
+              <Route path="/admin" element={<AdminDashboard />} />
+
               <Route
                 path="services/hardware/maintenance"
                 element={<Maintenance />}
