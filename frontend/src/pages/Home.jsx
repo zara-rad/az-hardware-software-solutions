@@ -8,13 +8,12 @@ const OverviewLinks = lazy(() => import("../components/OverviewLinks"));
 
 export default function Home() {
   useEffect(() => {
-    // ✅ پیش‌لود سرویس‌ها برای جلوگیری از تاخیر یا عدم لود
     import("./Services");
     import("../components/OverviewLinks");
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#0d1117] text-white overflow-hidden">
+    <div className="relative min-h-screen flex flex-col text-white overflow-hidden bg-[#0d1117]">
       <Helmet>
         <title>AZ Hardware — IT & Web Solutions in Berlin</title>
         <meta
@@ -23,26 +22,38 @@ export default function Home() {
         />
       </Helmet>
 
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#102030] to-[#0d1117] overflow-hidden">
+      {/* 🟩 فقط پایین صفحه (زیر Hero) بک‌گراند واحد */}
+      <div className="absolute inset-x-0 bottom-0 top-[40vh] pointer-events-none">
+        <img
+          src="/images/hero/hero.jpg"
+          alt="Data Center Background"
+          className="w-full h-full object-cover opacity-75 scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/60 via-[#0d1117]/40 to-[#0d1117]/90" />
         <motion.div
-          className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.1)_0%,transparent_70%)]"
-          animate={{ rotate: [0, 360] }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          className="absolute top-1/2 left-1/2 w-[1000px] h-[1000px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(0,255,180,0.15)_0%,transparent_70%)] blur-3xl opacity-50 animate-pulse"
+          animate={{ scale: [1, 1.1, 1] }}
+          transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
       <main className="relative z-10 flex-grow">
+        {/* 🔹 Hero بدون تغییر */}
         <Hero />
-        <Suspense
-          fallback={
-            <div className="py-24 text-center text-gray-500 animate-pulse">
-              Loading services...
-            </div>
-          }
-        >
-          <Services />
-          <OverviewLinks />
-        </Suspense>
+
+        {/* 🔹 از Our Services تا Explore More روی بک‌گراند مشترک */}
+        <div className="relative z-10">
+          <Suspense
+            fallback={
+              <div className="py-24 text-center text-gray-500 animate-pulse">
+                Loading services...
+              </div>
+            }
+          >
+            <Services />
+            <OverviewLinks />
+          </Suspense>
+        </div>
       </main>
     </div>
   );

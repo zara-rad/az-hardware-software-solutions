@@ -27,12 +27,14 @@ export default function Services() {
       link: "/services/hardware",
     },
   ];
+
   useEffect(() => {
     // وقتی وارد صفحه‌ی Services میشی، صفحه بره بالا
-    if (location.pathname === "/services") {
+    if (isStandalone) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
-  }, [location.pathname]);
+  }, [isStandalone]);
+
   return (
     <div
       key={location.pathname} // ✅ باعث remount کامل هنگام بازگشت می‌شود
@@ -40,18 +42,20 @@ export default function Services() {
         isStandalone ? "min-h-screen" : ""
       } text-white overflow-hidden`}
     >
-      {/* 🖼️ Background Image — clearer and more dynamic */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/services/bgservicess.jpg"
-          alt="Modern Data Center"
-          className="w-full h-full object-cover opacity-70 scale-105"
-        />
-        {/* 🌈 Dark overlay for readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/50 to-[#0d1117]/90" />
-        {/* ✨ Soft light center glow */}
-        <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-3xl opacity-70 animate-pulse" />
-      </div>
+      {/* 🖼️ Background فقط در حالت standalone */}
+      {isStandalone && (
+        <div className="absolute inset-0">
+          <img
+            src="/images/services/bgservicess.jpg"
+            alt="Modern Data Center"
+            className="w-full h-full object-cover opacity-70 scale-105"
+          />
+          {/* 🌈 Dark overlay for readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/50 to-[#0d1117]/90" />
+          {/* ✨ Soft light center glow */}
+          <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-3xl opacity-70 animate-pulse" />
+        </div>
+      )}
 
       {/* 🔹 Main Section */}
       <section
