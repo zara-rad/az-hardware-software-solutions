@@ -1,6 +1,7 @@
 import { Monitor, Code2, Cog } from "lucide-react";
 import { motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function Services() {
   const location = useLocation();
@@ -26,9 +27,15 @@ export default function Services() {
       link: "/services/hardware",
     },
   ];
-
+  useEffect(() => {
+    // وقتی وارد صفحه‌ی Services میشی، صفحه بره بالا
+    if (location.pathname === "/services") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [location.pathname]);
   return (
     <div
+      key={location.pathname} // ✅ باعث remount کامل هنگام بازگشت می‌شود
       className={`relative flex flex-col ${
         isStandalone ? "min-h-screen" : ""
       } text-white overflow-hidden`}
@@ -47,12 +54,11 @@ export default function Services() {
       </div>
 
       {/* 🔹 Main Section */}
-     <section
-  className={`relative z-10 flex flex-col justify-center ${
-    isStandalone ? "py-32 md:py-40" : "py-16"
-  } px-6 text-center min-h-[70vh]`}
->
-
+      <section
+        className={`relative z-10 flex flex-col justify-center ${
+          isStandalone ? "py-32 md:py-40" : "py-16"
+        } px-6 text-center min-h-[70vh]`}
+      >
         {/* 🔹 Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -108,8 +114,6 @@ export default function Services() {
     </div>
   );
 }
-
-
 
 // import { Monitor, Code2, Cog } from "lucide-react";
 // import { motion } from "framer-motion";
