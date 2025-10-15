@@ -5,17 +5,20 @@ export default function About() {
   return (
     <div className="relative min-h-screen flex flex-col text-white bg-[#0d1117] overflow-hidden">
       <Helmet>
-        <title>About Us — AZ Hardware & Software Solutions</title>
+        <title>
+          Empowering businesses with innovative IT solutions and reliable
+          hardware services — built for the future.
+        </title>
         <meta
           name="description"
           content="Empowering businesses with cutting-edge IT solutions and reliable hardware services — built for the future."
         />
       </Helmet>
 
-      {/* 🖼️ Background Image (جایگزین کن با عکس خودت) */}
+      {/* 🖼️ Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/images/about/about.jpg" // ⬅️ تصویر خودتو اینجا بذار
+          src="/images/about/about.jpg"
           alt="About Background"
           className="w-full h-full object-cover opacity-70 scale-105"
         />
@@ -45,8 +48,8 @@ export default function About() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
         >
-          Empowering businesses with cutting-edge IT solutions and reliable hardware
-          services — built for the future.
+          Empowering businesses with cutting-edge IT solutions and reliable
+          hardware services — built for the future.
         </motion.p>
       </section>
 
@@ -65,10 +68,13 @@ export default function About() {
             About AZ Hardware & Software Solutions
           </h2>
           <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Based in Berlin, we specialize in IT services, web development, and hardware
-            solutions tailored to small and medium-sized businesses. Our goal is to blend
-            technical expertise with precision and innovation — delivering secure,
-            efficient, and scalable systems for every client.
+            Based in Berlin, AZ Hardware & Software Solutions provides complete
+            IT, web, and hardware services designed to help small and
+            medium-sized businesses thrive in the digital era. We combine
+            technology, creativity, and precision to deliver reliable systems
+            that are efficient, secure, and built to last. Our focus is on
+            creating seamless digital ecosystems — from IT infrastructure and
+            networks to web platforms and hardware integration.
           </p>
         </motion.div>
 
@@ -83,10 +89,14 @@ export default function About() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#121a24]/80 backdrop-blur-md border border-gray-800 hover:border-transparent hover:bg-[#141c26]/90 rounded-2xl p-8 shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-[#0f1620]/80 hover:to-[#12212f]/80"
           >
-            <h3 className="text-xl font-semibold text-cyan-400 mb-3">Our Vision</h3>
+            <h3 className="text-xl font-semibold text-cyan-400 mb-3">
+              Our Vision
+            </h3>
             <p className="text-gray-300 leading-relaxed">
-              To become Berlin’s most trusted and forward-thinking provider of IT and
-              hardware solutions — empowering digital transformation across industries.
+              To become one of Berlin’s most trusted and forward-thinking IT and
+              hardware solution providers — empowering digital transformation
+              and enabling businesses to operate smarter, faster, and more
+              sustainably.
             </p>
           </motion.div>
 
@@ -99,20 +109,44 @@ export default function About() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#121a24]/80 backdrop-blur-md border border-gray-800 hover:border-transparent hover:bg-[#141c26]/90 rounded-2xl p-8 shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300 hover:bg-gradient-to-br hover:from-[#0f1620]/80 hover:to-[#12212f]/80"
           >
-            <h3 className="text-xl font-semibold text-cyan-400 mb-3">Our Mission</h3>
+            <h3 className="text-xl font-semibold text-cyan-400 mb-3">
+              Our Mission
+            </h3>
             <p className="text-gray-300 leading-relaxed">
-              To deliver high-quality, efficient, and future-proof technology services and
-              hardware — built with transparency and long-term value for our clients.
+              To deliver high-quality, efficient, and future-ready technology
+              services and hardware — combining transparency, innovation, and
+              long-term value for every client. We aim to make technology
+              simpler, more accessible, and truly supportive of business growth.
             </p>
           </motion.div>
         </div>
+
+        {/* 🤝 Call to Action */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-green-400">
+            Let’s Build Something Great Together
+          </h2>
+          <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
+            Whether you need IT support, web development, or complete hardware
+            integration — AZ Hardware & Software Solutions is ready to help you
+            turn your ideas into reliable, modern, and scalable results.
+          </p>
+          <a
+            href="/contact"
+            className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+          >
+            Contact Us
+          </a>
+        </motion.div>
       </section>
     </div>
   );
 }
-
-
-
 
 // import { motion } from "framer-motion";
 

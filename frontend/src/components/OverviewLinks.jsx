@@ -7,33 +7,33 @@ export default function OverviewLinks() {
     {
       icon: <User className="w-10 h-10 text-green-400 mb-3" />,
       title: "About Us",
-      desc: "Learn more about our mission and values.",
+      desc: "Discover who we are, what drives us, and how we bring value to every project.",
       to: "/about",
     },
     {
       icon: <Wrench className="w-10 h-10 text-green-400 mb-3" />,
       title: "Our Services",
-      desc: "Discover our IT, web, and hardware solutions.",
+      desc: "Explore our professional IT, web development, and hardware solutions tailored to your business.",
       to: "/services",
     },
     {
       icon: <Mail className="w-10 h-10 text-green-400 mb-3" />,
       title: "Contact",
-      desc: "Get in touch for inquiries or quotes.",
+      desc: "Reach out to discuss your project or request a personalized consultation.",
       to: "/contact",
     },
   ];
 
   return (
     <section className="relative py-20 px-6 border-t border-gray-800 overflow-hidden bg-transparent">
-      {/* ✨ نور ملایم فقط برای عمق بصری، بدون رنگ پس‌زمینه */}
+      {/* ✨ Light background animation for depth */}
       <motion.div
         className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.07)_0%,transparent_70%)] blur-3xl pointer-events-none"
         animate={{ opacity: [0.4, 0.8, 0.4], scale: [1, 1.2, 1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* 🔹 عنوان */}
+      {/* 🔹 Header */}
       <div className="relative z-10 max-w-6xl mx-auto text-center mb-16">
         <motion.h2
           className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-300 to-green-500 drop-shadow-[0_0_15px_rgba(0,255,180,0.3)]"
@@ -50,11 +50,11 @@ export default function OverviewLinks() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Get to know us and our services better
+          Learn more about our company, services, and how we can support your digital growth.
         </motion.p>
       </div>
 
-      {/* 🔹 لینک‌ها */}
+      {/* 🔹 Link Cards */}
       <div className="relative z-10 grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
         {links.map((item, index) => (
           <motion.div
@@ -87,6 +87,7 @@ export default function OverviewLinks() {
     </section>
   );
 }
+
 
 // import { Link } from "react-router-dom";
 // import { User, Wrench, Mail } from "lucide-react";
