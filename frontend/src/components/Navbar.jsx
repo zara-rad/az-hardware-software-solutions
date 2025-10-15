@@ -1,13 +1,15 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [langOpen, setLangOpen] = useState(false);
   const [lang, setLang] = useState("EN");
   const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const toggleLangMenu = () => setLangOpen(!langOpen);
 
   const linkClass = ({ isActive }) =>
     `relative transition-all duration-300 ${
@@ -16,19 +18,26 @@ export default function Navbar() {
         : "text-gray-300 hover:text-white"
     } hover:scale-[1.08]`;
 
+  const handleLangChange = (newLang) => {
+    setLang(newLang);
+    setLangOpen(false);
+  };
+
   return (
     <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117]/95 backdrop-blur-sm text-white fixed w-full z-50 shadow-[0_2px_15px_rgba(0,255,180,0.05)]">
-      {/* ✅ Clickable Logo (redirects to Home) */}
+      {/* ✅ لوگو */}
       <div
         onClick={() => navigate("/")}
         className="flex items-center cursor-pointer select-none"
       >
-        <span className="text-3xl font-extrabold tracking-tight mr-2 text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]">
-          AZ
-        </span>
+        <img
+          src="/images/logo/logo.png"
+          alt="AZ Hardware & Software Solutions Logo"
+          className="w-12 h-auto mr-3 drop-shadow-[0_0_8px_rgba(0,255,180,0.25)]"
+        />
         <div className="flex flex-col leading-[0.9]">
           <span className="text-xl font-light tracking-[0.2em]">
-            HARDWARE
+            AZ HARDWARE
           </span>
           <span className="text-[10px] text-gray-400 uppercase tracking-[0.35em]">
             FORYX ENGINE COMPONENTS
@@ -36,8 +45,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* ✅ Desktop Menu */}
-      <nav className="hidden md:flex gap-8 text-gray-300 font-medium">
+      {/* ✅ منوی دسکتاپ */}
+      <nav className="hidden md:flex gap-8 text-gray-300 font-medium items-center">
         <NavLink to="/" className={linkClass}>
           Home
         </NavLink>
@@ -51,15 +60,34 @@ export default function Navbar() {
           Contact
         </NavLink>
 
-        <button
-          onClick={() => setLang(lang === "EN" ? "DE" : "EN")}
-          className="ml-4 px-3 py-1 border border-gray-600 rounded hover:bg-[#1a222d] hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300"
-        >
-          {lang}
-        </button>
+        {/* 🌐 زیرمنوی زبان */}
+        <div className="relative">
+          <button
+            onClick={toggleLangMenu}
+            className="flex items-center gap-1 px-3 py-1 border border-gray-600 rounded hover:bg-[#1a222d] hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300"
+          >
+            {lang} <ChevronDown size={16} />
+          </button>
+
+          {langOpen && (
+            <div className="absolute right-0 mt-2 bg-[#1a1f25] border border-gray-700 rounded-lg shadow-lg w-28 text-sm z-50">
+              {["EN", "DE", "FA"].map((l) => (
+                <button
+                  key={l}
+                  onClick={() => handleLangChange(l)}
+                  className={`block w-full text-left px-4 py-2 hover:bg-[#1e2935] transition-colors ${
+                    lang === l ? "text-cyan-400" : "text-gray-300"
+                  }`}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       </nav>
 
-      {/* ✅ Mobile Menu Button */}
+      {/* ✅ منوی موبایل */}
       <button
         className="md:hidden text-gray-300 hover:text-white transition"
         onClick={toggleMenu}
@@ -67,7 +95,7 @@ export default function Navbar() {
         {menuOpen ? <X size={26} /> : <Menu size={26} />}
       </button>
 
-      {/* ✅ Mobile Dropdown */}
+      {/* ✅ Dropdown موبایل */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-[#161b22]/95 backdrop-blur-sm border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] animate-fadeIn">
           {["/", "/services", "/about", "/contact"].map((path, i) => {
@@ -90,15 +118,23 @@ export default function Navbar() {
             );
           })}
 
-          <button
-            onClick={() => {
-              setLang(lang === "EN" ? "DE" : "EN");
-              setMenuOpen(false);
-            }}
-            className="m-4 px-4 py-2 border border-gray-600 rounded hover:bg-[#1a222d] hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300"
-          >
-            {lang}
-          </button>
+          {/* 🌐 منوی زبان در موبایل */}
+          <div className="m-4 border border-gray-700 rounded-lg overflow-hidden">
+            {["EN", "DE", "FA"].map((l) => (
+              <button
+                key={l}
+                onClick={() => {
+                  handleLangChange(l);
+                  setMenuOpen(false);
+                }}
+                className={`block w-full text-left px-4 py-2 hover:bg-[#1e2935] transition-colors ${
+                  lang === l ? "text-cyan-400" : "text-gray-300"
+                }`}
+              >
+                {l}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </header>
