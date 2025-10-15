@@ -11,19 +11,19 @@ export default function Services() {
     {
       icon: Monitor,
       title: "IT Services",
-      desc: "System administration, network setup, and managed IT support.",
+      desc: "Expert system administration, secure network configuration, and dedicated IT support for your business.",
       link: "/services/it",
     },
     {
       icon: Code2,
       title: "Web & Software Development",
-      desc: "Modern websites, ERP systems, and custom software solutions.",
+      desc: "Custom-built websites, ERP platforms, and tailored software designed to power your digital presence.",
       link: "/services/web",
     },
     {
       icon: Cog,
       title: "Hardware Solutions",
-      desc: "Device sales, installation, and ongoing maintenance.",
+      desc: "Reliable device sourcing, professional installation, and full-cycle maintenance for all your hardware needs.",
       link: "/services/hardware",
     },
   ];
@@ -74,7 +74,7 @@ export default function Services() {
             Our Services
           </h1>
           <p className="text-gray-200 text-lg font-light">
-            Tailored solutions for your IT, web, and hardware needs
+            Complete IT, web, and hardware solutions — built for performance and growth.
           </p>
         </motion.div>
 

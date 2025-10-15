@@ -33,8 +33,8 @@ export default function HardwareSolutions() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
         >
-          Reliable hardware sales, professional installation, and ongoing support
-          for all your IT devices and components.
+          Trusted hardware procurement, expert installation, and ongoing
+          technical support — tailored for your business infrastructure.
         </motion.p>
       </section>
 
@@ -56,19 +56,19 @@ export default function HardwareSolutions() {
             {
               icon: <Truck className="w-14 h-14 text-green-400 mb-3" />,
               title: "Device Sales",
-              text: "Supplying high-quality laptops, PCs, and IT components at competitive prices.",
+              text: "High-performance laptops, desktops, and components from leading brands at competitive rates.",
               link: "/services/hardware/sales",
             },
             {
               icon: <Wrench className="w-14 h-14 text-green-400 mb-3" />,
               title: "Installation & Setup",
-              text: "Professional configuration and on-site installation for your hardware.",
+              text: "Professional installation, configuration, and seamless integration for your hardware systems.",
               link: "/services/hardware/installation",
             },
             {
               icon: <Cog className="w-14 h-14 text-green-400 mb-3" />,
               title: "Maintenance & Support",
-              text: "Regular updates, diagnostics, and technical assistance for all devices.",
+              text: "Regular maintenance and responsive support to keep your hardware running efficiently.",
               link: "/services/hardware/maintenance",
             },
           ].map((s, i) => (
@@ -81,8 +81,12 @@ export default function HardwareSolutions() {
               className="bg-[#161b22]/80 backdrop-blur-md p-8 rounded-2xl border border-gray-800 hover:border-green-400 hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300"
             >
               {s.icon}
-              <h3 className="text-xl font-semibold mb-2 text-white">{s.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">{s.text}</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">
+                {s.title}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                {s.text}
+              </p>
               <Link
                 to={s.link}
                 className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-6 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
@@ -104,7 +108,8 @@ export default function HardwareSolutions() {
             Need professional hardware solutions?
           </h2>
           <p className="text-gray-400 mb-6">
-            Contact us today for the best deals on hardware sales, installation, and long-term maintenance.
+            Let’s equip your business with reliable hardware — from supply to
+            setup and long-term support.{" "}
           </p>
           <a
             href="/contact"
@@ -117,7 +122,6 @@ export default function HardwareSolutions() {
     </div>
   );
 }
-
 
 // import { motion } from "framer-motion";
 // import { Cog, Wrench, Truck, ArrowLeft } from "lucide-react";
@@ -237,6 +241,3 @@ export default function HardwareSolutions() {
 //     </div>
 //   );
 // }
-
-
-

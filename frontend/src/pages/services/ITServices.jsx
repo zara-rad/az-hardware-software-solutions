@@ -7,19 +7,19 @@ export default function ITServices() {
     {
       icon: <Server className="w-14 h-14 text-green-400 mb-3" />,
       title: "Server & System Administration",
-      text: "Setup, optimization, and monitoring of servers for small and medium businesses.",
+      text: "Deployment, optimization, and continuous monitoring of servers and systems — ensuring stability and high performance across your business operations.",
       link: "/services/it/server",
     },
     {
       icon: <Network className="w-14 h-14 text-green-400 mb-3" />,
       title: "Network Setup & Security",
-      text: "Reliable LAN/WAN configuration, VPN solutions, and firewall management.",
+      text: "Secure and efficient network architecture — including LAN/WAN design, VPN integration, and advanced firewall management for full protection.",
       link: "/services/it/network",
     },
     {
       icon: <ShieldCheck className="w-14 h-14 text-green-400 mb-3" />,
       title: "IT Support & Maintenance",
-      text: "Professional on-site or remote IT support for day-to-day operations.",
+      text: "Comprehensive on-site and remote IT support, regular maintenance, and fast troubleshooting to keep your business running smoothly.",
       link: "/services/it/support",
     },
   ];
@@ -64,7 +64,7 @@ export default function ITServices() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-gray-200 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
         >
-          Reliable system administration, secure networks, and professional IT support — tailored for modern businesses.
+          Reliable infrastructure, secure networking, and expert IT support — optimized for business growth.
         </motion.p>
       </section>
 

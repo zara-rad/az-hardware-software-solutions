@@ -43,8 +43,8 @@ export default function WebDevelopment() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-gray-200 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
         >
-          We build modern, secure, and scalable web applications — from responsive
-          business websites to custom enterprise solutions.
+          Modern, secure, and scalable web applications — tailored for your
+          business growth.
         </motion.p>
       </section>
 
@@ -65,19 +65,19 @@ export default function WebDevelopment() {
             {
               icon: <Layout className="w-14 h-14 text-green-400 mb-3" />,
               title: "Frontend Development",
-              text: "Modern, responsive interfaces with React, Vite, and TailwindCSS.",
+              text: "Stunning, responsive, and performance-driven user interfaces built with React, Vite, and TailwindCSS.",
               link: "/services/web/frontend",
             },
             {
               icon: <Database className="w-14 h-14 text-green-400 mb-3" />,
               title: "Backend Development",
-              text: "Robust and scalable APIs built with Node.js and Express.",
+              text: "Powerful, secure, and scalable APIs designed with Node.js, Express, and modern backend architecture for maximum efficiency.",
               link: "/services/web/backend",
             },
             {
               icon: <Code2 className="w-14 h-14 text-green-400 mb-3" />,
               title: "Fullstack Solutions",
-              text: "End-to-end web applications — from concept to deployment.",
+              text: "Complete fullstack development — seamless integration from frontend to backend, concept to deployment.",
               link: "/services/web/fullstack",
             },
           ].map((s, i) => (
@@ -90,8 +90,12 @@ export default function WebDevelopment() {
               className="bg-[#0b121a]/70 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 hover:border-green-400 hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300"
             >
               {s.icon}
-              <h3 className="text-xl font-semibold mb-2 text-white">{s.title}</h3>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6">{s.text}</p>
+              <h3 className="text-xl font-semibold mb-2 text-white">
+                {s.title}
+              </h3>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                {s.text}
+              </p>
               <Link
                 to={s.link}
                 className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-6 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
@@ -113,8 +117,8 @@ export default function WebDevelopment() {
             Need a custom website or software?
           </h2>
           <p className="text-gray-300 mb-6">
-            Let’s talk about how we can bring your digital vision to life — fast, modern,
-            and fully optimized.
+            Let’s build your next digital product — fast, reliable, and
+            optimized for success.{" "}
           </p>
           <a
             href="/contact"
@@ -127,8 +131,6 @@ export default function WebDevelopment() {
     </div>
   );
 }
-
-
 
 // import { motion } from "framer-motion";
 // import { Code2, Layout, Database, ArrowLeft } from "lucide-react";
@@ -247,9 +249,3 @@ export default function WebDevelopment() {
 //     </div>
 //   );
 // }
-
-
-
-
-
-
