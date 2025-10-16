@@ -5,13 +5,15 @@
     "about": "Über uns",
     "contact": "Kontakt"
   },
-   "hero": {
+
+  "hero": {
     "title": "Ihr IT- und Hardware-Partner in Berlin",
     "subtitle": "Freiberufliche IT-Dienste · Webdesign · Hardware-Vertrieb und Support",
     "quoteButton": "Angebot anfordern",
     "servicesButton": "Unsere Leistungen"
   },
-   "services": {
+
+  "services": {
     "title": "Unsere Leistungen",
     "subtitle": "Komplette IT-, Web- und Hardwarelösungen – entwickelt für Leistung und Wachstum.",
     "learnMore": "Mehr erfahren",
@@ -30,6 +32,7 @@
       }
     }
   },
+
   "overview": {
     "title": "Mehr entdecken",
     "subtitle": "Erfahren Sie mehr über unser Unternehmen, unsere Dienstleistungen und wie wir Ihr digitales Wachstum unterstützen können.",
@@ -46,6 +49,7 @@
       "desc": "Kontaktieren Sie uns, um Ihr Projekt zu besprechen oder eine persönliche Beratung zu vereinbaren."
     }
   },
+
   "hardware": {
     "deviceSales": {
       "title": "Geräteverkauf",
@@ -57,91 +61,136 @@
       "back": "Zurück zu Hardwarelösungen"
     },
     "installation": {
-  "title": "Installation & Einrichtung",
-  "subtitle": "Professionelle Installation und Konfiguration für Ihre gesamte IT-Ausrüstung.",
-  "desc1": "Unser Team sorgt für eine reibungslose Einrichtung Ihrer Arbeitsstationen, Netzwerke und Peripheriegeräte.",
-  "point1": "Vor-Ort-Installation und Tests",
-  "point2": "Netzwerk- und Druckerkonfiguration",
-  "point3": "Datenmigration und Betriebssysteminstallation",
-  "back": "Zurück zu Hardware-Lösungen"
-},"maintenance": {
-  "title": "Wartung & Support",
-  "subtitle": "Halten Sie Ihre Systeme mit fortlaufendem technischen Support auf höchster Leistung.",
-  "desc1": "Vorbeugende Wartung und Support auf Abruf, um Ausfallzeiten zu minimieren.",
-  "point1": "Hardware-Diagnose & Upgrades",
-  "point2": "Fernwartung und Reparaturen",
-  "point3": "Regelmäßige Leistungsprüfungen und Reinigung",
-  "back": "Zurück zu Hardware-Lösungen"
-}
-
+      "title": "Installation & Einrichtung",
+      "subtitle": "Professionelle Installation und Konfiguration für Ihre gesamte IT-Ausrüstung.",
+      "desc1": "Unser Team sorgt für eine reibungslose Einrichtung Ihrer Arbeitsstationen, Netzwerke und Peripheriegeräte.",
+      "point1": "Vor-Ort-Installation und Tests",
+      "point2": "Netzwerk- und Druckerkonfiguration",
+      "point3": "Datenmigration und Betriebssysteminstallation",
+      "back": "Zurück zu Hardware-Lösungen"
+    },
+    "maintenance": {
+      "title": "Wartung & Support",
+      "subtitle": "Halten Sie Ihre Systeme mit fortlaufendem technischen Support auf höchster Leistung.",
+      "desc1": "Vorbeugende Wartung und Support auf Abruf, um Ausfallzeiten zu minimieren.",
+      "point1": "Hardware-Diagnose & Upgrades",
+      "point2": "Fernwartung und Reparaturen",
+      "point3": "Regelmäßige Leistungsprüfungen und Reinigung",
+      "back": "Zurück zu Hardware-Lösungen"
+    },
+    "overview": {
+      "title": "Hardwarelösungen",
+      "subtitle": "Zuverlässige Hardwarebeschaffung, professionelle Installation und fortlaufender technischer Support — maßgeschneidert für Ihre Unternehmensinfrastruktur.",
+      "back": "Zurück zu Dienstleistungen",
+      "salesTitle": "Geräteverkauf",
+      "salesText": "Leistungsstarke Laptops, Desktops und Komponenten führender Marken zu wettbewerbsfähigen Preisen.",
+      "installTitle": "Installation & Einrichtung",
+      "installText": "Professionelle Installation, Konfiguration und nahtlose Integration Ihrer Hardwaresysteme.",
+      "maintTitle": "Wartung & Support",
+      "maintText": "Regelmäßige Wartung und reaktionsschneller Support, um Ihre Hardware effizient zu halten.",
+      "learnMore": "Mehr erfahren",
+      "ctaTitle": "Benötigen Sie professionelle Hardwarelösungen?",
+      "ctaDesc": "Rüsten wir Ihr Unternehmen mit zuverlässiger Hardware aus — von der Lieferung bis zur langfristigen Unterstützung.",
+      "ctaButton": "Angebot anfordern"
+    }
   },
+
   "it": {
-  "itSupport": {
-    "title": "IT-Support & Wartung",
-    "subtitle": "Professioneller IT-Support vor Ort oder remote für Ihren täglichen Betrieb.",
-    "desc1": "Wir bieten flexible und effiziente IT-Support-Pläne – sowohl remote als auch vor Ort –, um Ihre Systeme reibungslos laufen zu lassen und Ausfallzeiten zu minimieren.",
-    "point1": "Fernunterstützung und Helpdesk",
-    "point2": "Wartung und Reparaturen vor Ort",
-    "point3": "Überwachung und proaktive Leistungsoptimierung",
-    "back": "Zurück zu IT-Dienstleistungen"
-  },
-   "networkSetup": {
-    "title": "Netzwerkinstallation & Sicherheit",
-    "subtitle": "Sicheres, zuverlässiges Netzwerkdesign, VPN-Einrichtung und Firewall-Management.",
-    "desc1": "Wir entwerfen und warten leistungsstarke Netzwerkinfrastrukturen – von kleinen Büros bis hin zu großen verteilten Systemen – mit Sicherheit und Stabilität als oberste Priorität.",
-    "point1": "LAN/WAN-Einrichtung und Optimierung",
-    "point2": "VPN-, VLAN- und WLAN-Konfiguration",
-    "point3": "Firewall- und Endpunktsicherheitsmanagement",
-    "back": "Zurück zu IT-Dienstleistungen"
-  },
-  "serverAdmin": {
-    "title": "Server- und Systemadministration",
-    "subtitle": "Einrichtung, Optimierung und Wartung zuverlässiger und sicherer Server.",
-    "desc1": "Unsere Serververwaltungsdienste sorgen dafür, dass Ihre Geschäftssysteme effizient und sicher laufen. Von der Einrichtung bis zur laufenden Wartung kümmern wir uns um alles, damit Sie sich auf Ihr Wachstum konzentrieren können.",
-    "point1": "Serverinstallation und -optimierung (Linux / Windows)",
-    "point2": "Active Directory-, DNS- und DHCP-Verwaltung",
-    "point3": "Backup-, Überwachungs- und Virtualisierungseinrichtung",
-    "back": "Zurück zu IT-Dienstleistungen"
-  }
-},
-"web": {
-  "backend": {
-    "title": "Backend-Entwicklung",
-    "subtitle": "Sichere und skalierbare Backend-Systeme mit Node.js, Express und MongoDB.",
-    "desc1": "Wir entwerfen Backend-Architekturen, die Leistung, Datensicherheit und Integrität priorisieren.",
-    "point1": "RESTful APIs und Authentifizierungssysteme",
-    "point2": "Datenbankdesign und Optimierung (MongoDB, PostgreSQL)",
-    "point3": "Sichere Sitzungs- und Token-basierte Authentifizierung (JWT)",
-    "point4": "Integration mit Drittanbieter-Services und APIs",
-    "back": "Zurück zur Webentwicklung"
-  },
-   "frontend": {
-    "title": "Frontend-Entwicklung",
-    "subtitle": "Moderne, reaktionsschnelle und ansprechende Benutzeroberflächen mit React, Vite und TailwindCSS.",
-    "desc1": "Unser Frontend-Entwicklungsprozess konzentriert sich auf visuell beeindruckende, schnelle und barrierefreie Web-Erlebnisse — mit pixelgenauer Präzision auf allen Geräten.",
-    "point1": "React + Vite Architektur für hohe Leistung",
-    "point2": "TailwindCSS für modernes responsives Design",
-    "point3": "Optimiertes SEO & Core Web Vitals",
-    "point4": "Wiederverwendbare komponentenbasierte UI für Skalierbarkeit",
-    "back": "Zurück zur Webentwicklung",
-    "ctaTitle": "Benötigen Sie eine beeindruckende und schnelle Weboberfläche?",
-    "ctaDesc": "Lassen Sie uns eine nahtlose und schöne Benutzererfahrung für Ihre Website oder App schaffen — basierend auf modernen Frontend-Technologien.",
+    "itSupport": {
+      "title": "IT-Support & Wartung",
+      "subtitle": "Professioneller IT-Support vor Ort oder remote für Ihren täglichen Betrieb.",
+      "desc1": "Wir bieten flexible und effiziente IT-Support-Pläne – sowohl remote als auch vor Ort –, um Ihre Systeme reibungslos laufen zu lassen und Ausfallzeiten zu minimieren.",
+      "point1": "Fernunterstützung und Helpdesk",
+      "point2": "Wartung und Reparaturen vor Ort",
+      "point3": "Überwachung und proaktive Leistungsoptimierung",
+      "back": "Zurück zu IT-Dienstleistungen"
+    },
+     "overview": {
+    "title": "IT-Dienstleistungen",
+    "subtitle": "Zuverlässige Infrastruktur, sichere Netzwerke und professioneller IT-Support – optimiert für Ihr Unternehmenswachstum.",
+    "back": "Zurück zu den Dienstleistungen",
+    "serverTitle": "Server- und Systemadministration",
+    "serverText": "Bereitstellung, Optimierung und Überwachung von Servern für Stabilität und Effizienz.",
+    "networkTitle": "Netzwerkeinrichtung & Sicherheit",
+    "networkText": "Sichere und effiziente Netzwerkinfrastruktur – inklusive VPN-, Firewall- und LAN/WAN-Konfiguration.",
+    "supportTitle": "IT-Support & Wartung",
+    "supportText": "Vor-Ort- und Remote-IT-Support, damit Ihre Systeme reibungslos funktionieren.",
+    "learnMore": "Mehr erfahren",
+    "ctaTitle": "Benötigen Sie zuverlässigen IT-Support?",
+    "ctaDesc": "Lassen Sie uns besprechen, wie wir Ihre Systeme und Netzwerke für maximale Leistung und Sicherheit optimieren können.",
     "ctaButton": "Angebot anfordern"
   },
-  "fullstack": {
-    "title": "Fullstack-Lösungen",
-    "subtitle": "Komplette End-to-End-Webanwendungen mit modernen Technologien.",
-    "desc1": "Unsere Fullstack-Dienste decken sowohl Frontend als auch Backend ab – für einen reibungslosen Datenfluss, hohe Leistung und moderne Architektur von Anfang bis Ende.",
-    "point1": "React + Node.js + MongoDB Fullstack-Architektur",
-    "point2": "API-Integration und Authentifizierungsabläufe",
-    "point3": "Bereitstellung in der Cloud (Vercel, AWS, Render usw.)",
-    "point4": "Leistungs- und SEO-Optimierung",
-    "back": "Zurück zur Webentwicklung",
-    "ctaTitle": "Suchen Sie nach einer vollständigen Fullstack-Lösung?",
-    "ctaDesc": "Von der Idee bis zur Bereitstellung – wir liefern zuverlässige, skalierbare und leistungsstarke Fullstack-Anwendungen.",
+    "networkSetup": {
+      "title": "Netzwerkinstallation & Sicherheit",
+      "subtitle": "Sicheres, zuverlässiges Netzwerkdesign, VPN-Einrichtung und Firewall-Management.",
+      "desc1": "Wir entwerfen und warten leistungsstarke Netzwerkinfrastrukturen – von kleinen Büros bis hin zu großen verteilten Systemen – mit Sicherheit und Stabilität als oberste Priorität.",
+      "point1": "LAN/WAN-Einrichtung und Optimierung",
+      "point2": "VPN-, VLAN- und WLAN-Konfiguration",
+      "point3": "Firewall- und Endpunktsicherheitsmanagement",
+      "back": "Zurück zu IT-Dienstleistungen"
+    },
+    "serverAdmin": {
+      "title": "Server- und Systemadministration",
+      "subtitle": "Einrichtung, Optimierung und Wartung zuverlässiger und sicherer Server.",
+      "desc1": "Unsere Serververwaltungsdienste sorgen dafür, dass Ihre Geschäftssysteme effizient und sicher laufen. Von der Einrichtung bis zur laufenden Wartung kümmern wir uns um alles, damit Sie sich auf Ihr Wachstum konzentrieren können.",
+      "point1": "Serverinstallation und -optimierung (Linux / Windows)",
+      "point2": "Active Directory-, DNS- und DHCP-Verwaltung",
+      "point3": "Backup-, Überwachungs- und Virtualisierungseinrichtung",
+      "back": "Zurück zu IT-Dienstleistungen"
+    }
+  },
+
+  "web": {
+    "backend": {
+      "title": "Backend-Entwicklung",
+      "subtitle": "Sichere und skalierbare Backend-Systeme mit Node.js, Express und MongoDB.",
+      "desc1": "Wir entwerfen Backend-Architekturen, die Leistung, Datensicherheit und Integrität priorisieren.",
+      "point1": "RESTful APIs und Authentifizierungssysteme",
+      "point2": "Datenbankdesign und Optimierung (MongoDB, PostgreSQL)",
+      "point3": "Sichere Sitzungs- und Token-basierte Authentifizierung (JWT)",
+      "point4": "Integration mit Drittanbieter-Services und APIs",
+      "back": "Zurück zur Webentwicklung"
+    },
+     "overview": {
+    "title": "Web- & Softwareentwicklung",
+    "subtitle": "Moderne, sichere und skalierbare Webanwendungen – maßgeschneidert für das Wachstum Ihres Unternehmens.",
+    "back": "Zurück zu den Dienstleistungen",
+    "frontendTitle": "Frontend-Entwicklung",
+    "frontendText": "Atemberaubende, responsive und leistungsstarke Benutzeroberflächen mit React, Vite und TailwindCSS.",
+    "backendTitle": "Backend-Entwicklung",
+    "backendText": "Leistungsstarke, sichere und skalierbare APIs – entwickelt mit Node.js, Express und moderner Backend-Architektur für maximale Effizienz.",
+    "fullstackTitle": "Fullstack-Lösungen",
+    "fullstackText": "Komplette Fullstack-Entwicklung – nahtlose Integration vom Frontend bis zum Backend, von der Idee bis zur Bereitstellung.",
+    "learnMore": "Mehr erfahren",
+    "ctaTitle": "Benötigen Sie eine individuelle Website oder Software?",
+    "ctaDesc": "Lassen Sie uns Ihr nächstes digitales Produkt entwickeln – schnell, zuverlässig und optimiert für Ihren Erfolg.",
     "ctaButton": "Angebot anfordern"
+  },
+    "frontend": {
+      "title": "Frontend-Entwicklung",
+      "subtitle": "Moderne, reaktionsschnelle und ansprechende Benutzeroberflächen mit React, Vite und TailwindCSS.",
+      "desc1": "Unser Frontend-Entwicklungsprozess konzentriert sich auf visuell beeindruckende, schnelle und barrierefreie Web-Erlebnisse — mit pixelgenauer Präzision auf allen Geräten.",
+      "point1": "React + Vite Architektur für hohe Leistung",
+      "point2": "TailwindCSS für modernes responsives Design",
+      "point3": "Optimiertes SEO & Core Web Vitals",
+      "point4": "Wiederverwendbare komponentenbasierte UI für Skalierbarkeit",
+      "back": "Zurück zur Webentwicklung",
+      "ctaTitle": "Benötigen Sie eine beeindruckende und schnelle Weboberfläche?",
+      "ctaDesc": "Lassen Sie uns eine nahtlose und schöne Benutzererfahrung für Ihre Website oder App schaffen — basierend auf modernen Frontend-Technologien.",
+      "ctaButton": "Angebot anfordern"
+    },
+    "fullstack": {
+      "title": "Fullstack-Lösungen",
+      "subtitle": "Komplette End-to-End-Webanwendungen mit modernen Technologien.",
+      "desc1": "Unsere Fullstack-Dienste decken sowohl Frontend als auch Backend ab – für einen reibungslosen Datenfluss, hohe Leistung und moderne Architektur von Anfang bis Ende.",
+      "point1": "React + Node.js + MongoDB Fullstack-Architektur",
+      "point2": "API-Integration und Authentifizierungsabläufe",
+      "point3": "Bereitstellung in der Cloud (Vercel, AWS, Render usw.)",
+      "point4": "Leistungs- und SEO-Optimierung",
+      "back": "Zurück zur Webentwicklung",
+      "ctaTitle": "Suchen Sie nach einer vollständigen Fullstack-Lösung?",
+      "ctaDesc": "Von der Idee bis zur Bereitstellung – wir liefern zuverlässige, skalierbare und leistungsstarke Fullstack-Anwendungen.",
+      "ctaButton": "Angebot anfordern"
+    }
   }
-}
-
-
 }

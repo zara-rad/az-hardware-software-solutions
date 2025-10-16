@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import { Cog, Wrench, Truck, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function HardwareSolutions() {
+  const { t } = useTranslation();
+
   return (
     <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden min-h-screen">
-      {/* 🖼️ پس‌زمینه تصویری اضافه شد */}
+      {/* 🖼️ پس‌زمینه تصویری */}
       <div className="absolute inset-0">
         <img
-          src="/images/services/bgsale.jpg" // 📷 تصویر بک‌گراند مخصوص Hardware
+          src="/images/services/bgsale.jpg"
           alt="Hardware Solutions Background"
           className="w-full h-full object-cover opacity-80"
         />
@@ -24,7 +27,7 @@ export default function HardwareSolutions() {
           transition={{ duration: 1 }}
           className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]"
         >
-          Hardware Solutions
+          {t("hardware.overview.title")}
         </motion.h1>
 
         <motion.p
@@ -33,8 +36,7 @@ export default function HardwareSolutions() {
           transition={{ delay: 0.5, duration: 1 }}
           className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
         >
-          Trusted hardware procurement, expert installation, and ongoing
-          technical support — tailored for your business infrastructure.
+          {t("hardware.overview.subtitle")}
         </motion.p>
       </section>
 
@@ -44,7 +46,7 @@ export default function HardwareSolutions() {
           to="/services"
           className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
         >
-          <ArrowLeft className="w-5 h-5" /> Back to Services
+          <ArrowLeft className="w-5 h-5" /> {t("hardware.overview.back")}
         </Link>
       </div>
 
@@ -55,20 +57,20 @@ export default function HardwareSolutions() {
           {[
             {
               icon: <Truck className="w-14 h-14 text-green-400 mb-3" />,
-              title: "Device Sales",
-              text: "High-performance laptops, desktops, and components from leading brands at competitive rates.",
+              title: t("hardware.overview.salesTitle"),
+              text: t("hardware.overview.salesText"),
               link: "/services/hardware/sales",
             },
             {
               icon: <Wrench className="w-14 h-14 text-green-400 mb-3" />,
-              title: "Installation & Setup",
-              text: "Professional installation, configuration, and seamless integration for your hardware systems.",
+              title: t("hardware.overview.installTitle"),
+              text: t("hardware.overview.installText"),
               link: "/services/hardware/installation",
             },
             {
               icon: <Cog className="w-14 h-14 text-green-400 mb-3" />,
-              title: "Maintenance & Support",
-              text: "Regular maintenance and responsive support to keep your hardware running efficiently.",
+              title: t("hardware.overview.maintTitle"),
+              text: t("hardware.overview.maintText"),
               link: "/services/hardware/maintenance",
             },
           ].map((s, i) => (
@@ -91,7 +93,7 @@ export default function HardwareSolutions() {
                 to={s.link}
                 className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-6 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
               >
-                Learn More
+                {t("hardware.overview.learnMore")}
               </Link>
             </motion.div>
           ))}
@@ -105,23 +107,22 @@ export default function HardwareSolutions() {
           transition={{ duration: 1 }}
         >
           <h2 className="text-2xl font-bold mb-4 text-green-400">
-            Need professional hardware solutions?
+            {t("hardware.overview.ctaTitle")}
           </h2>
-          <p className="text-gray-400 mb-6">
-            Let’s equip your business with reliable hardware — from supply to
-            setup and long-term support.{" "}
-          </p>
+          <p className="text-gray-400 mb-6">{t("hardware.overview.ctaDesc")}</p>
           <a
             href="/contact"
             className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all"
           >
-            Get a Quote
+            {t("hardware.overview.ctaButton")}
           </a>
         </motion.div>
       </main>
     </div>
   );
 }
+
+
 
 // import { motion } from "framer-motion";
 // import { Cog, Wrench, Truck, ArrowLeft } from "lucide-react";
@@ -130,13 +131,14 @@ export default function HardwareSolutions() {
 // export default function HardwareSolutions() {
 //   return (
 //     <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden min-h-screen">
-//       {/* 🌌 Animated Background */}
-//       <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#102030] to-[#0d1117] overflow-hidden">
-//         <motion.div
-//           className="absolute w-[200%] h-[200%] bg-[radial-gradient(circle_at_center,rgba(0,255,180,0.1)_0%,transparent_70%)]"
-//           animate={{ rotate: [0, 360] }}
-//           transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+//       {/* 🖼️ پس‌زمینه تصویری اضافه شد */}
+//       <div className="absolute inset-0">
+//         <img
+//           src="/images/services/bgsale.jpg" // 📷 تصویر بک‌گراند مخصوص Hardware
+//           alt="Hardware Solutions Background"
+//           className="w-full h-full object-cover opacity-80"
 //         />
+//         <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117]/70 via-[#0f1825]/50 to-[#0d1117]/90" />
 //       </div>
 
 //       {/* 🔹 Hero Section */}
@@ -157,8 +159,8 @@ export default function HardwareSolutions() {
 //           transition={{ delay: 0.5, duration: 1 }}
 //           className="text-gray-300 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
 //         >
-//           Reliable hardware sales, professional installation, and ongoing support
-//           for all your IT devices and components.
+//           Trusted hardware procurement, expert installation, and ongoing
+//           technical support — tailored for your business infrastructure.
 //         </motion.p>
 //       </section>
 
@@ -180,19 +182,19 @@ export default function HardwareSolutions() {
 //             {
 //               icon: <Truck className="w-14 h-14 text-green-400 mb-3" />,
 //               title: "Device Sales",
-//               text: "Supplying high-quality laptops, PCs, and IT components at competitive prices.",
+//               text: "High-performance laptops, desktops, and components from leading brands at competitive rates.",
 //               link: "/services/hardware/sales",
 //             },
 //             {
 //               icon: <Wrench className="w-14 h-14 text-green-400 mb-3" />,
 //               title: "Installation & Setup",
-//               text: "Professional configuration and on-site installation for your hardware.",
+//               text: "Professional installation, configuration, and seamless integration for your hardware systems.",
 //               link: "/services/hardware/installation",
 //             },
 //             {
 //               icon: <Cog className="w-14 h-14 text-green-400 mb-3" />,
 //               title: "Maintenance & Support",
-//               text: "Regular updates, diagnostics, and technical assistance for all devices.",
+//               text: "Regular maintenance and responsive support to keep your hardware running efficiently.",
 //               link: "/services/hardware/maintenance",
 //             },
 //           ].map((s, i) => (
@@ -205,8 +207,12 @@ export default function HardwareSolutions() {
 //               className="bg-[#161b22]/80 backdrop-blur-md p-8 rounded-2xl border border-gray-800 hover:border-green-400 hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300"
 //             >
 //               {s.icon}
-//               <h3 className="text-xl font-semibold mb-2 text-white">{s.title}</h3>
-//               <p className="text-gray-400 text-sm leading-relaxed mb-6">{s.text}</p>
+//               <h3 className="text-xl font-semibold mb-2 text-white">
+//                 {s.title}
+//               </h3>
+//               <p className="text-gray-400 text-sm leading-relaxed mb-6">
+//                 {s.text}
+//               </p>
 //               <Link
 //                 to={s.link}
 //                 className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-6 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
@@ -228,7 +234,8 @@ export default function HardwareSolutions() {
 //             Need professional hardware solutions?
 //           </h2>
 //           <p className="text-gray-400 mb-6">
-//             Contact us today for the best deals on hardware sales, installation, and long-term maintenance.
+//             Let’s equip your business with reliable hardware — from supply to
+//             setup and long-term support.{" "}
 //           </p>
 //           <a
 //             href="/contact"
@@ -241,3 +248,4 @@ export default function HardwareSolutions() {
 //     </div>
 //   );
 // }
+

@@ -12,7 +12,8 @@
     "quoteButton": "Get a Quote",
     "servicesButton": "View Services"
   },
-   "services": {
+
+  "services": {
     "title": "Our Services",
     "subtitle": "Complete IT, web, and hardware solutions — built for performance and growth.",
     "learnMore": "Learn More",
@@ -31,7 +32,8 @@
       }
     }
   },
-   "overview": {
+
+  "overview": {
     "title": "Explore More",
     "subtitle": "Learn more about our company, services, and how we can support your digital growth.",
     "about": {
@@ -47,6 +49,7 @@
       "desc": "Reach out to discuss your project or request a personalized consultation."
     }
   },
+
   "hardware": {
     "deviceSales": {
       "title": "Device Sales",
@@ -58,93 +61,136 @@
       "back": "Back to Hardware Solutions"
     },
     "installation": {
-  "title": "Installation & Setup",
-  "subtitle": "Professional installation and configuration for all your IT equipment.",
-  "desc1": "Our team ensures smooth setup for your workstations, networks, and peripherals.",
-  "point1": "On-site installation and testing",
-  "point2": "Network and printer configuration",
-  "point3": "Data migration and OS installation",
-  "back": "Back to Hardware Solutions"
-},
-"maintenance": {
-  "title": "Maintenance & Support",
-  "subtitle": "Keep your systems running at peak performance with ongoing technical support.",
-  "desc1": "Preventive maintenance and on-demand support to minimize downtime.",
-  "point1": "Hardware diagnostics & upgrades",
-  "point2": "Remote troubleshooting and repairs",
-  "point3": "Regular performance audits and cleaning",
-  "back": "Back to Hardware Solutions"
-}
+      "title": "Installation & Setup",
+      "subtitle": "Professional installation and configuration for all your IT equipment.",
+      "desc1": "Our team ensures smooth setup for your workstations, networks, and peripherals.",
+      "point1": "On-site installation and testing",
+      "point2": "Network and printer configuration",
+      "point3": "Data migration and OS installation",
+      "back": "Back to Hardware Solutions"
+    },
+    "maintenance": {
+      "title": "Maintenance & Support",
+      "subtitle": "Keep your systems running at peak performance with ongoing technical support.",
+      "desc1": "Preventive maintenance and on-demand support to minimize downtime.",
+      "point1": "Hardware diagnostics & upgrades",
+      "point2": "Remote troubleshooting and repairs",
+      "point3": "Regular performance audits and cleaning",
+      "back": "Back to Hardware Solutions"
+    },
+    "overview": {
+      "title": "Hardware Solutions",
+      "subtitle": "Trusted hardware procurement, expert installation, and ongoing technical support — tailored for your business infrastructure.",
+      "back": "Back to Services",
+      "salesTitle": "Device Sales",
+      "salesText": "High-performance laptops, desktops, and components from leading brands at competitive rates.",
+      "installTitle": "Installation & Setup",
+      "installText": "Professional installation, configuration, and seamless integration for your hardware systems.",
+      "maintTitle": "Maintenance & Support",
+      "maintText": "Regular maintenance and responsive support to keep your hardware running efficiently.",
+      "learnMore": "Learn More",
+      "ctaTitle": "Need professional hardware solutions?",
+      "ctaDesc": "Let’s equip your business with reliable hardware — from supply to setup and long-term support.",
+      "ctaButton": "Get a Quote"
+    }
   },
+
   "it": {
-  "itSupport": {
-    "title": "IT Support & Maintenance",
-    "subtitle": "Professional on-site or remote IT support for your daily operations.",
-    "desc1": "We offer flexible, efficient IT support plans — both remote and on-site — to keep your systems running smoothly and prevent costly downtime.",
-    "point1": "Remote troubleshooting and helpdesk",
-    "point2": "On-site maintenance and repairs",
-    "point3": "Monitoring and proactive performance tuning",
-    "back": "Back to IT Services"
-  },
-   "networkSetup": {
-    "title": "Network Setup & Security",
-    "subtitle": "Secure, reliable network design, VPN setup, and firewall management.",
-    "desc1": "We design and maintain high-performance network infrastructures — from small offices to large-scale distributed systems — with security and stability as top priorities.",
-    "point1": "LAN/WAN setup and optimization",
-    "point2": "VPN, VLAN, and Wi-Fi configuration",
-    "point3": "Firewall & endpoint security management",
-    "back": "Back to IT Services"
-  },
-   "serverAdmin": {
-    "title": "Server & System Administration",
-    "subtitle": "Setup, optimization, and maintenance of reliable and secure servers.",
-    "desc1": "Our server administration services ensure your business systems run efficiently and securely. From setup to ongoing maintenance, we manage everything so you can focus on growth.",
-    "point1": "Server installation & optimization (Linux / Windows)",
-    "point2": "Active Directory, DNS, DHCP management",
-    "point3": "Backup, monitoring, and virtualization setup",
-    "back": "Back to IT Services"
-  }
-},
-"web": {
-  "backend": {
-    "title": "Backend Development",
-    "subtitle": "Secure and scalable backend systems built with Node.js, Express, and MongoDB.",
-    "desc1": "We design backend architectures that prioritize performance, data integrity, and security for your applications.",
-    "point1": "RESTful API & authentication systems",
-    "point2": "Database design and optimization (MongoDB, PostgreSQL)",
-    "point3": "Secure session & token-based authentication (JWT)",
-    "point4": "Integration with third-party services and APIs",
-    "back": "Back to Web Development"
-  },
-  "frontend": {
-    "title": "Frontend Development",
-    "subtitle": "Modern, responsive, and engaging user interfaces built with React, Vite, and TailwindCSS.",
-    "desc1": "Our frontend development process focuses on building visually stunning, fast, and accessible web experiences — ensuring pixel-perfect interfaces that perform beautifully on all devices.",
-    "point1": "React + Vite architecture for high performance",
-    "point2": "TailwindCSS for modern responsive design",
-    "point3": "Optimized SEO & Core Web Vitals",
-    "point4": "Reusable component-based UI for scalability",
-    "back": "Back to Web Development",
-    "ctaTitle": "Need a stunning and fast web interface?",
-    "ctaDesc": "Let’s create a seamless and beautiful user experience for your website or app — powered by modern frontend technologies.",
+    "itSupport": {
+      "title": "IT Support & Maintenance",
+      "subtitle": "Professional on-site or remote IT support for your daily operations.",
+      "desc1": "We offer flexible, efficient IT support plans — both remote and on-site — to keep your systems running smoothly and prevent costly downtime.",
+      "point1": "Remote troubleshooting and helpdesk",
+      "point2": "On-site maintenance and repairs",
+      "point3": "Monitoring and proactive performance tuning",
+      "back": "Back to IT Services"
+    },
+     "overview": {
+    "title": "IT Services",
+    "subtitle": "Reliable infrastructure, secure networking, and expert IT support — optimized for business growth.",
+    "back": "Back to Services",
+    "serverTitle": "Server & System Administration",
+    "serverText": "Deployment, optimization, and monitoring of servers to ensure stability and efficiency.",
+    "networkTitle": "Network Setup & Security",
+    "networkText": "Secure and efficient network architecture — including VPN, firewall, and LAN/WAN setup.",
+    "supportTitle": "IT Support & Maintenance",
+    "supportText": "On-site and remote IT support to keep your systems running smoothly.",
+    "learnMore": "Learn More",
+    "ctaTitle": "Need reliable IT support?",
+    "ctaDesc": "Let’s discuss how we can optimize your systems and network for maximum performance and security.",
     "ctaButton": "Get a Quote"
   },
-   "fullstack": {
-    "title": "Fullstack Solutions",
-    "subtitle": "Complete end-to-end web applications built with modern technologies.",
-    "desc1": "Our fullstack services cover both frontend and backend — ensuring smooth data flow, strong performance, and modern architecture from start to finish.",
-    "point1": "React + Node.js + MongoDB fullstack architecture",
-    "point2": "API integration and authentication flows",
-    "point3": "Deployment to cloud (Vercel, AWS, Render, etc.)",
-    "point4": "Performance and SEO optimization",
-    "back": "Back to Web Development",
-    "ctaTitle": "Looking for a complete fullstack solution?",
-    "ctaDesc": "From concept to deployment — we deliver reliable, scalable, and high-performance fullstack applications.",
+    "networkSetup": {
+      "title": "Network Setup & Security",
+      "subtitle": "Secure, reliable network design, VPN setup, and firewall management.",
+      "desc1": "We design and maintain high-performance network infrastructures — from small offices to large-scale distributed systems — with security and stability as top priorities.",
+      "point1": "LAN/WAN setup and optimization",
+      "point2": "VPN, VLAN, and Wi-Fi configuration",
+      "point3": "Firewall & endpoint security management",
+      "back": "Back to IT Services"
+    },
+    "serverAdmin": {
+      "title": "Server & System Administration",
+      "subtitle": "Setup, optimization, and maintenance of reliable and secure servers.",
+      "desc1": "Our server administration services ensure your business systems run efficiently and securely. From setup to ongoing maintenance, we manage everything so you can focus on growth.",
+      "point1": "Server installation & optimization (Linux / Windows)",
+      "point2": "Active Directory, DNS, DHCP management",
+      "point3": "Backup, monitoring, and virtualization setup",
+      "back": "Back to IT Services"
+    }
+  },
+
+  "web": {
+    "backend": {
+      "title": "Backend Development",
+      "subtitle": "Secure and scalable backend systems built with Node.js, Express, and MongoDB.",
+      "desc1": "We design backend architectures that prioritize performance, data integrity, and security for your applications.",
+      "point1": "RESTful API & authentication systems",
+      "point2": "Database design and optimization (MongoDB, PostgreSQL)",
+      "point3": "Secure session & token-based authentication (JWT)",
+      "point4": "Integration with third-party services and APIs",
+      "back": "Back to Web Development"
+    },
+     "overview": {
+    "title": "Web & Software Development",
+    "subtitle": "Modern, secure, and scalable web applications — tailored for your business growth.",
+    "back": "Back to Services",
+    "frontendTitle": "Frontend Development",
+    "frontendText": "Stunning, responsive, and performance-driven user interfaces built with React, Vite, and TailwindCSS.",
+    "backendTitle": "Backend Development",
+    "backendText": "Powerful, secure, and scalable APIs designed with Node.js, Express, and modern backend architecture for maximum efficiency.",
+    "fullstackTitle": "Fullstack Solutions",
+    "fullstackText": "Complete fullstack development — seamless integration from frontend to backend, concept to deployment.",
+    "learnMore": "Learn More",
+    "ctaTitle": "Need a custom website or software?",
+    "ctaDesc": "Let’s build your next digital product — fast, reliable, and optimized for success.",
     "ctaButton": "Get a Quote"
+  },
+    "frontend": {
+      "title": "Frontend Development",
+      "subtitle": "Modern, responsive, and engaging user interfaces built with React, Vite, and TailwindCSS.",
+      "desc1": "Our frontend development process focuses on building visually stunning, fast, and accessible web experiences — ensuring pixel-perfect interfaces that perform beautifully on all devices.",
+      "point1": "React + Vite architecture for high performance",
+      "point2": "TailwindCSS for modern responsive design",
+      "point3": "Optimized SEO & Core Web Vitals",
+      "point4": "Reusable component-based UI for scalability",
+      "back": "Back to Web Development",
+      "ctaTitle": "Need a stunning and fast web interface?",
+      "ctaDesc": "Let’s create a seamless and beautiful user experience for your website or app — powered by modern frontend technologies.",
+      "ctaButton": "Get a Quote"
+    },
+    "fullstack": {
+      "title": "Fullstack Solutions",
+      "subtitle": "Complete end-to-end web applications built with modern technologies.",
+      "desc1": "Our fullstack services cover both frontend and backend — ensuring smooth data flow, strong performance, and modern architecture from start to finish.",
+      "point1": "React + Node.js + MongoDB fullstack architecture",
+      "point2": "API integration and authentication flows",
+      "point3": "Deployment to cloud (Vercel, AWS, Render, etc.)",
+      "point4": "Performance and SEO optimization",
+      "back": "Back to Web Development",
+      "ctaTitle": "Looking for a complete fullstack solution?",
+      "ctaDesc": "From concept to deployment — we deliver reliable, scalable, and high-performance fullstack applications.",
+      "ctaButton": "Get a Quote"
+    }
   }
-}
-
-
-
-
 }
