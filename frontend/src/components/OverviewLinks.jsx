@@ -1,25 +1,28 @@
 import { Link } from "react-router-dom";
 import { User, Wrench, Mail } from "lucide-react";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next"; // ✅ اضافه شد
 
 export default function OverviewLinks() {
+  const { t } = useTranslation(); // ✅ استفاده از ترجمه‌ها
+
   const links = [
     {
       icon: <User className="w-10 h-10 text-green-400 mb-3" />,
-      title: "About Us",
-      desc: "Discover who we are, what drives us, and how we bring value to every project.",
+      title: t("overview.about.title"),
+      desc: t("overview.about.desc"),
       to: "/about",
     },
     {
       icon: <Wrench className="w-10 h-10 text-green-400 mb-3" />,
-      title: "Our Services",
-      desc: "Explore our professional IT, web development, and hardware solutions tailored to your business.",
+      title: t("overview.services.title"),
+      desc: t("overview.services.desc"),
       to: "/services",
     },
     {
       icon: <Mail className="w-10 h-10 text-green-400 mb-3" />,
-      title: "Contact",
-      desc: "Reach out to discuss your project or request a personalized consultation.",
+      title: t("overview.contact.title"),
+      desc: t("overview.contact.desc"),
       to: "/contact",
     },
   ];
@@ -41,7 +44,7 @@ export default function OverviewLinks() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Explore More
+          {t("overview.title")}
         </motion.h2>
 
         <motion.p
@@ -50,7 +53,7 @@ export default function OverviewLinks() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
         >
-          Learn more about our company, services, and how we can support your digital growth.
+          {t("overview.subtitle")}
         </motion.p>
       </div>
 
@@ -87,6 +90,7 @@ export default function OverviewLinks() {
     </section>
   );
 }
+
 
 
 // import { Link } from "react-router-dom";

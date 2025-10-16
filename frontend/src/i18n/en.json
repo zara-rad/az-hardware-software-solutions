@@ -11,6 +11,41 @@
     "subtitle": "Freelance IT Services · Web Design · Hardware Sales Support",
     "quoteButton": "Get a Quote",
     "servicesButton": "View Services"
+  },
+   "services": {
+    "title": "Our Services",
+    "subtitle": "Complete IT, web, and hardware solutions — built for performance and growth.",
+    "learnMore": "Learn More",
+    "items": {
+      "it": {
+        "title": "IT Services",
+        "desc": "Expert system administration, secure network configuration, and dedicated IT support for your business."
+      },
+      "web": {
+        "title": "Web & Software Development",
+        "desc": "Custom-built websites, ERP platforms, and tailored software designed to power your digital presence."
+      },
+      "hardware": {
+        "title": "Hardware Solutions",
+        "desc": "Reliable device sourcing, professional installation, and full-cycle maintenance for all your hardware needs."
+      }
+    }
+  },
+   "overview": {
+    "title": "Explore More",
+    "subtitle": "Learn more about our company, services, and how we can support your digital growth.",
+    "about": {
+      "title": "About Us",
+      "desc": "Discover who we are, what drives us, and how we bring value to every project."
+    },
+    "services": {
+      "title": "Our Services",
+      "desc": "Explore our professional IT, web development, and hardware solutions tailored to your business."
+    },
+    "contact": {
+      "title": "Contact",
+      "desc": "Reach out to discuss your project or request a personalized consultation."
+    }
   }
 
 

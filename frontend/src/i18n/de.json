@@ -10,5 +10,40 @@
     "subtitle": "Freiberufliche IT-Dienste · Webdesign · Hardware-Vertrieb und Support",
     "quoteButton": "Angebot anfordern",
     "servicesButton": "Unsere Leistungen"
+  },
+   "services": {
+    "title": "Unsere Leistungen",
+    "subtitle": "Komplette IT-, Web- und Hardwarelösungen – entwickelt für Leistung und Wachstum.",
+    "learnMore": "Mehr erfahren",
+    "items": {
+      "it": {
+        "title": "IT-Dienstleistungen",
+        "desc": "Professionelle Systemadministration, sichere Netzwerkkonfiguration und engagierter IT-Support für Ihr Unternehmen."
+      },
+      "web": {
+        "title": "Web- & Softwareentwicklung",
+        "desc": "Individuelle Websites, ERP-Plattformen und maßgeschneiderte Software für Ihre digitale Präsenz."
+      },
+      "hardware": {
+        "title": "Hardwarelösungen",
+        "desc": "Zuverlässige Gerätebeschaffung, professionelle Installation und vollständiger Wartungsservice."
+      }
+    }
+  },
+  "overview": {
+    "title": "Mehr entdecken",
+    "subtitle": "Erfahren Sie mehr über unser Unternehmen, unsere Dienstleistungen und wie wir Ihr digitales Wachstum unterstützen können.",
+    "about": {
+      "title": "Über uns",
+      "desc": "Erfahren Sie, wer wir sind, was uns antreibt und wie wir jedem Projekt Mehrwert verleihen."
+    },
+    "services": {
+      "title": "Unsere Leistungen",
+      "desc": "Entdecken Sie unsere professionellen IT-, Webentwicklungs- und Hardwarelösungen, die auf Ihr Unternehmen zugeschnitten sind."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "desc": "Kontaktieren Sie uns, um Ihr Projekt zu besprechen oder eine persönliche Beratung zu vereinbaren."
+    }
   }
 }

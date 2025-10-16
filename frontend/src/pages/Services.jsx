@@ -2,47 +2,43 @@ import { Monitor, Code2, Cog } from "lucide-react";
 import { motion } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next"; // ✅ اضافه شد
 
 export default function Services() {
+  const { t } = useTranslation(); // ✅ hook ترجمه
   const location = useLocation();
   const isStandalone = location.pathname === "/services";
 
   const services = [
     {
       icon: Monitor,
-      title: "IT Services",
-      desc: "Expert system administration, secure network configuration, and dedicated IT support for your business.",
+      title: t("services.items.it.title"),
+      desc: t("services.items.it.desc"),
       link: "/services/it",
     },
     {
       icon: Code2,
-      title: "Web & Software Development",
-      desc: "Custom-built websites, ERP platforms, and tailored software designed to power your digital presence.",
+      title: t("services.items.web.title"),
+      desc: t("services.items.web.desc"),
       link: "/services/web",
     },
     {
       icon: Cog,
-      title: "Hardware Solutions",
-      desc: "Reliable device sourcing, professional installation, and full-cycle maintenance for all your hardware needs.",
+      title: t("services.items.hardware.title"),
+      desc: t("services.items.hardware.desc"),
       link: "/services/hardware",
     },
   ];
 
   useEffect(() => {
-    // وقتی وارد صفحه‌ی Services میشی، صفحه بره بالا
-    if (isStandalone) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
+    if (isStandalone) window.scrollTo({ top: 0, behavior: "smooth" });
   }, [isStandalone]);
 
   return (
     <div
-      key={location.pathname} // ✅ باعث remount کامل هنگام بازگشت می‌شود
-      className={`relative flex flex-col ${
-        isStandalone ? "min-h-screen" : ""
-      } text-white overflow-hidden`}
+      key={location.pathname}
+      className={`relative flex flex-col ${isStandalone ? "min-h-screen" : ""} text-white overflow-hidden`}
     >
-      {/* 🖼️ Background فقط در حالت standalone */}
       {isStandalone && (
         <div className="absolute inset-0">
           <img
@@ -50,20 +46,16 @@ export default function Services() {
             alt="Modern Data Center"
             className="w-full h-full object-cover opacity-70 scale-105"
           />
-          {/* 🌈 Dark overlay for readability */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/50 to-[#0d1117]/90" />
-          {/* ✨ Soft light center glow */}
           <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-3xl opacity-70 animate-pulse" />
         </div>
       )}
 
-      {/* 🔹 Main Section */}
       <section
         className={`relative z-10 flex flex-col justify-center ${
           isStandalone ? "py-32 md:py-40" : "py-16"
         } px-6 text-center min-h-[70vh]`}
       >
-        {/* 🔹 Title */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -71,14 +63,13 @@ export default function Services() {
           className="mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(0,255,180,0.2)]">
-            Our Services
+            {t("services.title")}
           </h1>
           <p className="text-gray-200 text-lg font-light">
-            Complete IT, web, and hardware solutions — built for performance and growth.
+            {t("services.subtitle")}
           </p>
         </motion.div>
 
-        {/* 🔹 Service Cards */}
         <div className="relative z-10 grid gap-10 md:grid-cols-3 max-w-6xl mx-auto">
           {services.map((service, i) => {
             const Icon = service.icon;
@@ -108,7 +99,7 @@ export default function Services() {
                   to={service.link}
                   className="bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
                 >
-                  Learn More
+                  {t("services.learnMore")}
                 </NavLink>
               </motion.div>
             );
