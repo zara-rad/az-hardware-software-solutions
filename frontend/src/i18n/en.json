@@ -192,5 +192,29 @@
       "ctaDesc": "From concept to deployment — we deliver reliable, scalable, and high-performance fullstack applications.",
       "ctaButton": "Get a Quote"
     }
-  }
+  },
+ 
+  "about": {
+    "title": "About Us",
+    "subtitle": "Empowering businesses with cutting-edge IT solutions and reliable hardware services — built for the future.",
+    "company": {
+      "title": "About AZ Hardware & Software Solutions",
+      "desc": "Based in Berlin, AZ Hardware & Software Solutions provides complete IT, web, and hardware services designed to help small and medium-sized businesses thrive in the digital era. We combine technology, creativity, and precision to deliver reliable systems that are efficient, secure, and built to last."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "desc": "To become one of Berlin’s most trusted and forward-thinking IT and hardware solution providers — empowering digital transformation and enabling businesses to operate smarter, faster, and more sustainably."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "desc": "To deliver high-quality, efficient, and future-ready technology services and hardware — combining transparency, innovation, and long-term value for every client. We aim to make technology simpler, more accessible, and truly supportive of business growth."
+    },
+    "cta": {
+      "title": "Let’s Build Something Great Together",
+      "desc": "Whether you need IT support, web development, or complete hardware integration — AZ Hardware & Software Solutions is ready to help you turn your ideas into reliable, modern, and scalable results.",
+      "button": "Contact Us"
+    }
+ 
+}
+
 }

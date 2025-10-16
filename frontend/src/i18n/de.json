@@ -192,5 +192,26 @@
       "ctaDesc": "Von der Idee bis zur Bereitstellung – wir liefern zuverlässige, skalierbare und leistungsstarke Fullstack-Anwendungen.",
       "ctaButton": "Angebot anfordern"
     }
+  },
+  "about": {
+    "title": "Über uns",
+    "subtitle": "Wir stärken Unternehmen mit innovativen IT-Lösungen und zuverlässigen Hardware-Diensten – bereit für die Zukunft.",
+    "company": {
+      "title": "Über AZ Hardware & Software Solutions",
+      "desc": "AZ Hardware & Software Solutions mit Sitz in Berlin bietet umfassende IT-, Web- und Hardware-Dienstleistungen, die kleinen und mittleren Unternehmen helfen, in der digitalen Ära erfolgreich zu sein. Wir verbinden Technologie, Kreativität und Präzision, um zuverlässige Systeme zu liefern, die effizient, sicher und langlebig sind."
+    },
+    "vision": {
+      "title": "Unsere Vision",
+      "desc": "Einer der vertrauenswürdigsten und zukunftsorientiertesten Anbieter für IT- und Hardware-Lösungen in Berlin zu werden – um die digitale Transformation zu fördern und Unternehmen zu befähigen, intelligenter, schneller und nachhaltiger zu arbeiten."
+    },
+    "mission": {
+      "title": "Unsere Mission",
+      "desc": "Bereitstellung hochwertiger, effizienter und zukunftssicherer Technologie- und Hardware-Dienstleistungen – mit Transparenz, Innovation und langfristigem Mehrwert für jeden Kunden. Unser Ziel ist es, Technologie einfacher, zugänglicher und wirklich unterstützend für das Unternehmenswachstum zu machen."
+    },
+    "cta": {
+      "title": "Lassen Sie uns gemeinsam Großes schaffen",
+      "desc": "Ob IT-Support, Webentwicklung oder komplette Hardware-Integration – AZ Hardware & Software Solutions hilft Ihnen, Ihre Ideen in zuverlässige, moderne und skalierbare Lösungen umzusetzen.",
+      "button": "Kontakt aufnehmen"
+    }
   }
 }
