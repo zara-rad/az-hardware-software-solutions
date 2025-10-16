@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -21,18 +23,18 @@ export default function ContactForm() {
 
     // ✅ Validation قبل از ارسال
     if (formData.name.trim().length < 5) {
-      toast.error("⚠️ Name must be at least 5 characters long", { id: "contact" });
+      toast.error(t("contact.form.toast.nameError"), { id: "contact" });
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      toast.error("⚠️ Please enter a valid email address", { id: "contact" });
+      toast.error(t("contact.form.toast.emailError"), { id: "contact" });
       return;
     }
 
     setLoading(true);
-    toast.loading("Sending message...", { id: "contact" });
+    toast.loading(t("contact.form.toast.loading"), { id: "contact" });
 
     try {
       const res = await fetch("http://localhost:5050/api/contact", {
@@ -44,7 +46,7 @@ export default function ContactForm() {
       const data = await res.json();
 
       if (data.success) {
-        toast.success("✅ Message sent successfully!", { id: "contact" });
+        toast.success(t("contact.form.toast.success"), { id: "contact" });
         setFormData({
           name: "",
           email: "",
@@ -53,11 +55,14 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        toast.error("⚠️ " + (data.message || "Something went wrong!"), { id: "contact" });
+        toast.error(
+          "⚠️ " + (data.message || t("contact.form.toast.unknown")),
+          { id: "contact" }
+        );
       }
     } catch (err) {
       console.error(err);
-      toast.error("❌ Failed to send message.", { id: "contact" });
+      toast.error(t("contact.form.toast.fail"), { id: "contact" });
     } finally {
       setLoading(false);
     }
@@ -73,27 +78,27 @@ export default function ContactForm() {
       viewport={{ once: true }}
     >
       <InputField
-        label="Name"
+        label={t("contact.form.name")}
         name="name"
         value={formData.name}
         onChange={handleChange}
-        placeholder="Your name"
+        placeholder={t("contact.form.placeholder.name")}
         required
       />
 
       <InputField
-        label="Email"
+        label={t("contact.form.email")}
         name="email"
         type="email"
         value={formData.email}
         onChange={handleChange}
-        placeholder="you@example.com"
+        placeholder={t("contact.form.placeholder.email")}
         required
       />
 
       <div>
         <label className="block text-sm font-medium mb-2 text-gray-300">
-          Service Type
+          {t("contact.form.service")}
         </label>
         <select
           name="service"
@@ -102,28 +107,28 @@ export default function ContactForm() {
           required
           className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200"
         >
-          <option value="">Select a service...</option>
-          <option>IT Services</option>
-          <option>Web & Software Development</option>
-          <option>Hardware Solutions</option>
+          <option value="">{t("contact.form.select.default")}</option>
+          <option>{t("contact.form.select.it")}</option>
+          <option>{t("contact.form.select.web")}</option>
+          <option>{t("contact.form.select.hardware")}</option>
         </select>
       </div>
 
       <InputField
-        label="Estimated Budget"
+        label={t("contact.form.budget")}
         name="budget"
         value={formData.budget}
         onChange={handleChange}
-        placeholder="e.g. €1,000 - €5,000"
+        placeholder={t("contact.form.placeholder.budget")}
       />
 
       <InputField
-        label="Project Details"
+        label={t("contact.form.message")}
         name="message"
         value={formData.message}
         onChange={handleChange}
         textarea
-        placeholder="Tell us about your project goals..."
+        placeholder={t("contact.form.placeholder.message")}
       />
 
       <motion.button
@@ -137,7 +142,9 @@ export default function ContactForm() {
             : "bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400"
         } text-white shadow-lg transition-all duration-300`}
       >
-        {loading ? "Sending..." : "Send Request"}
+        {loading
+          ? t("contact.form.button.sending")
+          : t("contact.form.button.send")}
       </motion.button>
     </motion.form>
   );
@@ -185,10 +192,9 @@ function InputField({
 
 
 
-
 // import { useState } from "react";
 // import { motion } from "framer-motion";
-// import toast from "react-hot-toast"; // ✅ اضافه شد برای toast زیبا
+// import toast from "react-hot-toast";
 
 // export default function ContactForm() {
 //   const [formData, setFormData] = useState({
@@ -206,9 +212,20 @@ function InputField({
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
-//     setLoading(true);
 
-//     // 🚀 Toast شروع ارسال
+//     // ✅ Validation قبل از ارسال
+//     if (formData.name.trim().length < 5) {
+//       toast.error("⚠️ Name must be at least 5 characters long", { id: "contact" });
+//       return;
+//     }
+
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailRegex.test(formData.email)) {
+//       toast.error("⚠️ Please enter a valid email address", { id: "contact" });
+//       return;
+//     }
+
+//     setLoading(true);
 //     toast.loading("Sending message...", { id: "contact" });
 
 //     try {
@@ -230,7 +247,7 @@ function InputField({
 //           message: "",
 //         });
 //       } else {
-//         toast.error("⚠️ Something went wrong!", { id: "contact" });
+//         toast.error("⚠️ " + (data.message || "Something went wrong!"), { id: "contact" });
 //       }
 //     } catch (err) {
 //       console.error(err);
@@ -320,7 +337,6 @@ function InputField({
 //   );
 // }
 
-// // 🔸 Input Field Component (with placeholder support)
 // function InputField({
 //   label,
 //   name,
@@ -360,3 +376,7 @@ function InputField({
 //     </div>
 //   );
 // }
+
+
+
+

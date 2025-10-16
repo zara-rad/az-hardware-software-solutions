@@ -213,5 +213,50 @@
       "desc": "Ob IT-Support, Webentwicklung oder komplette Hardware-Integration – AZ Hardware & Software Solutions hilft Ihnen, Ihre Ideen in zuverlässige, moderne und skalierbare Lösungen umzusetzen.",
       "button": "Kontakt aufnehmen"
     }
+  },
+   "contact": {
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "service": "Dienstleistung",
+      "budget": "Geschätztes Budget",
+      "message": "Projektbeschreibung",
+      "placeholder": {
+        "name": "Ihr Name",
+        "email": "sie@example.com",
+        "budget": "z. B. €1.000 – €5.000",
+        "message": "Erzählen Sie uns von Ihrem Projekt..."
+      },
+      "select": {
+        "default": "Wählen Sie eine Dienstleistung...",
+        "it": "IT-Dienstleistungen",
+        "web": "Web- & Softwareentwicklung",
+        "hardware": "Hardwarelösungen"
+      },
+      "button": {
+        "send": "Anfrage senden",
+        "sending": "Wird gesendet..."
+      },
+      "toast": {
+        "nameError": "⚠️ Der Name muss mindestens 5 Zeichen lang sein",
+        "emailError": "⚠️ Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "loading": "Nachricht wird gesendet...",
+        "success": "✅ Nachricht erfolgreich gesendet!",
+        "fail": "❌ Nachricht konnte nicht gesendet werden.",
+        "unknown": "⚠️ Etwas ist schiefgelaufen!"
+      }
+    },
+    "info": {
+    "title": "Kontaktinformationen",
+    "subtitle": "Sie können uns gerne telefonisch, per E-Mail oder persönlich erreichen.",
+    "address": "Berlin, Deutschland",
+    "phone": "+49 30 1234567",
+    "email": "info@az-hardware.de",
+    "availability": "Erreichbar: Mo–Fr · 9:00–18:00 (MEZ)"
+  },
+  "layout": {
+    "title": "Angebot anfordern",
+    "subtitle": "Teilen Sie uns Ihre Anforderungen mit – wir melden uns mit einem individuellen Angebot zurück."
+  }
   }
 }

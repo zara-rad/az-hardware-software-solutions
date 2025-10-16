@@ -215,6 +215,51 @@
       "button": "Contact Us"
     }
  
-}
+},
+ "contact": {
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "service": "Service Type",
+      "budget": "Estimated Budget",
+      "message": "Project Details",
+      "placeholder": {
+        "name": "Your name",
+        "email": "you@example.com",
+        "budget": "e.g. €1,000 - €5,000",
+        "message": "Tell us about your project goals..."
+      },
+      "select": {
+        "default": "Select a service...",
+        "it": "IT Services",
+        "web": "Web & Software Development",
+        "hardware": "Hardware Solutions"
+      },
+      "button": {
+        "send": "Send Request",
+        "sending": "Sending..."
+      },
+      "toast": {
+        "nameError": "⚠️ Name must be at least 5 characters long",
+        "emailError": "⚠️ Please enter a valid email address",
+        "loading": "Sending message...",
+        "success": "✅ Message sent successfully!",
+        "fail": "❌ Failed to send message.",
+        "unknown": "⚠️ Something went wrong!"
+      }
+    },
+     "info": {
+    "title": "Contact Information",
+    "subtitle": "Feel free to reach out via phone, email, or visit us in person.",
+    "address": "Berlin, Germany",
+    "phone": "+49 30 1234567",
+    "email": "info@az-hardware.de",
+    "availability": "Available: Mon–Fri · 9:00–18:00 (CET)"
+  },
+   "layout": {
+    "title": "Request a Quote",
+    "subtitle": "Tell us what you need — we’ll get back to you with a custom offer."
+  }
+  }
 
 }
