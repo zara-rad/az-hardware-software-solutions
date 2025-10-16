@@ -3,7 +3,15 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import { Toaster } from "react-hot-toast"; // ✅ برای toast زیبا
-
+import "./i18n/i18n.js";
+import i18n from "./i18n/i18n.js"; // ✅ اضافه کن برای کنترل زبان
+// 🔹 این بخش جدید برای جهت‌دهی زبان‌ها
+document.documentElement.lang = i18n.language;
+document.documentElement.dir = i18n.language === "fa" ? "rtl" : "ltr";
+i18n.on("languageChanged", (lng) => {
+  document.documentElement.lang = lng;
+  document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
+});
 // 📂 Pages & Layouts
 import App from "./App";
 import Home from "./pages/Home";
@@ -25,6 +33,7 @@ import DeviceSales from "./pages/services/hardware/DeviceSales";
 import Installation from "./pages/services/hardware/Installation";
 import Maintenance from "./pages/services/hardware/Maintenance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+
 
 // 📂 Components & Context
 import ScrollToTop from "./components/ScrollToTop";

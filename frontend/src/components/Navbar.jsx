@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // ✅ اضافه شد
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
-  const [lang, setLang] = useState("EN");
+  const { i18n, t } = useTranslation(); // ✅ i18n hook
+  const [lang, setLang] = useState(i18n.language.toUpperCase() || "EN");
   const navigate = useNavigate();
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -18,20 +20,39 @@ export default function Navbar() {
         : "text-gray-300 hover:text-white"
     } hover:scale-[1.08]`;
 
+  // ✅ تغییر زبان واقعی
   const handleLangChange = (newLang) => {
     setLang(newLang);
     setLangOpen(false);
+    i18n.changeLanguage(newLang.toLowerCase()); // تغییر زبان در i18n
+    document.dir = newLang === "FA" ? "rtl" : "ltr"; // راست‌چین برای فارسی
+  };
+
+  // برای هماهنگی اولیه با زبان فعلی
+  useEffect(() => {
+    document.dir = i18n.language === "fa" ? "rtl" : "ltr";
+  }, [i18n.language]);
+
+  // ✅ تبدیل کد زبان به نام قابل‌نمایش
+  const displayLang = (code) => {
+    if (code === "FA") return "فارسی";
+    if (code === "DE") return "Deutsch";
+    return "English";
   };
 
   return (
-    <header className="border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117]/95 backdrop-blur-sm text-white fixed w-full z-50 shadow-[0_2px_15px_rgba(0,255,180,0.05)]">
+    <header
+      className={`border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117]/95 backdrop-blur-sm text-white fixed w-full z-50 shadow-[0_2px_15px_rgba(0,255,180,0.05)] ${
+        i18n.language === "fa" ? "flex-row-reverse" : ""
+      }`}
+    >
       {/* ✅ لوگو */}
       <div
         onClick={() => navigate("/")}
         className="flex items-center cursor-pointer select-none"
       >
         <img
-          src="/images/logo/logo.png"
+          src="/images/logo/logo1.png"
           alt="AZ Hardware & Software Solutions Logo"
           className="w-12 h-auto mr-3 drop-shadow-[0_0_8px_rgba(0,255,180,0.25)]"
         />
@@ -48,16 +69,16 @@ export default function Navbar() {
       {/* ✅ منوی دسکتاپ */}
       <nav className="hidden md:flex gap-8 text-gray-300 font-medium items-center">
         <NavLink to="/" className={linkClass}>
-          Home
+          {t("navbar.home")}
         </NavLink>
         <NavLink to="/services" className={linkClass}>
-          Services
+          {t("navbar.services")}
         </NavLink>
         <NavLink to="/about" className={linkClass}>
-          About
+          {t("navbar.about")}
         </NavLink>
         <NavLink to="/contact" className={linkClass}>
-          Contact
+          {t("navbar.contact")}
         </NavLink>
 
         {/* 🌐 زیرمنوی زبان */}
@@ -66,7 +87,7 @@ export default function Navbar() {
             onClick={toggleLangMenu}
             className="flex items-center gap-1 px-3 py-1 border border-gray-600 rounded hover:bg-[#1a222d] hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300"
           >
-            {lang} <ChevronDown size={16} />
+            {displayLang(lang)} <ChevronDown size={16} />
           </button>
 
           {langOpen && (
@@ -79,7 +100,7 @@ export default function Navbar() {
                     lang === l ? "text-cyan-400" : "text-gray-300"
                   }`}
                 >
-                  {l}
+                  {displayLang(l)}
                 </button>
               ))}
             </div>
@@ -98,25 +119,27 @@ export default function Navbar() {
       {/* ✅ Dropdown موبایل */}
       {menuOpen && (
         <div className="absolute top-16 left-0 w-full bg-[#161b22]/95 backdrop-blur-sm border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] animate-fadeIn">
-          {["/", "/services", "/about", "/contact"].map((path, i) => {
-            const labels = ["Home", "Services", "About", "Contact"];
-            return (
-              <NavLink
-                key={path}
-                to={path}
-                onClick={() => setMenuOpen(false)}
-                className={({ isActive }) =>
-                  `px-6 py-3 border-b border-gray-800 last:border-none transition-all duration-200 ${
-                    isActive
-                      ? "bg-[#1b2532] text-cyan-400"
-                      : "hover:bg-[#1b2532]"
-                  }`
-                }
-              >
-                {labels[i]}
-              </NavLink>
-            );
-          })}
+          {[
+            { path: "/", label: t("navbar.home") },
+            { path: "/services", label: t("navbar.services") },
+            { path: "/about", label: t("navbar.about") },
+            { path: "/contact", label: t("navbar.contact") },
+          ].map((item) => (
+            <NavLink
+              key={item.path}
+              to={item.path}
+              onClick={() => setMenuOpen(false)}
+              className={({ isActive }) =>
+                `px-6 py-3 border-b border-gray-800 last:border-none transition-all duration-200 ${
+                  isActive
+                    ? "bg-[#1b2532] text-cyan-400"
+                    : "hover:bg-[#1b2532]"
+                }`
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
 
           {/* 🌐 منوی زبان در موبایل */}
           <div className="m-4 border border-gray-700 rounded-lg overflow-hidden">
@@ -131,7 +154,7 @@ export default function Navbar() {
                   lang === l ? "text-cyan-400" : "text-gray-300"
                 }`}
               >
-                {l}
+                {displayLang(l)}
               </button>
             ))}
           </div>
