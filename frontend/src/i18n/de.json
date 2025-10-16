@@ -258,5 +258,15 @@
     "title": "Angebot anfordern",
     "subtitle": "Teilen Sie uns Ihre Anforderungen mit – wir melden uns mit einem individuellen Angebot zurück."
   }
-  }
+  },
+  "footer": {
+  "home": "Startseite",
+  "services": "Dienstleistungen",
+  "about": "Über uns",
+  "contact": "Kontakt",
+  "privacy": "Datenschutz",
+  "legal": "Impressum",
+  "location": "Berlin"
+}
+
 }

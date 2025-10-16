@@ -260,6 +260,16 @@
     "title": "Request a Quote",
     "subtitle": "Tell us what you need — we’ll get back to you with a custom offer."
   }
-  }
+  },
+  "footer": {
+  "home": "Home",
+  "services": "Services",
+  "about": "About",
+  "contact": "Contact",
+  "privacy": "Privacy Policy",
+  "legal": "Legal Notice",
+  "location": "Berlin"
+}
+
 
 }
