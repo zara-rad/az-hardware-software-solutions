@@ -267,6 +267,60 @@
   "privacy": "Datenschutz",
   "legal": "Impressum",
   "location": "Berlin"
+},
+"impressum": {
+  "title": "Impressum",
+  "owner": "Inhaberin:",
+  "address": "Adresse:",
+  "phone": "Telefon:",
+  "email": "E-Mail:",
+  "vat": "USt-IdNr:",
+  "responsible": "Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV):",
+  "legalTitle": "Rechtliche Hinweise",
+  "legalText": "AZ Hardware & Software Solutions bietet professionelle IT-, Web- und Hardware-Dienstleistungen an. Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.",
+  "copyrightTitle": "Urheberrecht",
+  "copyrightText": "Alle Texte, Bilder, Logos und Inhalte dieser Website unterliegen dem Urheberrecht. Eine Vervielfältigung, Bearbeitung oder Verbreitung bedarf der schriftlichen Zustimmung des Autors.",
+  "linksTitle": "Externe Links",
+  "linksText": "Unsere Website enthält Links zu externen Websites Dritter. Auf deren Inhalte haben wir keinen Einfluss. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter verantwortlich.",
+  "disputeTitle": "Streitbeilegung",
+  "disputeText": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS-Plattform) bereit:"
+},
+"privacy": {
+  "title": "Datenschutzerklärung",
+  "section1": {
+    "title": "1. Allgemeine Informationen",
+    "text": "Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Erklärung erläutert, welche Daten wir erheben, wie wir sie verwenden und welche Rechte Sie haben."
+  },
+  "section2": {
+    "title": "2. Verantwortlicher",
+    "text": "AZ Hardware & Software Solutions\nInhaberin: Zahra Rafieirad\nAdresse: Musterstraße 12, 10115 Berlin, Deutschland\nE-Mail: info@az-hardware.de"
+  },
+  "section3": {
+    "title": "3. Erhebung und Nutzung personenbezogener Daten",
+    "text": "Wir erheben personenbezogene Daten nur, wenn Sie uns diese freiwillig mitteilen (z. B. über das Kontaktformular oder per E-Mail). Diese Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und nicht ohne Zustimmung weitergegeben."
+  },
+  "section4": {
+    "title": "4. Server-Logfiles",
+    "text": "Beim Besuch unserer Website werden automatisch Daten (z. B. IP-Adresse, Browsertyp, Uhrzeit) übermittelt. Diese werden ausschließlich aus technischen Gründen gespeichert."
+  },
+  "section5": {
+    "title": "5. Cookies",
+    "text": "Unsere Website kann Cookies verwenden, um die Benutzererfahrung zu verbessern. Sie können Cookies in Ihrem Browser deaktivieren, wodurch jedoch Teile der Website nicht richtig funktionieren könnten."
+  },
+  "section6": {
+    "title": "6. Datenspeicherung",
+    "text": "Wir speichern personenbezogene Daten nur so lange, wie es für die angegebenen Zwecke erforderlich ist oder gesetzlich vorgeschrieben wird."
+  },
+  "section7": {
+    "title": "7. Ihre Rechte",
+    "text": "Sie haben das Recht, Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer Daten zu verlangen. Kontaktieren Sie uns dazu unter info@az-hardware.de."
+  },
+  "section8": {
+    "title": "8. Änderungen dieser Erklärung",
+    "text": "Diese Datenschutzerklärung kann gelegentlich aktualisiert werden. Die aktuelle Version finden Sie jederzeit auf unserer Website."
+  }
 }
+
+
 
 }

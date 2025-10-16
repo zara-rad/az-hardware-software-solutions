@@ -269,7 +269,61 @@
   "privacy": "Privacy Policy",
   "legal": "Legal Notice",
   "location": "Berlin"
+},
+"impressum": {
+  "title": "Legal Notice (Impressum)",
+  "owner": "Owner:",
+  "address": "Address:",
+  "phone": "Phone:",
+  "email": "Email:",
+  "vat": "VAT ID (USt-IdNr):",
+  "responsible": "Responsible for content (§ 55 Abs. 2 RStV):",
+  "legalTitle": "Legal Notice",
+  "legalText": "AZ Hardware & Software Solutions provides professional IT, web, and hardware services. All content on this website has been created with the greatest possible care. However, we cannot guarantee the completeness, accuracy, or timeliness of the content provided. We are responsible for our own content on these pages according to general laws but are not obligated to monitor transmitted or stored third-party information.",
+  "copyrightTitle": "Copyright",
+  "copyrightText": "All texts, images, logos, and other content on this website are subject to copyright. Any reproduction, processing, distribution, or commercialization beyond copyright law requires prior written consent.",
+  "linksTitle": "External Links",
+  "linksText": "Our website may contain links to external third-party websites. We have no influence on their content and therefore cannot assume liability. The provider of the linked pages is always responsible for their content.",
+  "disputeTitle": "Dispute Resolution",
+  "disputeText": "The European Commission provides a platform for online dispute resolution (ODR):"
+},
+"privacy": {
+  "title": "Privacy Policy",
+  "section1": {
+    "title": "1. General Information",
+    "text": "We take the protection of your personal data very seriously. This policy explains what data we collect, how we use it, and your rights regarding your data when visiting our website."
+  },
+  "section2": {
+    "title": "2. Data Controller",
+    "text": "AZ Hardware & Software Solutions\nOwner: Zahra Rafieirad\nAddress: Musterstraße 12, 10115 Berlin, Germany\nEmail: info@az-hardware.de"
+  },
+  "section3": {
+    "title": "3. Collection and Use of Personal Data",
+    "text": "We only collect personal data that you voluntarily provide, for example, through our contact form or email. This data is used exclusively to process your request and is not shared with third parties without consent."
+  },
+  "section4": {
+    "title": "4. Server Log Files",
+    "text": "When visiting our site, your browser automatically transmits data (e.g., IP, browser type, time). This data is stored for technical reasons and not linked to any personal identity."
+  },
+  "section5": {
+    "title": "5. Cookies",
+    "text": "Our website may use cookies to improve functionality. You can disable cookies in your browser, but some parts of the site may not function properly."
+  },
+  "section6": {
+    "title": "6. Data Retention",
+    "text": "We retain personal data only as long as necessary for the stated purposes or as required by law."
+  },
+  "section7": {
+    "title": "7. Your Rights",
+    "text": "You have the right to access, correct, delete, or restrict the processing of your personal data. To exercise these rights, contact us at info@az-hardware.de."
+  },
+  "section8": {
+    "title": "8. Changes to This Policy",
+    "text": "We may update this policy periodically. The latest version will always be available on this website."
+  }
 }
+
+
 
 
 }
