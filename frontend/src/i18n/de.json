@@ -103,6 +103,45 @@
     "point3": "Backup-, Überwachungs- und Virtualisierungseinrichtung",
     "back": "Zurück zu IT-Dienstleistungen"
   }
+},
+"web": {
+  "backend": {
+    "title": "Backend-Entwicklung",
+    "subtitle": "Sichere und skalierbare Backend-Systeme mit Node.js, Express und MongoDB.",
+    "desc1": "Wir entwerfen Backend-Architekturen, die Leistung, Datensicherheit und Integrität priorisieren.",
+    "point1": "RESTful APIs und Authentifizierungssysteme",
+    "point2": "Datenbankdesign und Optimierung (MongoDB, PostgreSQL)",
+    "point3": "Sichere Sitzungs- und Token-basierte Authentifizierung (JWT)",
+    "point4": "Integration mit Drittanbieter-Services und APIs",
+    "back": "Zurück zur Webentwicklung"
+  },
+   "frontend": {
+    "title": "Frontend-Entwicklung",
+    "subtitle": "Moderne, reaktionsschnelle und ansprechende Benutzeroberflächen mit React, Vite und TailwindCSS.",
+    "desc1": "Unser Frontend-Entwicklungsprozess konzentriert sich auf visuell beeindruckende, schnelle und barrierefreie Web-Erlebnisse — mit pixelgenauer Präzision auf allen Geräten.",
+    "point1": "React + Vite Architektur für hohe Leistung",
+    "point2": "TailwindCSS für modernes responsives Design",
+    "point3": "Optimiertes SEO & Core Web Vitals",
+    "point4": "Wiederverwendbare komponentenbasierte UI für Skalierbarkeit",
+    "back": "Zurück zur Webentwicklung",
+    "ctaTitle": "Benötigen Sie eine beeindruckende und schnelle Weboberfläche?",
+    "ctaDesc": "Lassen Sie uns eine nahtlose und schöne Benutzererfahrung für Ihre Website oder App schaffen — basierend auf modernen Frontend-Technologien.",
+    "ctaButton": "Angebot anfordern"
+  },
+  "fullstack": {
+    "title": "Fullstack-Lösungen",
+    "subtitle": "Komplette End-to-End-Webanwendungen mit modernen Technologien.",
+    "desc1": "Unsere Fullstack-Dienste decken sowohl Frontend als auch Backend ab – für einen reibungslosen Datenfluss, hohe Leistung und moderne Architektur von Anfang bis Ende.",
+    "point1": "React + Node.js + MongoDB Fullstack-Architektur",
+    "point2": "API-Integration und Authentifizierungsabläufe",
+    "point3": "Bereitstellung in der Cloud (Vercel, AWS, Render usw.)",
+    "point4": "Leistungs- und SEO-Optimierung",
+    "back": "Zurück zur Webentwicklung",
+    "ctaTitle": "Suchen Sie nach einer vollständigen Fullstack-Lösung?",
+    "ctaDesc": "Von der Idee bis zur Bereitstellung – wir liefern zuverlässige, skalierbare und leistungsstarke Fullstack-Anwendungen.",
+    "ctaButton": "Angebot anfordern"
+  }
 }
+
 
 }

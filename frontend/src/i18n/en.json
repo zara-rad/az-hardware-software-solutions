@@ -104,7 +104,46 @@
     "point3": "Backup, monitoring, and virtualization setup",
     "back": "Back to IT Services"
   }
+},
+"web": {
+  "backend": {
+    "title": "Backend Development",
+    "subtitle": "Secure and scalable backend systems built with Node.js, Express, and MongoDB.",
+    "desc1": "We design backend architectures that prioritize performance, data integrity, and security for your applications.",
+    "point1": "RESTful API & authentication systems",
+    "point2": "Database design and optimization (MongoDB, PostgreSQL)",
+    "point3": "Secure session & token-based authentication (JWT)",
+    "point4": "Integration with third-party services and APIs",
+    "back": "Back to Web Development"
+  },
+  "frontend": {
+    "title": "Frontend Development",
+    "subtitle": "Modern, responsive, and engaging user interfaces built with React, Vite, and TailwindCSS.",
+    "desc1": "Our frontend development process focuses on building visually stunning, fast, and accessible web experiences — ensuring pixel-perfect interfaces that perform beautifully on all devices.",
+    "point1": "React + Vite architecture for high performance",
+    "point2": "TailwindCSS for modern responsive design",
+    "point3": "Optimized SEO & Core Web Vitals",
+    "point4": "Reusable component-based UI for scalability",
+    "back": "Back to Web Development",
+    "ctaTitle": "Need a stunning and fast web interface?",
+    "ctaDesc": "Let’s create a seamless and beautiful user experience for your website or app — powered by modern frontend technologies.",
+    "ctaButton": "Get a Quote"
+  },
+   "fullstack": {
+    "title": "Fullstack Solutions",
+    "subtitle": "Complete end-to-end web applications built with modern technologies.",
+    "desc1": "Our fullstack services cover both frontend and backend — ensuring smooth data flow, strong performance, and modern architecture from start to finish.",
+    "point1": "React + Node.js + MongoDB fullstack architecture",
+    "point2": "API integration and authentication flows",
+    "point3": "Deployment to cloud (Vercel, AWS, Render, etc.)",
+    "point4": "Performance and SEO optimization",
+    "back": "Back to Web Development",
+    "ctaTitle": "Looking for a complete fullstack solution?",
+    "ctaDesc": "From concept to deployment — we deliver reliable, scalable, and high-performance fullstack applications.",
+    "ctaButton": "Get a Quote"
+  }
 }
+
 
 
 
