@@ -75,7 +75,37 @@
   "point3": "Regular performance audits and cleaning",
   "back": "Back to Hardware Solutions"
 }
+  },
+  "it": {
+  "itSupport": {
+    "title": "IT Support & Maintenance",
+    "subtitle": "Professional on-site or remote IT support for your daily operations.",
+    "desc1": "We offer flexible, efficient IT support plans — both remote and on-site — to keep your systems running smoothly and prevent costly downtime.",
+    "point1": "Remote troubleshooting and helpdesk",
+    "point2": "On-site maintenance and repairs",
+    "point3": "Monitoring and proactive performance tuning",
+    "back": "Back to IT Services"
+  },
+   "networkSetup": {
+    "title": "Network Setup & Security",
+    "subtitle": "Secure, reliable network design, VPN setup, and firewall management.",
+    "desc1": "We design and maintain high-performance network infrastructures — from small offices to large-scale distributed systems — with security and stability as top priorities.",
+    "point1": "LAN/WAN setup and optimization",
+    "point2": "VPN, VLAN, and Wi-Fi configuration",
+    "point3": "Firewall & endpoint security management",
+    "back": "Back to IT Services"
+  },
+   "serverAdmin": {
+    "title": "Server & System Administration",
+    "subtitle": "Setup, optimization, and maintenance of reliable and secure servers.",
+    "desc1": "Our server administration services ensure your business systems run efficiently and securely. From setup to ongoing maintenance, we manage everything so you can focus on growth.",
+    "point1": "Server installation & optimization (Linux / Windows)",
+    "point2": "Active Directory, DNS, DHCP management",
+    "point3": "Backup, monitoring, and virtualization setup",
+    "back": "Back to IT Services"
   }
+}
+
 
 
 }
