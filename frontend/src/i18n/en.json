@@ -4,5 +4,14 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact"
+  },
+  
+  "hero": {
+    "title": "Your One-Stop IT & Hardware Partner in Berlin",
+    "subtitle": "Freelance IT Services · Web Design · Hardware Sales Support",
+    "quoteButton": "Get a Quote",
+    "servicesButton": "View Services"
   }
+
+
 }

@@ -4,5 +4,11 @@
     "services": "Dienstleistungen",
     "about": "Über uns",
     "contact": "Kontakt"
+  },
+   "hero": {
+    "title": "Ihr IT- und Hardware-Partner in Berlin",
+    "subtitle": "Freiberufliche IT-Dienste · Webdesign · Hardware-Vertrieb und Support",
+    "quoteButton": "Angebot anfordern",
+    "servicesButton": "Unsere Leistungen"
   }
 }
