@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Cog, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // ✅ اضافه شد
 
 export default function Maintenance() {
+  const { t } = useTranslation(); // ✅ فعال‌سازی ترجمه‌ها
+
   return (
     <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden min-h-screen">
       {/* 🌌 Background gradient subtle */}
@@ -17,10 +20,10 @@ export default function Maintenance() {
           transition={{ duration: 1 }}
           className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text"
         >
-          Maintenance & Support
+          {t("hardware.maintenance.title")}
         </motion.h1>
         <p className="text-gray-400 max-w-2xl text-center">
-          Keep your systems running at peak performance with ongoing technical support.
+          {t("hardware.maintenance.subtitle")}
         </p>
       </section>
 
@@ -35,7 +38,7 @@ export default function Maintenance() {
           className="md:w-1/2 w-full"
         >
           <img
-            src="/images/services/support.jpg" // 📷 تصویر مخصوص Maintenance
+            src="/images/services/support.jpg"
             alt="System Maintenance"
             className="rounded-2xl shadow-[0_0_30px_rgba(0,255,180,0.1)] object-cover w-full h-[350px] md:h-[420px]"
           />
@@ -49,13 +52,12 @@ export default function Maintenance() {
           viewport={{ once: true }}
           className="md:w-1/2 w-full text-gray-300 leading-relaxed space-y-4"
         >
-          <p>
-            Preventive maintenance and on-demand support to minimize downtime.
-          </p>
+          <p>{t("hardware.maintenance.desc1")}</p>
+
           <ul className="list-disc list-inside space-y-2 text-gray-400">
-            <li>Hardware diagnostics & upgrades</li>
-            <li>Remote troubleshooting and repairs</li>
-            <li>Regular performance audits and cleaning</li>
+            <li>{t("hardware.maintenance.point1")}</li>
+            <li>{t("hardware.maintenance.point2")}</li>
+            <li>{t("hardware.maintenance.point3")}</li>
           </ul>
 
           <div className="pt-6">
@@ -63,7 +65,7 @@ export default function Maintenance() {
               to="/services/hardware"
               className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
             >
-              <ArrowLeft className="w-5 h-5" /> Back to Hardware Solutions
+              <ArrowLeft className="w-5 h-5" /> {t("hardware.maintenance.back")}
             </Link>
           </div>
         </motion.div>
@@ -71,6 +73,7 @@ export default function Maintenance() {
     </div>
   );
 }
+
 
 
 

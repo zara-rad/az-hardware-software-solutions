@@ -45,5 +45,34 @@
       "title": "Kontakt",
       "desc": "Kontaktieren Sie uns, um Ihr Projekt zu besprechen oder eine persönliche Beratung zu vereinbaren."
     }
+  },
+  "hardware": {
+    "deviceSales": {
+      "title": "Geräteverkauf",
+      "subtitle": "Leistungsstarke Laptops, PCs und IT-Komponenten für Unternehmen und Privatkunden.",
+      "desc1": "Wir beschaffen, konfigurieren und liefern zuverlässige Hardware, die genau Ihren Anforderungen entspricht.",
+      "point1": "Business-Laptops & -Desktops (Lenovo, Dell, HP usw.)",
+      "point2": "Individuell angefertigte PCs für Entwickler und Designer",
+      "point3": "Großbestellungen und B2B-Preisoptionen",
+      "back": "Zurück zu Hardwarelösungen"
+    },
+    "installation": {
+  "title": "Installation & Einrichtung",
+  "subtitle": "Professionelle Installation und Konfiguration für Ihre gesamte IT-Ausrüstung.",
+  "desc1": "Unser Team sorgt für eine reibungslose Einrichtung Ihrer Arbeitsstationen, Netzwerke und Peripheriegeräte.",
+  "point1": "Vor-Ort-Installation und Tests",
+  "point2": "Netzwerk- und Druckerkonfiguration",
+  "point3": "Datenmigration und Betriebssysteminstallation",
+  "back": "Zurück zu Hardware-Lösungen"
+},"maintenance": {
+  "title": "Wartung & Support",
+  "subtitle": "Halten Sie Ihre Systeme mit fortlaufendem technischen Support auf höchster Leistung.",
+  "desc1": "Vorbeugende Wartung und Support auf Abruf, um Ausfallzeiten zu minimieren.",
+  "point1": "Hardware-Diagnose & Upgrades",
+  "point2": "Fernwartung und Reparaturen",
+  "point3": "Regelmäßige Leistungsprüfungen und Reinigung",
+  "back": "Zurück zu Hardware-Lösungen"
+}
+
   }
 }

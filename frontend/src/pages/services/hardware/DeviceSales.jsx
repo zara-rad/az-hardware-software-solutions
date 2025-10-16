@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import { Truck, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // ✅ اضافه شد
 
 export default function DeviceSales() {
+  const { t } = useTranslation(); // ✅ فعال‌سازی ترجمه‌ها
+
   return (
     <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden min-h-screen">
       {/* 🌌 Background gradient subtle */}
@@ -17,16 +20,16 @@ export default function DeviceSales() {
           transition={{ duration: 1 }}
           className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text"
         >
-          Device Sales
+          {t("hardware.deviceSales.title")}
         </motion.h1>
         <p className="text-gray-400 max-w-2xl text-center">
-          High-performance laptops, PCs, and IT components for business and home use.
+          {t("hardware.deviceSales.subtitle")}
         </p>
       </section>
 
-      {/* 🔹 Content Section (Image left + Text right) */}
+      {/* 🔹 Content Section */}
       <main className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 py-16 gap-10">
-        {/* 🖼️ Image (left side) */}
+        {/* 🖼️ Image */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -35,13 +38,13 @@ export default function DeviceSales() {
           className="md:w-1/2 w-full"
         >
           <img
-            src="/images/services/bgsale.jpg" // 📷 تصویر مخصوص Device Sales
+            src="/images/services/bgsale.jpg"
             alt="Device Sales - Hardware Products"
             className="rounded-2xl shadow-[0_0_30px_rgba(0,255,180,0.1)] object-cover w-full h-[350px] md:h-[420px]"
           />
         </motion.div>
 
-        {/* 📝 Text (right side) */}
+        {/* 📝 Text */}
         <motion.div
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -49,13 +52,12 @@ export default function DeviceSales() {
           viewport={{ once: true }}
           className="md:w-1/2 w-full text-gray-300 leading-relaxed space-y-4"
         >
-          <p>
-            We source, configure, and deliver reliable hardware suited to your exact needs.
-          </p>
+          <p>{t("hardware.deviceSales.desc1")}</p>
+
           <ul className="list-disc list-inside space-y-2 text-gray-400">
-            <li>Business laptops & desktops (Lenovo, Dell, HP, etc.)</li>
-            <li>Custom-built PCs for developers and designers</li>
-            <li>Bulk orders and B2B pricing options</li>
+            <li>{t("hardware.deviceSales.point1")}</li>
+            <li>{t("hardware.deviceSales.point2")}</li>
+            <li>{t("hardware.deviceSales.point3")}</li>
           </ul>
 
           <div className="pt-6">
@@ -63,7 +65,7 @@ export default function DeviceSales() {
               to="/services/hardware"
               className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
             >
-              <ArrowLeft className="w-5 h-5" /> Back to Hardware Solutions
+              <ArrowLeft className="w-5 h-5" /> {t("hardware.deviceSales.back")}
             </Link>
           </div>
         </motion.div>
@@ -71,6 +73,7 @@ export default function DeviceSales() {
     </div>
   );
 }
+
 
 
 // import { motion } from "framer-motion";

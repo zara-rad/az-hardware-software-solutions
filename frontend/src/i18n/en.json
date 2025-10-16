@@ -46,6 +46,35 @@
       "title": "Contact",
       "desc": "Reach out to discuss your project or request a personalized consultation."
     }
+  },
+  "hardware": {
+    "deviceSales": {
+      "title": "Device Sales",
+      "subtitle": "High-performance laptops, PCs, and IT components for business and home use.",
+      "desc1": "We source, configure, and deliver reliable hardware suited to your exact needs.",
+      "point1": "Business laptops & desktops (Lenovo, Dell, HP, etc.)",
+      "point2": "Custom-built PCs for developers and designers",
+      "point3": "Bulk orders and B2B pricing options",
+      "back": "Back to Hardware Solutions"
+    },
+    "installation": {
+  "title": "Installation & Setup",
+  "subtitle": "Professional installation and configuration for all your IT equipment.",
+  "desc1": "Our team ensures smooth setup for your workstations, networks, and peripherals.",
+  "point1": "On-site installation and testing",
+  "point2": "Network and printer configuration",
+  "point3": "Data migration and OS installation",
+  "back": "Back to Hardware Solutions"
+},
+"maintenance": {
+  "title": "Maintenance & Support",
+  "subtitle": "Keep your systems running at peak performance with ongoing technical support.",
+  "desc1": "Preventive maintenance and on-demand support to minimize downtime.",
+  "point1": "Hardware diagnostics & upgrades",
+  "point2": "Remote troubleshooting and repairs",
+  "point3": "Regular performance audits and cleaning",
+  "back": "Back to Hardware Solutions"
+}
   }
 
 
