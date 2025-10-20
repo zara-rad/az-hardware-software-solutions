@@ -220,12 +220,18 @@
     "form": {
       "name": "Name",
       "email": "Email",
+          "phone": "Phone Number",
+
       "service": "Service Type",
       "budget": "Estimated Budget",
       "message": "Project Details",
+          "optional": "optional",
+
       "placeholder": {
         "name": "Your name",
         "email": "you@example.com",
+              "phone": "e.g. +49 151 2345678",
+
         "budget": "e.g. €1,000 - €5,000",
         "message": "Tell us about your project goals..."
       },

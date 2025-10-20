@@ -218,12 +218,18 @@
     "form": {
       "name": "Name",
       "email": "E-Mail",
+      "phone": "Telefonnummer",
+
       "service": "Dienstleistung",
       "budget": "Geschätztes Budget",
       "message": "Projektbeschreibung",
+      "optional": "optional",
+
       "placeholder": {
         "name": "Ihr Name",
         "email": "sie@example.com",
+          "phone": "z. B. +49 151 2345678",
+
         "budget": "z. B. €1.000 – €5.000",
         "message": "Erzählen Sie uns von Ihrem Projekt..."
       },

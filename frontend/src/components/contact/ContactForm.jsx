@@ -8,6 +8,8 @@ export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "", // ✅ اضافه شد
+
     service: "",
     budget: "",
     message: "",
@@ -55,10 +57,9 @@ export default function ContactForm() {
           message: "",
         });
       } else {
-        toast.error(
-          "⚠️ " + (data.message || t("contact.form.toast.unknown")),
-          { id: "contact" }
-        );
+        toast.error("⚠️ " + (data.message || t("contact.form.toast.unknown")), {
+          id: "contact",
+        });
       }
     } catch (err) {
       console.error(err);
@@ -94,6 +95,14 @@ export default function ContactForm() {
         onChange={handleChange}
         placeholder={t("contact.form.placeholder.email")}
         required
+      />
+      <InputField
+        label={t("contact.form.phone")}
+        name="phone"
+        value={formData.phone}
+        onChange={handleChange}
+        placeholder={t("contact.form.placeholder.phone")}
+        required={false}
       />
 
       <div>
@@ -189,11 +198,3 @@ function InputField({
     </div>
   );
 }
-
-
-
-
-
-
-
-

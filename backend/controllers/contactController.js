@@ -4,7 +4,7 @@ import ContactMessage from "../models/ContactMessage.js";
 
 export const sendContactForm = async (req, res) => {
   try {
-    const { name, email, service, budget, message } = req.body;
+    const { name, email, phone, service, budget, message } = req.body;
     if (!name || name.trim().length < 5) {
       return res.status(400).json({
         success: false,
@@ -40,6 +40,8 @@ export const sendContactForm = async (req, res) => {
     const newMessage = new ContactMessage({
       name,
       email,
+            phone, // ✅ optional
+
       service,
       budget,
       message,
@@ -63,6 +65,8 @@ export const sendContactForm = async (req, res) => {
         <h2 style="font-family:sans-serif;color:#16f2b3;">New Contact Message Received</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+
         <p><strong>Service:</strong> ${service}</p>
         <p><strong>Budget:</strong> ${budget}</p>
         <p><strong>Message:</strong><br/>${message}</p>
@@ -85,6 +89,8 @@ export const sendContactForm = async (req, res) => {
           </div>
 
           <p style="font-size:16px;line-height:1.6;">Hello <strong>${name}</strong>,</p>
+          ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+
           <p style="font-size:15px;line-height:1.6;">
             Thank you for contacting <strong>AZ Hardware & Software Solutions</strong>.<br/>
             We’ve successfully received your message${
