@@ -1,12 +1,3 @@
-// backend/scripts/createAdmin.js
-/**
- * Usage:
- *   node scripts/createAdmin.js "Admin Name" "admin@example.com" "password123"
- *
- * یا اگر از npm script استفاده می‌کنی:
- *   node ./backend/scripts/createAdmin.js ...
- */
-
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import bcrypt from "bcryptjs";

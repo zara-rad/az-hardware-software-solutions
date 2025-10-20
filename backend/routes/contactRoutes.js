@@ -1,4 +1,3 @@
-// backend/routes/contactRoutes.js
 import express from "express";
 import { sendContactForm } from "../controllers/contactController.js";
 import ContactMessage from "../models/ContactMessage.js";
@@ -6,10 +5,8 @@ import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// ارسال پیام از فرم (عمومی)
 router.post("/", sendContactForm);
 
-// مسیرهای ادمین — محافظت شده با JWT
 // GET all messages
 router.get("/admin", protect, async (req, res) => {
   try {
@@ -25,7 +22,8 @@ router.get("/admin", protect, async (req, res) => {
 router.get("/admin/:id", protect, async (req, res) => {
   try {
     const msg = await ContactMessage.findById(req.params.id);
-    if (!msg) return res.status(404).json({ success: false, message: "Not found" });
+    if (!msg)
+      return res.status(404).json({ success: false, message: "Not found" });
     res.json({ success: true, message: msg });
   } catch (err) {
     console.error("Get contact message error:", err);
@@ -37,7 +35,8 @@ router.get("/admin/:id", protect, async (req, res) => {
 router.delete("/admin/:id", protect, async (req, res) => {
   try {
     const msg = await ContactMessage.findByIdAndDelete(req.params.id);
-    if (!msg) return res.status(404).json({ success: false, message: "Not found" });
+    if (!msg)
+      return res.status(404).json({ success: false, message: "Not found" });
     res.json({ success: true, message: "Deleted" });
   } catch (err) {
     console.error("Delete contact message error:", err);
@@ -46,25 +45,3 @@ router.delete("/admin/:id", protect, async (req, res) => {
 });
 
 export default router;
-
-
-
-
-
-// import express from "express";
-// import { sendContactForm } from "../controllers/contactController.js";
-
-// const router = express.Router();
-
-// // ✅ ارسال پیام از فرم تماس
-// router.post("/", sendContactForm);
-
-// // ⚙️ رزرو شده برای آینده (admin panel → نمایش پیام‌ها)
-// router.get("/", (req, res) => {
-//   res.status(200).json({ message: "Admin route placeholder — coming soon" });
-// });
-
-// export default router;
-
-
-

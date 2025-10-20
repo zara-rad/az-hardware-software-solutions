@@ -20,7 +20,6 @@ export default function AdminHeader({
           message{messagesCount !== 1 ? "s" : ""}
         </p>
 
-        {/* 🔍 فیلتر بر اساس نام یا ایمیل */}
         <input
           type="text"
           placeholder="Filter by name or email..."
@@ -29,7 +28,6 @@ export default function AdminHeader({
           className="mt-3 w-full md:w-72 px-3 py-2 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 focus:ring-2 focus:ring-green-500 outline-none"
         />
 
-        {/* 🧩 فیلتر سرویس */}
         <select
           value={serviceFilter}
           onChange={(e) => setServiceFilter(e.target.value)}
