@@ -20,6 +20,8 @@ export default function Home() {
           name="description"
           content="Professional IT services, web and software development, and hardware solutions in Berlin. Reliable, fast, and tailored to your business needs."
         />
+        {/* ✅ preload background image for LCP */}
+        <link rel="preload" as="image" href="/images/about/about.jpg" />
       </Helmet>
 
       {/* 🔹 Hero با بک‌گراند خودش */}
@@ -29,11 +31,12 @@ export default function Home() {
 
       {/* 🟩 تصویر پس‌زمینه از زیر Hero تا انتهای صفحه */}
       <div className="relative z-10">
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 -z-10 h-[65vh] md:h-[70vh]">
           <img
             src="/images/about/about.jpg"
             alt="Data Center Background"
             className="w-full h-full object-cover opacity-75 scale-105"
+            fetchpriority="high"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/40 to-[#0d1117]/90" />
           <motion.div
@@ -63,8 +66,6 @@ export default function Home() {
     </div>
   );
 }
-
-
 
 // import { lazy, Suspense, useEffect } from "react";
 // import { motion } from "framer-motion";
@@ -119,7 +120,7 @@ export default function Home() {
 //             }
 //           >
 //             <Services />
-           
+
 //             <OverviewLinks />
 //           </Suspense>
 //         </div>

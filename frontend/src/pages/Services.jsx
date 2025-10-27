@@ -34,10 +34,20 @@ export default function Services() {
     if (isStandalone) window.scrollTo({ top: 0, behavior: "smooth" });
   }, [isStandalone]);
 
+  // ✅ Preload image before rendering to avoid flicker
+  useEffect(() => {
+    if (isStandalone) {
+      const img = new Image();
+      img.src = "/images/services/bgservicess.jpg";
+    }
+  }, [isStandalone]);
+
   return (
     <div
       key={location.pathname}
-      className={`relative flex flex-col ${isStandalone ? "min-h-screen" : ""} text-white overflow-hidden`}
+      className={`relative flex flex-col ${
+        isStandalone ? "min-h-screen" : ""
+      } text-white overflow-hidden`}
     >
       {isStandalone && (
         <div className="absolute inset-0">
@@ -45,6 +55,8 @@ export default function Services() {
             src="/images/services/bgservicess.jpg"
             alt="Modern Data Center"
             className="w-full h-full object-cover opacity-70 scale-105"
+            fetchpriority="high" // ✅ image loads first
+            loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/50 to-[#0d1117]/90" />
           <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-3xl opacity-70 animate-pulse" />
@@ -53,8 +65,8 @@ export default function Services() {
 
       <section
         className={`relative z-10 flex flex-col justify-center ${
-          isStandalone ? "py-32 md:py-40" : "py-16"
-        } px-6 text-center min-h-[70vh]`}
+          isStandalone ? "py-32 md:py-40 min-h-[100vh]" : "py-16"
+        } px-6 text-center`}
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -109,4 +121,3 @@ export default function Services() {
     </div>
   );
 }
-
