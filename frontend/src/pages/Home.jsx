@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen flex flex-col text-white overflow-hidden bg-[#0d1117]">
       <Helmet>
-        <title>AZ Hardware — IT & Web Solutions in Berlin</title>
+        {/* <title>AZ Hardware — IT & Web Solutions in Berlin</title> */}
         <meta
           name="description"
           content="Professional IT services, web and software development, and hardware solutions in Berlin. Reliable, fast, and tailored to your business needs."
