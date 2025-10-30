@@ -40,6 +40,7 @@ import Shop from "./pages/Shop";
 import ScrollToTop from "./components/ScrollToTop";
 import { ScrollProvider } from "./ScrollContext";
 import "./index.css";
+import AdminProducts from "./pages/admin/AdminProducts.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -61,6 +62,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="services/web/frontend" element={<FrontendDev />} />
               <Route path="services/web/backend" element={<BackendDev />} />
               <Route path="/shop" element={<Shop />} />
+              <Route path="/admin/products" element={<AdminProducts />} />
+
 
               <Route
                 path="services/web/fullstack"

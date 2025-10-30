@@ -18,10 +18,7 @@ export default function AdminDashboard() {
 
   // 🟢 در زمان mount، تاریخ چاپ رو در body قرار بده و پیام‌ها رو واکشی کن
   useEffect(() => {
-    document.body.setAttribute(
-      "data-print-date",
-      new Date().toLocaleString()
-    );
+    document.body.setAttribute("data-print-date", new Date().toLocaleString());
 
     const token = localStorage.getItem("adminToken");
     if (token) fetchMessages(token);
@@ -60,7 +57,8 @@ export default function AdminDashboard() {
 
   // 🗑 حذف پیام
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this message?")) return;
+    if (!window.confirm("Are you sure you want to delete this message?"))
+      return;
     const token = localStorage.getItem("adminToken");
     try {
       const res = await fetch(`http://localhost:5050/api/contact/admin/${id}`, {
@@ -124,6 +122,15 @@ export default function AdminDashboard() {
         <AdminLogin onLogin={() => window.location.reload()} />
       ) : (
         <div className="max-w-6xl mx-auto">
+          <div className="flex justify-end mb-6">
+            <button
+              onClick={() => (window.location.href = "/admin/products")}
+              className="px-5 py-2 bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white rounded-lg font-semibold shadow-md transition-all"
+            >
+              🛍️ Manage Products
+            </button>
+          </div>
+
           <AdminHeader
             messagesCount={filteredMessages.length}
             loading={loading}

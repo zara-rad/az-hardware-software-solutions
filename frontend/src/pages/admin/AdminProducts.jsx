@@ -23,16 +23,26 @@ export default function AdminProducts() {
         🛠️ Manage Products
       </motion.h1>
 
-      {/* جدول محصولات */}
+      {/* ✅ جدول حرفه‌ای‌تر با چینش دو‌سطری و ستون‌های واضح */}
       <div className="overflow-x-auto">
-        <table className="w-full border border-gray-800 rounded-lg overflow-hidden">
-          <thead className="bg-[#121a24] text-gray-300 text-sm">
+        <table className="w-full border border-gray-800 rounded-lg overflow-hidden text-sm md:text-base">
+          <thead className="bg-[#121a24] text-gray-300 uppercase text-xs md:text-sm">
             <tr>
-              <th className="p-3 border-b border-gray-700">Title</th>
-              <th className="p-3 border-b border-gray-700">Category</th>
-              <th className="p-3 border-b border-gray-700">Price</th>
-              <th className="p-3 border-b border-gray-700">Old Price</th>
-              <th className="p-3 border-b border-gray-700">Actions</th>
+              <th className="p-3 border-b border-gray-700 text-left w-[25%]">
+                Title
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[20%]">
+                Category
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[15%]">
+                Price
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[15%]">
+                Old Price
+              </th>
+              <th className="p-3 border-b border-gray-700 text-center w-[25%]">
+                Actions
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -40,19 +50,39 @@ export default function AdminProducts() {
               products.map((p) => (
                 <tr
                   key={p._id}
-                  className="text-sm text-gray-300 hover:bg-[#18222f] transition-colors"
+                  className="border-t border-gray-800 hover:bg-[#1a2432]/70 transition-all"
                 >
-                  <td className="p-3 border-b border-gray-800">{p.title}</td>
-                  <td className="p-3 border-b border-gray-800">{p.category}</td>
-                  <td className="p-3 border-b border-gray-800 text-green-400">
+                  {/* 🟢 عنوان و توضیح */}
+                  <td className="p-4">
+                    <div className="font-semibold text-white">{p.title}</div>
+                    <div className="text-gray-400 text-xs mt-1">
+                      {p.description || "No description"}
+                    </div>
+                  </td>
+
+                  {/* 🟣 دسته‌بندی */}
+                  <td className="p-4 align-top text-gray-300">{p.category}</td>
+
+                  {/* 💸 قیمت */}
+                  <td className="p-4 align-top text-green-400 font-semibold">
                     €{p.price}
                   </td>
-                  <td className="p-3 border-b border-gray-800 text-gray-500 line-through">
+
+                  {/* ⚙️ قیمت قدیمی */}
+                  <td className="p-4 align-top text-gray-500 line-through">
                     {p.oldPrice ? `€${p.oldPrice}` : "-"}
                   </td>
-                  <td className="p-3 border-b border-gray-800">
-                    <button className="bg-red-500/80 hover:bg-red-600 text-white px-3 py-1 rounded text-xs">
+
+                  {/* 🧰 دکمه‌ها */}
+                  <td className="p-4 text-center flex justify-center items-center gap-2">
+                    <button className="bg-yellow-500/80 hover:bg-yellow-400 text-white px-3 py-1 rounded text-xs shadow">
+                      Edit
+                    </button>
+                    <button className="bg-red-500/80 hover:bg-red-600 text-white px-3 py-1 rounded text-xs shadow">
                       Delete
+                    </button>
+                    <button className="bg-green-500/80 hover:bg-green-400 text-white px-3 py-1 rounded text-xs shadow">
+                      Add
                     </button>
                   </td>
                 </tr>
