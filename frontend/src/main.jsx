@@ -33,6 +33,7 @@ import DeviceSales from "./pages/services/hardware/DeviceSales";
 import Installation from "./pages/services/hardware/Installation";
 import Maintenance from "./pages/services/hardware/Maintenance";
 import AdminDashboard from "./pages/admin/AdminDashboard";
+import Shop from "./pages/Shop";
 
 
 // 📂 Components & Context
@@ -59,6 +60,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route path="services/web" element={<WebDevelopment />} />
               <Route path="services/web/frontend" element={<FrontendDev />} />
               <Route path="services/web/backend" element={<BackendDev />} />
+              <Route path="/shop" element={<Shop />} />
+
               <Route
                 path="services/web/fullstack"
                 element={<FullstackSolutions />}
