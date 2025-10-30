@@ -51,7 +51,10 @@ export default function Home() {
             <OverviewLinks />
           </Suspense>
         </main>
+        <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0d1117]/80 to-transparent pointer-events-none" />
+
       </div>
+      
     </div>
   );
 }
