@@ -3,6 +3,7 @@ import multer from "multer";
 import {
   getProducts,
   createProduct,
+    updateProduct,
   deleteProduct,
 } from "../controllers/productController.js";
 
@@ -23,6 +24,8 @@ const upload = multer({ storage });
 // 📦 مسیرها
 router.get("/", getProducts); // همه محصولات
 router.post("/", upload.array("images", 5), createProduct); // افزودن محصول (تا ۵ عکس)
+router.put("/:id", upload.array("images", 5), updateProduct); // 🟢 اضافه شد
+
 router.delete("/:id", deleteProduct); // حذف محصول
 
 export default router;

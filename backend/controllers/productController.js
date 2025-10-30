@@ -21,6 +21,36 @@ export const createProduct = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
+// ✏️ ویرایش محصول
+export const updateProduct = async (req, res) => {
+  try {
+    const images = req.files ? req.files.map((file) => `/uploads/${file.filename}`) : [];
+
+    const updatedData = {
+      title: req.body.title,
+      category: req.body.category,
+      description: req.body.description,
+      price: req.body.price,
+      oldPrice: req.body.oldPrice,
+    };
+
+    // فقط اگر عکس جدید فرستاده شده بود
+    if (images.length > 0) updatedData.images = images;
+
+    const updatedProduct = await Product.findByIdAndUpdate(
+      req.params.id,
+      updatedData,
+      { new: true }
+    );
+
+    if (!updatedProduct)
+      return res.status(404).json({ message: "Product not found" });
+
+    res.json(updatedProduct);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 // ❌ حذف محصول
 export const deleteProduct = async (req, res) => {
