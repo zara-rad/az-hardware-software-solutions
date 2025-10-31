@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Home",
     "services": "Services",
+      "shop": "Shop",
     "about": "About",
     "contact": "Contact"
   },
@@ -192,8 +193,16 @@
       "ctaDesc": "From concept to deployment — we deliver reliable, scalable, and high-performance fullstack applications.",
       "ctaButton": "Get a Quote"
     }
-  },
- 
+  },"shop": {
+  "title": "Our Products",
+  "orderInfoTitle": "How to Order Your Favorite Product",
+  "orderInfoText": "Each product comes with its own unique Serial Number. To place an order, simply copy this serial number and include it in the message on our Contact Page. Once you send us your request, our team will reach out to confirm your order and arrange delivery.",
+  "contactButton": "Contact Us",
+  "noDetails": "No details provided",
+  "noImage": "No Image",
+  "noProducts": "No products found."
+}
+,
   "about": {
     "title": "About Us",
     "subtitle": "Empowering businesses with cutting-edge IT solutions and reliable hardware services — built for the future.",

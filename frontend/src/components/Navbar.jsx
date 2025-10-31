@@ -76,8 +76,9 @@ export default function Navbar() {
         </NavLink>
         {/* 🟩 لینک جدید Shop */}
         <NavLink to="/shop" className={linkClass}>
-          Shop
+          {t("navbar.shop")}
         </NavLink>
+
         <NavLink to="/about" className={linkClass}>
           {t("navbar.about")}
         </NavLink>
@@ -126,7 +127,7 @@ export default function Navbar() {
           {[
             { path: "/", label: t("navbar.home") },
             { path: "/services", label: t("navbar.services") },
-            { path: "/shop", label: "Shop" }, // 🟩 اضافه شد
+            { path: "/shop", label: t("navbar.shop") },
             { path: "/about", label: t("navbar.about") },
             { path: "/contact", label: t("navbar.contact") },
           ].map((item) => (
@@ -242,7 +243,7 @@ export default function Navbar() {
 //         </NavLink>
 //         <NavLink to="/services" className={linkClass}>
 //           {t("navbar.services")}
-        
+
 //         </NavLink>
 //           {/* 🟩 اضافه شد */}
 //           <NavLink to="/shop" className={linkClass}>

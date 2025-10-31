@@ -2,6 +2,7 @@
   "navbar": {
     "home": "Startseite",
     "services": "Dienstleistungen",
+      "shop": "Shop",
     "about": "Über uns",
     "contact": "Kontakt"
   },
@@ -193,6 +194,16 @@
       "ctaButton": "Angebot anfordern"
     }
   },
+  "shop": {
+  "title": "Unsere Produkte",
+  "orderInfoTitle": "So bestellen Sie Ihr Lieblingsprodukt",
+  "orderInfoText": "Jedes Produkt hat eine eigene Seriennummer. Um zu bestellen, kopieren Sie einfach die Seriennummer und fügen Sie sie in die Nachricht auf unserer Kontaktseite ein. Unser Team wird sich dann mit Ihnen in Verbindung setzen, um Ihre Bestellung zu bestätigen und die Lieferung zu arrangieren.",
+  "contactButton": "Kontaktieren Sie uns",
+  "noDetails": "Keine Details angegeben",
+  "noImage": "Kein Bild",
+  "noProducts": "Keine Produkte gefunden."
+}
+,
   "about": {
     "title": "Über uns",
     "subtitle": "Wir stärken Unternehmen mit innovativen IT-Lösungen und zuverlässigen Hardware-Diensten – bereit für die Zukunft.",
