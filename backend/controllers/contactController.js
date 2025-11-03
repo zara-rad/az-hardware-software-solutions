@@ -40,11 +40,12 @@ export const sendContactForm = async (req, res) => {
     const newMessage = new ContactMessage({
       name,
       email,
-            phone, // ✅ optional
+      phone, // ✅ optional
 
       service,
       budget,
       message,
+      serialNumber,
     });
     await newMessage.save();
 
@@ -66,12 +67,14 @@ export const sendContactForm = async (req, res) => {
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-
         <p><strong>Service:</strong> ${service}</p>
         <p><strong>Budget:</strong> ${budget}</p>
+        <p><strong>Serial Number:</strong> ${serialNumber || "Not provided"}</p>
         <p><strong>Message:</strong><br/>${message}</p>
         <hr style="border:none;border-top:1px solid #ccc;margin-top:20px;">
         <p style="color:#888;">This message was sent via AZ Hardware & Software Solutions contact form.</p>
+        
+
       `,
     });
 

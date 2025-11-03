@@ -235,6 +235,8 @@
       "budget": "Estimated Budget",
       "message": "Project Details",
           "optional": "optional",
+          "serialNumber": "Serial Number",
+
 
       "placeholder": {
         "name": "Your name",
@@ -242,13 +244,17 @@
               "phone": "e.g. +49 151 2345678",
 
         "budget": "e.g. €1,000 - €5,000",
-        "message": "Tell us about your project goals..."
+        "message": "Tell us about your project goals...",
+          "serialNumber": "e.g. SN-1245789"
+
       },
       "select": {
         "default": "Select a service...",
         "it": "IT Services",
         "web": "Web & Software Development",
-        "hardware": "Hardware Solutions"
+        "hardware": "Hardware Solutions",
+        "shop": "Shop Product"
+
       },
       "button": {
         "send": "Send Request",

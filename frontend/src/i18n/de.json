@@ -233,6 +233,8 @@
 
       "service": "Dienstleistung",
       "budget": "Geschätztes Budget",
+      "serialNumber": "Seriennummer",
+
       "message": "Projektbeschreibung",
       "optional": "optional",
 
@@ -242,13 +244,17 @@
           "phone": "z. B. +49 151 2345678",
 
         "budget": "z. B. €1.000 – €5.000",
+          "serialNumber": "z. B. SN-1245789",
+
         "message": "Erzählen Sie uns von Ihrem Projekt..."
       },
       "select": {
         "default": "Wählen Sie eine Dienstleistung...",
         "it": "IT-Dienstleistungen",
         "web": "Web- & Softwareentwicklung",
-        "hardware": "Hardwarelösungen"
+        "hardware": "Hardwarelösungen",
+        "shop": "Shop Product"
+
       },
       "button": {
         "send": "Anfrage senden",

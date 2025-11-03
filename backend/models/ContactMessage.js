@@ -9,6 +9,7 @@ const contactMessageSchema = new mongoose.Schema(
     service: { type: String },
     budget: { type: String },
     message: { type: String, required: true },
+        serialNumber: { type: String },
   },
   { timestamps: true }
 );
