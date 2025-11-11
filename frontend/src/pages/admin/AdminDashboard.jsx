@@ -93,7 +93,9 @@ export default function AdminDashboard() {
   const filteredMessages = messages.filter((m) => {
     const matchesText =
       m.name?.toLowerCase().includes(filter.toLowerCase()) ||
-      m.email?.toLowerCase().includes(filter.toLowerCase());
+      m.email?.toLowerCase().includes(filter.toLowerCase())||
+        m.serialNumber?.toLowerCase().includes(filter.toLowerCase());
+;
     const matchesService = !serviceFilter || m.service === serviceFilter;
     return matchesText && matchesService;
   });

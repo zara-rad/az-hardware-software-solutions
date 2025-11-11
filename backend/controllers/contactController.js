@@ -4,7 +4,7 @@ import ContactMessage from "../models/ContactMessage.js";
 
 export const sendContactForm = async (req, res) => {
   try {
-    const { name, email, phone, service, budget, message } = req.body;
+    const { name, email, phone, service, budget, serialNumber, message } = req.body;
     if (!name || name.trim().length < 5) {
       return res.status(400).json({
         success: false,

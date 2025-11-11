@@ -27,6 +27,8 @@ export default function MessageModal({ selectedMsg, onClose }) {
               <p><strong>Name:</strong> {selectedMsg.name}</p>
               <p><strong>Email:</strong> {selectedMsg.email}</p>
               <p><strong>Service:</strong> {selectedMsg.service || "-"}</p>
+                <p><strong>Serial Number:</strong> {selectedMsg.serialNumber || "N/A"}</p>
+
               <p><strong>Budget:</strong> {selectedMsg.budget || "-"}</p>
               <p><strong>Date:</strong> {new Date(selectedMsg.createdAt).toLocaleString()}</p>
               <p className="pt-2 border-t border-gray-700">
