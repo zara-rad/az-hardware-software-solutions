@@ -59,7 +59,10 @@ export default function Services() {
             loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/50 to-[#0d1117]/90" />
-          <div className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle,rgba(0,255,180,0.12)_0%,transparent_70%)] blur-3xl opacity-70 animate-pulse" />
+          <div
+            className="absolute top-1/2 left-1/2 w-[800px] h-[800px] -translate-x-1/2 -translate-y-1/2bg-[radial-gradient(circle,rgba(200,200,210,0.15)_0%,transparent_70%)]
+ blur-3xl opacity-70 animate-pulse"
+          />
         </div>
       )}
 
@@ -74,7 +77,10 @@ export default function Services() {
           transition={{ duration: 0.8 }}
           className="mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(0,255,180,0.2)]">
+          <h1
+            className="text-4xl md:text-5xl font-extrabold mb-4 bg-gradient-to-r from-gray-300 via-gray-100 to-gray-400 text-transparent bg-clip-text drop-shadow-[0_0_20px_rgba(200,200,200,0.3)]
+"
+          >
             {t("services.title")}
           </h1>
           <p className="text-gray-200 text-lg font-light">
@@ -93,13 +99,21 @@ export default function Services() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ scale: 1.03 }}
-                className="group p-10 rounded-2xl bg-[#0f1620]/80 border border-gray-800 hover:border-green-400 backdrop-blur-xl shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,255,180,0.15)] transition-all duration-300 flex flex-col items-center"
+                className="group p-10 rounded-2xl bg-[#0d1117]/85
+                 border border-gray-800 hover:border-gray-400 hover:shadow-[0_0_25px_rgba(200,200,200,0.15)]
+                hover:shadow-[0_0_25px_rgba(0,255,180,0.15)] transition-all duration-300 flex flex-col items-center"
               >
                 <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">
-                  <Icon className="w-14 h-14 text-green-400" />
+                  <Icon
+                    className="w-14 h-14 text-gray-300
+"
+                  />
                 </div>
 
-                <h3 className="text-2xl font-semibold mb-3 text-white group-hover:text-green-400 transition-colors duration-300">
+                <h3
+                  className="text-2xl font-semibold mb-3 text-white group-hover:text-gray-300
+                  transition-colors duration-300"
+                >
                   {service.title}
                 </h3>
 
@@ -109,7 +123,9 @@ export default function Services() {
 
                 <NavLink
                   to={service.link}
-                  className="bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+                 className="bg-[#9CA3AF] hover:bg-[#E5E7EB] text-white hover:text-[#0D1117]
+px-8 py-2 rounded-lg font-medium shadow-md shadow-gray-800/30 hover:shadow-gray-600/40 transition-all duration-300"
+
                 >
                   {t("services.learnMore")}
                 </NavLink>

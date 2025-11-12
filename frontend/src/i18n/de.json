@@ -8,8 +8,8 @@
   },
 
   "hero": {
-    "title": "Ihr IT- und Hardware-Partner in Berlin",
-    "subtitle": "Freiberufliche IT-Dienste · Webdesign · Hardware-Vertrieb und Support",
+  "title": "Intelligente IT. Zuverlässige Hardware. Ein vertrauensvoller Partner.",
+  "subtitle": "IT-Beratung · Webentwicklung · Hardware-Beschaffung & Support",
     "quoteButton": "Angebot anfordern",
     "servicesButton": "Unsere Leistungen"
   },
@@ -39,11 +39,12 @@
     "subtitle": "Erfahren Sie mehr über unser Unternehmen, unsere Dienstleistungen und wie wir Ihr digitales Wachstum unterstützen können.",
     "about": {
       "title": "Über uns",
-      "desc": "Erfahren Sie, wer wir sind, was uns antreibt und wie wir jedem Projekt Mehrwert verleihen."
+    "desc": "Erfahren Sie, wer wir sind, was uns antreibt und wie wir in jedem Projekt echten Mehrwert schaffen."
     },
     "services": {
       "title": "Unsere Leistungen",
-      "desc": "Entdecken Sie unsere professionellen IT-, Webentwicklungs- und Hardwarelösungen, die auf Ihr Unternehmen zugeschnitten sind."
+         "desc": "Entdecken Sie unsere maßgeschneiderten IT-, Webentwicklungs- und Hardwarelösungen für Ihr Unternehmen."
+
     },
     "contact": {
       "title": "Kontakt",
@@ -206,22 +207,22 @@
 ,
   "about": {
     "title": "Über uns",
-    "subtitle": "Wir stärken Unternehmen mit innovativen IT-Lösungen und zuverlässigen Hardware-Diensten – bereit für die Zukunft.",
+    "subtitle": "Wir fördern digitale Innovation mit präzisionsgefertigten IT- und Hardwarelösungen – entwickelt, gebaut und betreut von AQBITZ in Berlin.",
     "company": {
-      "title": "Über AZ Hardware & Software Solutions",
-      "desc": "AZ Hardware & Software Solutions mit Sitz in Berlin bietet umfassende IT-, Web- und Hardware-Dienstleistungen, die kleinen und mittleren Unternehmen helfen, in der digitalen Ära erfolgreich zu sein. Wir verbinden Technologie, Kreativität und Präzision, um zuverlässige Systeme zu liefern, die effizient, sicher und langlebig sind."
+      "title": "Über AQBITZ — IT & Hardware Solutions by AZ",
+      "desc": "Mit Sitz in Berlin bietet AQBITZ umfassende IT-, Web- und Hardware-Dienstleistungen für kleine und mittelständische Unternehmen in ganz Europa.Wir verbinden Technologie, Leistung und Design, um zuverlässige, sichere und skalierbare Systeme zu schaffen, die unseren Kunden helfen, intelligenter zu arbeiten und nachhaltig zu wachsen.Unser Team kombiniert fundiertes technisches Know-how mit einem starken Fokus auf Qualität und Transparenz – für IT-Infrastrukturen und digitale Erlebnisse mit messbaren Ergebnissen. "
     },
     "vision": {
       "title": "Unsere Vision",
-      "desc": "Einer der vertrauenswürdigsten und zukunftsorientiertesten Anbieter für IT- und Hardware-Lösungen in Berlin zu werden – um die digitale Transformation zu fördern und Unternehmen zu befähigen, intelligenter, schneller und nachhaltiger zu arbeiten."
+      "desc": "Wir wollen Zuverlässigkeit und Innovation im Bereich IT und Hardware neu definieren.Unser Ziel ist es, Berlins vertrauenswürdigster Technologiepartner zu sein – durch intelligente Systeme, Automatisierung und moderne Sicherheitsarchitekturen die digitale Transformation voranzutreiben.Bei AQBITZ glauben wir: Technologie soll das Geschäft vereinfachen – nicht verkomplizieren."
     },
     "mission": {
       "title": "Unsere Mission",
-      "desc": "Bereitstellung hochwertiger, effizienter und zukunftssicherer Technologie- und Hardware-Dienstleistungen – mit Transparenz, Innovation und langfristigem Mehrwert für jeden Kunden. Unser Ziel ist es, Technologie einfacher, zugänglicher und wirklich unterstützend für das Unternehmenswachstum zu machen."
+      "desc": "Wir liefern leistungsstarke IT-Infrastrukturen, maßgeschneiderte Software und Hardware-Integration, die moderne Unternehmen stärken.Mit Ingenieurspräzision, kreativer Lösungsfindung und langfristiger Unterstützung stellen wir sicher, dass jedes Projekt reibungslos läuft – von der Planung bis zur Umsetzung und darüber hinaus.Unsere Mission ist einfach: Technologie, die funktioniert – Partnerschaften, die bestehen."
     },
     "cta": {
-      "title": "Lassen Sie uns gemeinsam Großes schaffen",
-      "desc": "Ob IT-Support, Webentwicklung oder komplette Hardware-Integration – AZ Hardware & Software Solutions hilft Ihnen, Ihre Ideen in zuverlässige, moderne und skalierbare Lösungen umzusetzen.",
+      "title": "Gemeinsam Großes schaffen",
+      "desc": "Ob IT-Support, Netzwerkarchitektur, Hardware-Wartung oder Webentwicklung .AQBITZ ist Ihr verlässlicher Partner für Leistung, Sicherheit und Wachstum.",
       "button": "Kontakt aufnehmen"
     }
   },

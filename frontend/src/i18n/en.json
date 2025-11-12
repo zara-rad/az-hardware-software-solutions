@@ -8,8 +8,8 @@
   },
   
   "hero": {
-    "title": "Your One-Stop IT & Hardware Partner in Berlin",
-    "subtitle": "Freelance IT Services · Web Design · Hardware Sales Support",
+  "title": "Smart IT. Reliable Hardware. One Trusted Partner.",
+  "subtitle": "IT Consulting · Web Development · Hardware Procurement & Support",
     "quoteButton": "Get a Quote",
     "servicesButton": "View Services"
   },
@@ -36,14 +36,14 @@
 
   "overview": {
     "title": "Explore More",
-    "subtitle": "Learn more about our company, services, and how we can support your digital growth.",
+    "subtitle": "Learn more about our company, services, and how we empower your digital transformation.",
     "about": {
       "title": "About Us",
-      "desc": "Discover who we are, what drives us, and how we bring value to every project."
+      "desc": "Discover who we are, what drives us, and how we deliver value through every project."
     },
     "services": {
       "title": "Our Services",
-      "desc": "Explore our professional IT, web development, and hardware solutions tailored to your business."
+      "desc": "Explore our tailored IT, web development, and hardware solutions designed for your business."
     },
     "contact": {
       "title": "Contact",
@@ -205,23 +205,23 @@
 ,
   "about": {
     "title": "About Us",
-    "subtitle": "Empowering businesses with cutting-edge IT solutions and reliable hardware services — built for the future.",
+    "subtitle": "Empowering digital innovation with precision-engineered IT and hardware solutions — designed, built, and maintained by AQBITZ in Berlin.",
     "company": {
-      "title": "About AZ Hardware & Software Solutions",
-      "desc": "Based in Berlin, AZ Hardware & Software Solutions provides complete IT, web, and hardware services designed to help small and medium-sized businesses thrive in the digital era. We combine technology, creativity, and precision to deliver reliable systems that are efficient, secure, and built to last."
+      "title": "About AQBITZ — IT & Hardware Solutions by AZ",
+      "desc": "Based in Berlin, AQBITZ provides complete IT, web, and hardware services tailored to small and medium-sized businesses across Europe.We integrate technology, performance, and design to create reliable, secure, and scalable systems that help our clients operate smarter and grow sustainably.Our team combines deep technical expertise with a commitment to quality and transparency — delivering both enterprise-level infrastructure and modern digital experiences with measurable results."
     },
     "vision": {
       "title": "Our Vision",
-      "desc": "To become one of Berlin’s most trusted and forward-thinking IT and hardware solution providers — empowering digital transformation and enabling businesses to operate smarter, faster, and more sustainably."
+      "desc": "To redefine reliability and innovation in IT and hardware services.We aim to be Berlin’s most trusted technology partner, empowering digital transformation through intelligent systems, automation, and advanced security architectures.At AQBITZ, we believe technology should simplify business — not complicate it."
     },
     "mission": {
       "title": "Our Mission",
-      "desc": "To deliver high-quality, efficient, and future-ready technology services and hardware — combining transparency, innovation, and long-term value for every client. We aim to make technology simpler, more accessible, and truly supportive of business growth."
+      "desc": "To deliver high-performance IT infrastructure, custom software, and hardware integration that empower modern organizations.We combine engineering precision, creative problem-solving, and long-term support to ensure every project runs smoothly — from planning to deployment and beyond.Our mission is simple: Technology that works, partnerships that last."
     },
     "cta": {
       "title": "Let’s Build Something Great Together",
-      "desc": "Whether you need IT support, web development, or complete hardware integration — AZ Hardware & Software Solutions is ready to help you turn your ideas into reliable, modern, and scalable results.",
-      "button": "Contact Us"
+      "desc": "Whether you need reliable IT support, network architecture, hardware maintenance, or custom web development,AQBITZ is your trusted partner for performance, security, and growth.",
+      "button": "Contact AQBITZ"
     }
  
 },

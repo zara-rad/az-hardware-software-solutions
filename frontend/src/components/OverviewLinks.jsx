@@ -8,19 +8,34 @@ export default function OverviewLinks() {
 
   const links = [
     {
-      icon: <User className="w-10 h-10 text-green-400 mb-3" />,
+      icon: (
+        <User
+          className="w-10 h-10 text-text-gray-300
+ mb-3"
+        />
+      ),
       title: t("overview.about.title"),
       desc: t("overview.about.desc"),
       to: "/about",
     },
     {
-      icon: <Wrench className="w-10 h-10 text-green-400 mb-3" />,
+      icon: (
+        <Wrench
+          className="w-10 h-10 text-text-gray-300
+ mb-3"
+        />
+      ),
       title: t("overview.services.title"),
       desc: t("overview.services.desc"),
       to: "/services",
     },
     {
-      icon: <Mail className="w-10 h-10 text-green-400 mb-3" />,
+      icon: (
+        <Mail
+          className="w-10 h-10 text-text-gray-300
+ mb-3"
+        />
+      ),
       title: t("overview.contact.title"),
       desc: t("overview.contact.desc"),
       to: "/contact",
@@ -32,7 +47,8 @@ export default function OverviewLinks() {
       {/* 🔹 Header */}
       <div className="relative z-10 max-w-6xl mx-auto text-center mb-16">
         <motion.h2
-          className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-cyan-300 to-green-500 drop-shadow-[0_0_15px_rgba(0,255,180,0.3)]"
+          className="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-gray-100 to-gray-400 drop-shadow-[0_0_12px_rgba(200,200,200,0.25)]
+"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -62,7 +78,9 @@ export default function OverviewLinks() {
           >
             <Link
               to={item.to}
-              className="group block p-10 rounded-2xl border border-gray-800 bg-[#121a24]/80 backdrop-blur-sm hover:border-green-400 hover:shadow-[0_0_20px_rgba(0,255,180,0.2)] transition-all duration-300 text-center"
+              className="group block p-10 rounded-2xl border-2 border-gray-800 bg-[#0f1620]/80
+              backdrop-blur-sm hover:border-gray-400 hover:shadow-[0_0_20px_rgba(200,200,200,0.15)]
+              transition-all duration-300 text-center"
             >
               <motion.div
                 className="transition-transform duration-300 group-hover:scale-110"
@@ -70,7 +88,7 @@ export default function OverviewLinks() {
               >
                 {item.icon}
               </motion.div>
-              <h3 className="text-2xl font-semibold mb-3 mt-4 text-white group-hover:text-green-400 transition-colors duration-300">
+              <h3 className="text-2xl font-semibold mb-3 mt-4 text-white group-hover:text-gray-400 transition-colors duration-300">
                 {item.title}
               </h3>
               <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
@@ -83,10 +101,3 @@ export default function OverviewLinks() {
     </section>
   );
 }
-
-
-
-
-
-
-

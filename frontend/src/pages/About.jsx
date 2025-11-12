@@ -49,8 +49,8 @@ export default function About() {
       <section className="relative z-10 text-center py-28 px-6">
         <motion.h1
           className="text-4xl md:text-5xl font-extrabold mb-4 
-          bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent 
-          drop-shadow-[0_0_25px_rgba(0,255,180,0.3)]"
+          bg-gradient-to-r from-gray-200 to-gray-400 bg-clip-text text-transparent 
+          drop-shadow-[0_0_25px_rgba(200,200,200,0.3)]"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -79,10 +79,10 @@ export default function About() {
           whileHover={{ scale: 1.03 }}
           className="bg-[#121a24]/80 backdrop-blur-md border border-gray-800 
           hover:border-transparent hover:bg-[#141c26]/90 rounded-2xl p-8 md:p-10 text-center 
-          shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:shadow-[0_0_35px_rgba(0,255,180,0.2)] 
+          shadow-[0_0_30px_rgba(0,0,0,0.3)] hover:shadow-[0_0_35px_rgba(180,180,180,0.25)] 
           transition-all duration-300 hover:bg-gradient-to-br hover:from-[#0f1620]/80 hover:to-[#12212f]/80"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-green-400 mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-300 mb-4">
             {t("about.company.title")}
           </h2>
           <p className="text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -100,10 +100,10 @@ export default function About() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#121a24]/80 backdrop-blur-md border border-gray-800 
             hover:border-transparent hover:bg-[#141c26]/90 rounded-2xl p-8 
-            shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] 
+            shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(200,200,200,0.25)] 
             transition-all duration-300 hover:bg-gradient-to-br hover:from-[#0f1620]/80 hover:to-[#12212f]/80"
           >
-            <h3 className="text-xl font-semibold text-cyan-400 mb-3">
+            <h3 className="text-xl font-semibold text-gray-300 mb-3">
               {t("about.vision.title")}
             </h3>
             <p className="text-gray-300 leading-relaxed">
@@ -119,10 +119,10 @@ export default function About() {
             whileHover={{ scale: 1.05 }}
             className="bg-[#121a24]/80 backdrop-blur-md border border-gray-800 
             hover:border-transparent hover:bg-[#141c26]/90 rounded-2xl p-8 
-            shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] 
+            shadow-[0_0_20px_rgba(0,0,0,0.3)] hover:shadow-[0_0_25px_rgba(200,200,200,0.25)] 
             transition-all duration-300 hover:bg-gradient-to-br hover:from-[#0f1620]/80 hover:to-[#12212f]/80"
           >
-            <h3 className="text-xl font-semibold text-cyan-400 mb-3">
+            <h3 className="text-xl font-semibold text-gray-300 mb-3">
               {t("about.mission.title")}
             </h3>
             <p className="text-gray-300 leading-relaxed">
@@ -138,7 +138,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-green-400">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-300">
             {t("about.cta.title")}
           </h2>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
@@ -146,9 +146,9 @@ export default function About() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 
-            hover:from-green-400 hover:to-cyan-400 text-white px-8 py-3 rounded-lg 
-            font-semibold shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+            className="inline-block bg-gradient-to-r from-gray-600 to-gray-400 
+  hover:from-gray-500 hover:to-gray-300 text-white px-8 py-3 rounded-lg 
+  font-semibold shadow-lg shadow-gray-900/30 hover:shadow-gray-700/40 transition-all duration-300"
           >
             {t("about.cta.button")}
           </a>
