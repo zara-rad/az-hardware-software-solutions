@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
@@ -81,7 +87,10 @@ export default function ContactForm() {
   return (
     <motion.form
       onSubmit={handleSubmit}
-      className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl shadow-[0_0_20px_rgba(0,0,0,0.4)] p-8 border border-gray-800 hover:shadow-[0_0_20px_rgba(34,197,94,0.2)] transition-all duration-300 space-y-6"
+     className="bg-[#161b22]/80 backdrop-blur-md rounded-2xl p-8 border border-gray-800 
+shadow-[0_0_30px_rgba(0,0,0,0.45)] hover:border-gray-400 
+transition-all duration-300 space-y-6"
+
       initial={{ opacity: 0, x: -40 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
@@ -120,19 +129,30 @@ export default function ContactForm() {
         <label className="block text-sm font-medium mb-2 text-gray-300">
           {t("contact.form.service")}
         </label>
-        <select
-          name="service"
-          value={formData.service}
-          onChange={handleChange}
-          required
-          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200"
-        >
-          <option value="">{t("contact.form.select.default")}</option>
-          <option>{t("contact.form.select.it")}</option>
-          <option>{t("contact.form.select.web")}</option>
-          <option>{t("contact.form.select.hardware")}</option>
-          <option>{t("contact.form.select.shop")}</option> {/* ✅ New Option */}
-        </select>
+       <div className="relative">
+  <select
+    name="service"
+    value={formData.service}
+    onChange={handleChange}
+    required
+    className="w-full p-3 rounded-lg bg-[#161b22] border border-gray-700 text-gray-300
+    appearance-none focus:outline-none 
+    focus:ring-1 focus:ring-gray-500 focus:border-gray-500
+    [&>option]:bg-[#161b22] [&>option]:text-gray-300"
+  >
+    <option value="">{t("contact.form.select.default")}</option>
+    <option>{t("contact.form.select.it")}</option>
+    <option>{t("contact.form.select.web")}</option>
+    <option>{t("contact.form.select.hardware")}</option>
+    <option>{t("contact.form.select.shop")}</option>
+  </select>
+
+  {/* 🔻 فلش سفارشی مثل عکس ۲ */}
+  <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+    ▼
+  </span>
+</div>
+
       </div>
 
       <InputField
@@ -173,8 +193,8 @@ export default function ContactForm() {
         className={`w-full py-3 rounded-lg font-semibold ${
           loading
             ? "bg-gray-600 cursor-not-allowed"
-            : "bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400"
-        } text-white shadow-lg transition-all duration-300`}
+            : "bg-gradient-to-r from-gray-300 to-gray-500 hover:from-gray-300 hover:to-gray-400"
+        } text-black shadow-lg transition-all duration-300`}
       >
         {loading
           ? t("contact.form.button.sending")
@@ -209,7 +229,7 @@ function InputField({
           rows="5"
           required={required}
           placeholder={placeholder}
-          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 resize-none focus:outline-none focus:ring-1 focus:ring-green-500"
+          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 resize-none focus:outline-none focus:ring-1 focus:ring-gray-500"
         ></textarea>
       ) : (
         <input
@@ -219,7 +239,7 @@ function InputField({
           onChange={onChange}
           required={required}
           placeholder={placeholder}
-          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-green-500"
+          className="w-full p-3 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 placeholder-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-500"
         />
       )}
     </div>

@@ -33,9 +33,8 @@ export default function ContactLayout() {
           transition={{ duration: 1 }}
         >
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 pb-2 md:pb-3 
-            bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text 
-            drop-shadow-[0_0_15px_rgba(0,255,180,0.3)] leading-snug md:leading-normal"
+            className="mt-8 text-4xl md:text-5xl font-extrabold text-center mb-12 
+  bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text"
           >
             {t("contact.layout.title")}
           </h1>

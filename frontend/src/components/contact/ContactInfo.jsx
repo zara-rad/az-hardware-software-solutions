@@ -24,15 +24,15 @@ export default function ContactInfo() {
 
       <div className="space-y-4 text-gray-300">
         <div className="flex items-center gap-3">
-          <MapPin className="text-green-400" />
+          <MapPin className="text-gray-200" />
           <span>{t("contact.info.address")}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Phone className="text-green-400" />
+          <Phone className="text-gray-200" />
           <span>{t("contact.info.phone")}</span>
         </div>
         <div className="flex items-center gap-3">
-          <Mail className="text-green-400" />
+          <Mail className="text-gray-200" />
           <span>{t("contact.info.email")}</span>
         </div>
       </div>

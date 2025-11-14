@@ -100,7 +100,7 @@ export default function Services() {
                 transition={{ delay: i * 0.15, duration: 0.6 }}
                 whileHover={{ scale: 1.03 }}
                 className="group p-10 rounded-2xl bg-[#0d1117]/85
-                 border border-gray-800 hover:border-gray-400 hover:shadow-[0_0_25px_rgba(200,200,200,0.15)]
+                 border-2 border-gray-800 hover:border-gray-400 hover:shadow-[0_0_25px_rgba(200,200,200,0.15)]
                 hover:shadow-[0_0_25px_rgba(0,255,180,0.15)] transition-all duration-300 flex flex-col items-center"
               >
                 <div className="mb-4 transform transition-transform duration-300 group-hover:scale-110">
