@@ -7,7 +7,7 @@ export default function ContactInfo() {
 
   return (
     <motion.div
-      className="flex flex-col justify-center bg-[#161b22]/80 backdrop-blur-md rounded-2xl border border-gray-800 p-8 shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_20px_rgba(0,255,180,0.2)] transition-all duration-300 space-y-6"
+      className="flex flex-col justify-center bg-[#161b22]/80 backdrop-blur-md rounded-2xl border-gray-800 p-8 shadow-[0_0_20px_rgba(0,0,0,0.4)] hover:shadow-[0_0_20px_rgba(200,200,200,0.3)] transition-all duration-300 space-y-6"
       initial={{ opacity: 0, x: 40 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
