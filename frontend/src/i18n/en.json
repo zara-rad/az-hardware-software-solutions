@@ -21,15 +21,15 @@
     "items": {
       "it": {
         "title": "IT Services",
-        "desc": "Expert system administration, secure network configuration, and dedicated IT support for your business."
+        "desc": "Comprehensive system administration, secure network architecture, and reliable IT support — ensuring your business operates smoothly and securely."
       },
       "web": {
         "title": "Web & Software Development",
-        "desc": "Custom-built websites, ERP platforms, and tailored software designed to power your digital presence."
+        "desc": "Modern, scalable, and custom-built websites and software platforms — engineered to elevate your digital presence and automate your business workflows."
       },
       "hardware": {
         "title": "Hardware Solutions",
-        "desc": "Reliable device sourcing, professional installation, and full-cycle maintenance for all your hardware needs."
+        "desc": "End-to-end hardware procurement, professional installation, and lifecycle maintenance — delivering reliable performance across your entire infrastructure. "
       }
     }
   },
@@ -132,11 +132,12 @@
     },
     "serverAdmin": {
       "title": "Server & System Administration",
-      "subtitle": "Setup, optimization, and maintenance of reliable and secure servers.",
-      "desc1": "Our server administration services ensure your business systems run efficiently and securely. From setup to ongoing maintenance, we manage everything so you can focus on growth.",
-      "point1": "Server installation & optimization (Linux / Windows)",
-      "point2": "Active Directory, DNS, DHCP management",
-      "point3": "Backup, monitoring, and virtualization setup",
+  "subtitle": "Reliable setup, optimization, and ongoing management of secure business servers.",
+       "desc1": "We ensure your servers run at peak performance — stable, secure, and fully optimized for your daily operations. From initial deployment to continuous monitoring and maintenance, we take care of everything so you can focus on your business.",
+
+  "point1": "Professional server installation & optimization (Linux / Windows)",
+  "point2": "Active Directory, DNS, and DHCP configuration & management",
+  "point3": "Backup solutions, system monitoring, and virtualization setup",
       "back": "Back to IT Services"
     }
   },

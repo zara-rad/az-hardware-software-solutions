@@ -16,20 +16,20 @@
 
   "services": {
     "title": "Unsere Leistungen",
-    "subtitle": "Komplette IT-, Web- und Hardwarelösungen – entwickelt für Leistung und Wachstum.",
+  "subtitle": "Umfassende IT-, Web- und Hardwarelösungen — entwickelt für Leistung und nachhaltiges Wachstum.",
     "learnMore": "Mehr erfahren",
     "items": {
       "it": {
         "title": "IT-Dienstleistungen",
-        "desc": "Professionelle Systemadministration, sichere Netzwerkkonfiguration und engagierter IT-Support für Ihr Unternehmen."
+      "desc": "Umfassende Systemadministration, sichere Netzwerkarchitektur und zuverlässiger IT-Support — damit Ihr Unternehmen stabil und sicher arbeitet."
       },
       "web": {
         "title": "Web- & Softwareentwicklung",
-        "desc": "Individuelle Websites, ERP-Plattformen und maßgeschneiderte Software für Ihre digitale Präsenz."
+      "desc": "Moderne, skalierbare und individuell entwickelte Websites und Softwareplattformen — entwickelt, um Ihre digitale Präsenz zu stärken und Geschäftsabläufe zu automatisieren."
       },
       "hardware": {
         "title": "Hardwarelösungen",
-        "desc": "Zuverlässige Gerätebeschaffung, professionelle Installation und vollständiger Wartungsservice."
+      "desc": "Ganzheitliche Hardwarebeschaffung, professionelle Installation und vollständige Lifecycle-Wartung — für zuverlässige Performance Ihrer gesamten IT-Infrastruktur."
       }
     }
   },
@@ -133,11 +133,11 @@
     },
     "serverAdmin": {
       "title": "Server- und Systemadministration",
-      "subtitle": "Einrichtung, Optimierung und Wartung zuverlässiger und sicherer Server.",
-      "desc1": "Unsere Serververwaltungsdienste sorgen dafür, dass Ihre Geschäftssysteme effizient und sicher laufen. Von der Einrichtung bis zur laufenden Wartung kümmern wir uns um alles, damit Sie sich auf Ihr Wachstum konzentrieren können.",
-      "point1": "Serverinstallation und -optimierung (Linux / Windows)",
-      "point2": "Active Directory-, DNS- und DHCP-Verwaltung",
-      "point3": "Backup-, Überwachungs- und Virtualisierungseinrichtung",
+  "subtitle": "Zuverlässige Einrichtung, Optimierung und laufende Betreuung Ihrer sicheren Unternehmensserver.",
+  "desc1": "Wir stellen sicher, dass Ihre Server stets stabil, sicher und leistungsoptimiert laufen. Von der Erstinstallation bis zur kontinuierlichen Überwachung und Wartung übernehmen wir alles – damit Sie sich vollständig auf Ihr Kerngeschäft konzentrieren können.",
+  "point1": "Professionelle Serverinstallation und -optimierung (Linux / Windows)",
+  "point2": "Konfiguration und Verwaltung von Active Directory, DNS und DHCP",
+  "point3": "Backup-Lösungen, Systemüberwachung und Virtualisierungseinrichtung",
       "back": "Zurück zu IT-Dienstleistungen"
     }
   },

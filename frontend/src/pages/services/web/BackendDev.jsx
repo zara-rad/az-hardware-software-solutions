@@ -20,12 +20,12 @@ export default function BackendDev() {
 
       {/* 🔹 Hero Section */}
       <section className="relative z-10 flex flex-col items-center justify-center text-center h-[40vh] min-h-[300px] px-6">
-        <Database className="w-16 h-16 text-green-400 mb-4" />
+        <Database className="w-16 h-16 text-gray-400 mb-4" />
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-gray-400 to-gray-400 text-transparent bg-clip-text"
         >
           {t("web.backend.title")}
         </motion.h1>
@@ -56,7 +56,7 @@ export default function BackendDev() {
           <div className="pt-6">
             <Link
               to="/services/web"
-              className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-400 transition-all"
             >
               <ArrowLeft className="w-5 h-5" /> {t("web.backend.back")}
             </Link>
@@ -74,7 +74,7 @@ export default function BackendDev() {
           <img
             src="/images/services/backend.jpg"
             alt="Backend architecture workspace"
-            className="rounded-2xl shadow-[0_0_30px_rgba(0,255,180,0.1)] object-cover w-full h-[350px] md:h-[420px]"
+            className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
           />
         </motion.div>
       </main>

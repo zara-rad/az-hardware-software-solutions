@@ -8,19 +8,19 @@ export default function WebDevelopment() {
 
   const services = [
     {
-      icon: <Layout className="w-14 h-14 text-green-400 mb-3" />,
+      icon: <Layout className="w-14 h-14 text-gray-400 mb-3" />,
       title: t("web.overview.frontendTitle"),
       text: t("web.overview.frontendText"),
       link: "/services/web/frontend",
     },
     {
-      icon: <Database className="w-14 h-14 text-green-400 mb-3" />,
+      icon: <Database className="w-14 h-14 text-gray-400 mb-3" />,
       title: t("web.overview.backendTitle"),
       text: t("web.overview.backendText"),
       link: "/services/web/backend",
     },
     {
-      icon: <Code2 className="w-14 h-14 text-green-400 mb-3" />,
+      icon: <Code2 className="w-14 h-14 text-gray-400 mb-3" />,
       title: t("web.overview.fullstackTitle"),
       text: t("web.overview.fullstackText"),
       link: "/services/web/fullstack",
@@ -52,12 +52,12 @@ export default function WebDevelopment() {
 
       {/* 🔹 Hero Section */}
       <section className="relative z-10 flex flex-col items-center justify-center text-center h-[45vh] min-h-[320px] px-6">
-        <Code2 className="w-16 h-16 text-green-400 mb-4" />
+        <Code2 className="w-16 h-16 text-gray-400 mb-4" />
         <motion.h1
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]"
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(200,200,200,0.15)]"
         >
           {t("web.overview.title")}
         </motion.h1>
@@ -75,7 +75,7 @@ export default function WebDevelopment() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 mb-8">
         <Link
           to="/services"
-          className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-400 transition-all"
         >
           <ArrowLeft className="w-5 h-5" /> {t("web.overview.back")}
         </Link>
@@ -91,14 +91,14 @@ export default function WebDevelopment() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
-              className="bg-[#0b121a]/70 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 hover:border-green-400 hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300"
+              className="bg-[#0b121a]/70 backdrop-blur-lg p-8 rounded-2xl border-2 border-gray-800 hover:border-gray-400 hover:shadow-[0_0_25px_rgba(200,200,200,0.15)] transition-all duration-300"
             >
               {s.icon}
               <h3 className="text-xl font-semibold mb-2 text-white">{s.title}</h3>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">{s.text}</p>
               <Link
                 to={s.link}
-                className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-6 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+                className="inline-block bg-gradient-to-r from-gray-500 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-white px-6 py-2 rounded-lg font-medium shadow-md shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
               >
                 {t("web.overview.learnMore")}
               </Link>
@@ -113,13 +113,13 @@ export default function WebDevelopment() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-2xl font-bold mb-4 text-green-400">
+          <h2 className="text-2xl font-bold mb-4 text-gray-400">
             {t("web.overview.ctaTitle")}
           </h2>
           <p className="text-gray-300 mb-6">{t("web.overview.ctaDesc")}</p>
           <a
             href="/contact"
-            className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+            className="inline-block bg-gradient-to-r from-gray-500 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
           >
             {t("web.overview.ctaButton")}
           </a>

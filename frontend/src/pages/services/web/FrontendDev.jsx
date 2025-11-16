@@ -20,12 +20,12 @@ export default function FrontendDev() {
 
       {/* 🔹 Hero Section */}
       <section className="relative z-10 flex flex-col items-center justify-center text-center h-[40vh] min-h-[300px] px-6">
-        <Layout className="w-16 h-16 text-green-400 mb-4" />
+        <Layout className="w-16 h-16 text-gray-400 mb-4" />
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text"
+          className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text"
         >
           {t("web.frontend.title")}
         </motion.h1>
@@ -56,7 +56,7 @@ export default function FrontendDev() {
           <div className="pt-6">
             <Link
               to="/services/web"
-              className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-400 transition-all"
             >
               <ArrowLeft className="w-5 h-5" /> {t("web.frontend.back")}
             </Link>
@@ -74,7 +74,7 @@ export default function FrontendDev() {
           <img
             src="/images/services/frontend.jpg"
             alt="Frontend workspace"
-            className="rounded-2xl shadow-[0_0_30px_rgba(0,255,180,0.1)] object-cover w-full h-[350px] md:h-[420px]"
+            className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
           />
         </motion.div>
       </main>
@@ -86,13 +86,13 @@ export default function FrontendDev() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-2xl font-bold mb-4 text-green-400">
+        <h2 className="text-2xl font-bold mb-4 text-gray-400">
           {t("web.frontend.ctaTitle")}
         </h2>
         <p className="text-gray-400 mb-6">{t("web.frontend.ctaDesc")}</p>
         <a
           href="/contact"
-          className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+          className="inline-block bg-gradient-to-r from-gray-500 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
         >
           {t("web.frontend.ctaButton")}
         </a>

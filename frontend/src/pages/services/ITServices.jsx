@@ -8,19 +8,19 @@ export default function ITServices() {
 
   const services = [
     {
-      icon: <Server className="w-14 h-14 text-green-400 mb-3" />,
+      icon: <Server className="w-14 h-14 text-gray-500 mb-3" />,
       title: t("it.serverAdmin.title"),
       text: t("it.serverAdmin.subtitle"),
       link: "/services/it/server",
     },
     {
-      icon: <Network className="w-14 h-14 text-green-400 mb-3" />,
+      icon: <Network className="w-14 h-14 text-gray-400 mb-3" />,
       title: t("it.networkSetup.title"),
       text: t("it.networkSetup.subtitle"),
       link: "/services/it/network",
     },
     {
-      icon: <ShieldCheck className="w-14 h-14 text-green-400 mb-3" />,
+      icon: <ShieldCheck className="w-14 h-14 text-gray-400 mb-3" />,
       title: t("it.itSupport.title"),
       text: t("it.itSupport.subtitle"),
       link: "/services/it/support",
@@ -52,14 +52,16 @@ export default function ITServices() {
 
       {/* 🔹 Hero Section */}
       <section className="relative z-10 flex flex-col items-center justify-center text-center h-[45vh] min-h-[320px] px-6">
-        <motion.h1
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-3 bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_10px_rgba(34,197,94,0.4)]"
-        >
-          {t("services.items.it.title")}
-        </motion.h1>
+       <motion.h1
+  className="text-4xl md:text-5xl lg:text-6xl font-extrabold 
+  pb-2    /* ← این مشکل g رو 100% حل می‌کنه */
+  mb-3
+  bg-gradient-to-r from-gray-200 to-gray-400
+  text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(200,200,200,0.15)]"
+>
+  {t("services.items.it.title")}
+</motion.h1>
+
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -75,7 +77,7 @@ export default function ITServices() {
       <div className="relative z-10 max-w-6xl mx-auto px-6 mb-8">
         <Link
           to="/services"
-          className="inline-flex items-center gap-2 text-green-400 hover:text-cyan-400 transition-all"
+          className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-400 transition-all"
         >
           <ArrowLeft className="w-5 h-5" /> {t("hardware.overview.back")}
         </Link>
@@ -86,13 +88,47 @@ export default function ITServices() {
         {/* Service Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {services.map((s, i) => (
+  <motion.div
+    key={i}
+    initial={{ opacity: 0, y: 40 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: i * 0.2, duration: 0.8 }}
+    className="bg-[#0b121a]/70 backdrop-blur-lg p-8 rounded-2xl 
+    border-2 border-gray-800 hover:border-gray-400 
+    hover:shadow-[0_0_25px_rgba(200,200,200,0.15)]
+    transition-all duration-300 flex flex-col h-full"
+  >
+    {s.icon}
+
+    <h3 className="text-xl font-semibold mb-2 text-white">
+      {s.title}
+    </h3>
+
+    <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
+      {s.text}
+    </p>
+
+    <Link
+      to={s.link}
+      className="mt-auto inline-block bg-gradient-to-r from-gray-300 to-gray-500 
+      hover:from-gray-400 hover:to-gray-400 text-black px-6 py-2 
+      rounded-md text-sm font-medium shadow-md shadow-gray-900/30 
+      hover:shadow-gray-700/40 transition-all"
+    >
+      {t("hardware.overview.learnMore")}
+    </Link>
+  </motion.div>
+))}
+
+          {/* {services.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.8 }}
-              className="bg-[#0b121a]/70 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 hover:border-green-400 hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300"
+              className="bg-[#0b121a]/70 backdrop-blur-lg p-8 rounded-2xl border border-gray-800 hover:border-gray-400 hover:shadow-[0_0_25px_rgba(0,255,180,0.2)] transition-all duration-300"
             >
               {s.icon}
               <h3 className="text-xl font-semibold mb-2 text-white">{s.title}</h3>
@@ -100,12 +136,12 @@ export default function ITServices() {
 
               <Link
                 to={s.link}
-                className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-2 rounded-lg font-medium shadow-md shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+                className="inline-block bg-gradient-to-r from-gray-300 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-black px-8 py-2 rounded-lg font-medium shadow-md shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
               >
                 {t("hardware.overview.learnMore")}
               </Link>
             </motion.div>
-          ))}
+          ))} */}
         </div>
 
         {/* ✅ CTA Section */}
@@ -115,7 +151,7 @@ export default function ITServices() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <h2 className="text-2xl font-bold mb-4 text-green-400">
+          <h2 className="text-2xl font-bold mb-4 text-gray-400">
             {t("it.overview.ctaTitle", "Need reliable IT support?")}
           </h2>
           <p className="text-gray-300 mb-6">
@@ -126,7 +162,7 @@ export default function ITServices() {
           </p>
           <a
             href="/contact"
-            className="inline-block bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-green-900/30 hover:shadow-green-700/40 transition-all"
+            className="inline-block bg-gradient-to-r from-gray-300 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-black px-8 py-3 rounded-lg font-semibold shadow-lg shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
           >
             {t("hardware.overview.ctaButton")}
           </a>
