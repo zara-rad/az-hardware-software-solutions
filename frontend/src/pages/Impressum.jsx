@@ -19,7 +19,7 @@ export default function Impressum() {
       <main className="relative flex-grow py-24 px-6 max-w-4xl mx-auto z-10">
         {/* ===== Title ===== */}
         <motion.h1
-          className="text-4xl md:text-5xl font-extrabold mb-12 pb-2 md:pb-3 text-center bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(0,255,180,0.3)] leading-snug md:leading-normal"
+          className="text-4xl md:text-5xl font-extrabold mb-12 pb-2 md:pb-3 text-center bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(200,200,200,0.15)] leading-snug md:leading-normal"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -29,12 +29,12 @@ export default function Impressum() {
 
         {/* ===== Company Info ===== */}
         <motion.div
-          className="bg-[#161b22]/70 backdrop-blur-md border border-gray-800 rounded-2xl p-8 shadow-[0_0_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(0,255,180,0.15)] mb-12 transition-all duration-300"
+          className="bg-[#161b22]/70 backdrop-blur-md border border-gray-800 rounded-2xl p-8 shadow-[0_0_25px_rgba(200,200,200,0.15)] hover:shadow-[0_0_25px_rgba(200,200,200,0.15)] mb-12 transition-all duration-300"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 1 }}
         >
-          <h2 className="text-xl font-semibold text-green-400 mb-4">
+          <h2 className="text-xl font-semibold text-gray-400 mb-4">
             AZ Hardware & Software Solutions
           </h2>
           <p className="text-gray-300 leading-relaxed">
@@ -45,7 +45,7 @@ export default function Impressum() {
             <strong>{t("impressum.email")}</strong>{" "}
             <a
               href="mailto:info@az-hardware.de"
-              className="text-green-400 hover:underline"
+              className="text-gray-400 hover:underline"
             >
               info@az-hardware.de
             </a>{" "}
@@ -57,41 +57,41 @@ export default function Impressum() {
 
         {/* ===== Legal Sections ===== */}
         <motion.section
-          className="space-y-10 text-gray-300 leading-relaxed bg-[#161b22]/70 backdrop-blur-md border border-gray-800 rounded-2xl p-8 shadow-[0_0_25px_rgba(0,0,0,0.4)] hover:shadow-[0_0_25px_rgba(0,255,180,0.15)] transition-all duration-300"
+          className="space-y-10 text-gray-300 leading-relaxed bg-[#161b22]/70 backdrop-blur-md border border-gray-800 rounded-2xl p-8 shadow-[0_0_25px_rgba(200,200,200,0.15)] hover:shadow-[0_0_25px_rgba(200,200,200,0.15)] transition-all duration-300"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 1 }}
         >
           <div>
-            <h3 className="text-xl font-semibold mb-2 text-green-400">
+            <h3 className="text-xl font-semibold mb-2 text-gray-400">
               {t("impressum.legalTitle")}
             </h3>
             <p>{t("impressum.legalText")}</p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-2 text-green-400">
+            <h3 className="text-xl font-semibold mb-2 text-gray-400">
               {t("impressum.copyrightTitle")}
             </h3>
             <p>{t("impressum.copyrightText")}</p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-2 text-green-400">
+            <h3 className="text-xl font-semibold mb-2 text-gray-400">
               {t("impressum.linksTitle")}
             </h3>
             <p>{t("impressum.linksText")}</p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-2 text-green-400">
+            <h3 className="text-xl font-semibold mb-2 text-gray-400">
               {t("impressum.disputeTitle")}
             </h3>
             <p>
               {t("impressum.disputeText")}{" "}
               <a
                 href="https://ec.europa.eu/consumers/odr"
-                className="text-green-400 hover:underline"
+                className="text-gray-400 hover:underline"
                 target="_blank"
                 rel="noreferrer"
               >

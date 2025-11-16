@@ -35,7 +35,7 @@ export default function Footer() {
           <span
             key={item.path}
             onClick={() => handleSmoothNavigation(item.path)}
-            className="hover:text-white cursor-pointer hover:scale-[1.05] transition-all duration-200 relative after:content-[''] after:absolute after:left-0 after:-bottom-[3px] after:w-0 after:h-[2px] after:bg-cyan-400 hover:after:w-full after:transition-all after:duration-300"
+            className="hover:text-white cursor-pointer hover:scale-[1.05] transition-all duration-200 relative after:content-[''] after:absolute after:left-0 after:-bottom-[3px] after:w-0 after:h-[2px] after:bg-gray-400 hover:after:w-full after:transition-all after:duration-300"
           >
             {item.label}
           </span>

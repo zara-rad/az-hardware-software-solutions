@@ -220,7 +220,7 @@ export default function Navbar() {
   const linkClass = ({ isActive }) =>
     `relative transition-all duration-300 ${
       isActive
-        ? "text-white after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-gray-200 drop-shadow-[0_0_5px_rgba(34,211,238,0.5)]"
+        ? "text-white after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-gray-200 drop-shadow-[0_0_25px_rgba(200,200,200,0.15)]"
         : "text-gray-300 hover:text-white"
     } hover:scale-[1.08]`;
 
@@ -246,7 +246,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117]/95 backdrop-blur-sm text-white fixed w-full z-50 shadow-[0_2px_15px_rgba(0,255,180,0.05)] ${
+      className={`border-b border-gray-800 px-6 py-4 flex justify-between items-center bg-[#0d1117]/95 backdrop-blur-sm text-white fixed w-full z-50 shadow-[0_0_25px_rgba(200,200,200,0.15)] ${
         i18n.language === "fa" ? "flex-row-reverse" : ""
       }`}
     >
@@ -258,7 +258,7 @@ export default function Navbar() {
         <img
           src="/images/logo/silver.png"
           alt="AZ Hardware & Software Solutions Logo"
-          className="w-14 h-auto mr-3 drop-shadow-[0_0_6px_rgba(180,180,180,0.2)]"
+          className="w-14 h-auto mr-3 drop-shadow-[0_0_25px_rgba(200,200,200,0.15)]"
         />
         <div className="flex flex-col leading-[0.9]">
           <span className="text-xl font-light tracking-[0.2em]">
@@ -327,7 +327,7 @@ export default function Navbar() {
 
       {/* ✅ Dropdown موبایل */}
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-[#161b22]/95 backdrop-blur-sm border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300 shadow-[0_4px_20px_rgba(0,0,0,0.4)] animate-fadeIn">
+        <div className="absolute top-16 left-0 w-full bg-[#161b22]/95 backdrop-blur-sm border-t border-gray-700 flex flex-col md:hidden z-50 text-gray-300 shadow-[0_0_25px_rgba(200,200,200,0.15)] animate-fadeIn">
           {[
             { path: "/", label: t("navbar.home") },
             { path: "/services", label: t("navbar.services") },

@@ -29,7 +29,7 @@ export default function PrivacyPolicy() {
 
       <main className="relative flex-grow py-24 px-6 max-w-4xl mx-auto z-10">
         <motion.h1
-          className="text-4xl md:text-5xl font-extrabold mb-12 pb-2 md:pb-3 text-center bg-gradient-to-r from-green-400 to-cyan-400 text-transparent bg-clip-text drop-shadow-[0_0_15px_rgba(0,255,180,0.3)] leading-snug md:leading-normal"
+          className="text-4xl md:text-5xl font-extrabold mb-12 pb-2 md:pb-3 text-center bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text drop-shadow-[0_0_25px_rgba(200,200,200,0.15)] leading-snug md:leading-normal"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -38,7 +38,7 @@ export default function PrivacyPolicy() {
         </motion.h1>
 
         <motion.section
-          className="space-y-10 text-gray-300 leading-relaxed backdrop-blur-sm bg-[#161b22]/60 border border-gray-800 rounded-2xl p-8 shadow-[0_0_25px_rgba(0,0,0,0.4)]"
+          className="space-y-10 text-gray-300 leading-relaxed backdrop-blur-sm bg-[#161b22]/60 border border-gray-800 rounded-2xl p-8 shadow-[0_0_25px_rgba(200,200,200,0.15)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4, duration: 1 }}
@@ -51,7 +51,7 @@ export default function PrivacyPolicy() {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-xl font-semibold mb-2 text-green-400">
+              <h3 className="text-xl font-semibold mb-2 text-gray-400">
                 {item.title}
               </h3>
               <p className="whitespace-pre-line text-gray-300">{item.text}</p>
