@@ -22,6 +22,8 @@ i18n
     },
     interpolation: { escapeValue: false },
     react: { useSuspense: true }, // ✅ بسیار مهم!
+        partialBundledLanguages: true, // ⬅️ مهم برای جلوگیری از ارورهای عجیب
+
     debug: false, // می‌تونی true بزاری برای تست لاگ‌ها در کنسول
   });
 
