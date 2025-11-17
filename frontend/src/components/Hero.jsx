@@ -25,7 +25,7 @@ export default function Hero() {
       {/* 🔹 عنوان اصلی */}
       <motion.h1
         className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 leading-tight 
-        text-gray-100 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+        text-gray-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}

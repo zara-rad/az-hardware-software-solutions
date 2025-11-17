@@ -29,7 +29,7 @@ export default function About() {
           src="/images/about/about.jpg"
           alt="About Background"
           className="absolute inset-0 w-full h-full object-cover opacity-70 scale-105"
-          fetchpriority="high"
+          fetchPriority="high"
           loading="eager"
         />
 

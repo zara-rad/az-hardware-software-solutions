@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect } from "react";
-import { motion } from "framer-motion";
+//import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 
@@ -31,10 +31,10 @@ export default function Home() {
       <div className="relative z-10 flex-grow">
         <div className="absolute inset-0 -z-10">
           <img
-            src="/images/about/about.jpg"
+            src="/images/home/home3.png"
             alt="Data Center Background"
             className="w-full h-full object-cover opacity-75 scale-105"
-            fetchpriority="high"
+            fetchPriority="high"
           />
           {/* ✅ حذف کامل گرادیان تیره یا بلور */}
         </div>

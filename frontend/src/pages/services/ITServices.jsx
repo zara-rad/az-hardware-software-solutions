@@ -53,11 +53,11 @@ export default function ITServices() {
   return (
     <div className="relative flex flex-col text-white overflow-hidden min-h-screen bg-transparent">
       {/* 🖼️ تصویر بک‌گراند */}
-      <img
+      {/* <img
         src="/images/services/serverroom.jpg"
         alt="IT Services background"
         className="absolute inset-0 w-full h-full object-cover brightness-[0.65] contrast-[1.05] -z-30"
-      />
+      /> */}
 
       {/* 🌈 لایه گرادینت */}
       <div className="absolute inset-0 overflow-hidden -z-20">

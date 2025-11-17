@@ -55,7 +55,7 @@ export default function Services() {
             src="/images/services/bgservicess.jpg"
             alt="Modern Data Center"
             className="w-full h-full object-cover opacity-70 scale-105"
-            fetchpriority="high" // ✅ image loads first
+            fetchPriority="high" // ✅ image loads first
             loading="eager"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/70 via-[#0d1117]/50 to-[#0d1117]/90" />
