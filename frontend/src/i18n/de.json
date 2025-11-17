@@ -16,59 +16,59 @@
 
   "services": {
     "title": "Unsere Leistungen",
-  "subtitle": "Umfassende IT-, Web- und Hardwarelösungen — entwickelt für Leistung und nachhaltiges Wachstum.",
+  "subtitle": "Integrierte IT-, Web- und Hardware-Lösungen — entwickelt für Zuverlässigkeit, Effizienz und nachhaltiges Wachstum.",
     "learnMore": "Mehr erfahren",
     "items": {
       "it": {
         "title": "IT-Dienstleistungen",
-      "desc": "Umfassende Systemadministration, sichere Netzwerkarchitektur und zuverlässiger IT-Support — damit Ihr Unternehmen stabil und sicher arbeitet."
+      "desc": "Umfassender IT-Support inklusive Systemadministration, sicherer Netzwerkarchitektur, Infrastrukturüberwachung und Fehlerbehebung — für einen stabilen, sicheren und unterbrechungsfreien Geschäftsbetrieb."
       },
       "web": {
         "title": "Web- & Softwareentwicklung",
-      "desc": "Moderne, skalierbare und individuell entwickelte Websites und Softwareplattformen — entwickelt, um Ihre digitale Präsenz zu stärken und Geschäftsabläufe zu automatisieren."
+      "desc": "Individuell entwickelte, skalierbare Websites und Softwarelösungen auf Basis moderner Technologien — zur Stärkung Ihrer digitalen Präsenz, Automatisierung und Produktivität."
       },
       "hardware": {
-        "title": "Hardwarelösungen",
-      "desc": "Ganzheitliche Hardwarebeschaffung, professionelle Installation und vollständige Lifecycle-Wartung — für zuverlässige Performance Ihrer gesamten IT-Infrastruktur."
+        "title": "Hardware-Lösungen",
+      "desc": "Professionelle Beratung, Beschaffung, Installation und Lifecycle-Management von Hardwaresystemen — für maximale Leistung, Kompatibilität und langfristige Zuverlässigkeit in Ihrer gesamten Infrastruktur."
       }
     }
   },
 
   "overview": {
     "title": "Mehr entdecken",
-    "subtitle": "Erfahren Sie mehr über unser Unternehmen, unsere Dienstleistungen und wie wir Ihr digitales Wachstum unterstützen können.",
+  "subtitle": "Erfahren Sie mehr über unsere Mission, unsere Leistungen und wie wir Ihre digitale Entwicklung unterstützen.",
     "about": {
       "title": "Über uns",
-    "desc": "Erfahren Sie, wer wir sind, was uns antreibt und wie wir in jedem Projekt echten Mehrwert schaffen."
+    "desc": "Erfahren Sie mehr über unsere Vision, unsere Fachkompetenz und die Werte, die jedes unserer Projekte leiten."
     },
     "services": {
       "title": "Unsere Leistungen",
-         "desc": "Entdecken Sie unsere maßgeschneiderten IT-, Webentwicklungs- und Hardwarelösungen für Ihr Unternehmen."
+    "desc": "Entdecken Sie unsere maßgeschneiderten IT-, Web- und Hardware-Lösungen, die Ihr Unternehmen unterstützen."
 
     },
     "contact": {
       "title": "Kontakt",
-      "desc": "Kontaktieren Sie uns, um Ihr Projekt zu besprechen oder eine persönliche Beratung zu vereinbaren."
+    "desc": "Kontaktieren Sie uns, um Ihr Vorhaben zu besprechen oder eine individuelle Beratung anzufordern."
     }
   },
 
   "hardware": {
     "deviceSales": {
       "title": "Geräteverkauf",
-      "subtitle": "Leistungsstarke Laptops, PCs und IT-Komponenten für Unternehmen und Privatkunden.",
-      "desc1": "Wir beschaffen, konfigurieren und liefern zuverlässige Hardware, die genau Ihren Anforderungen entspricht.",
-      "point1": "Business-Laptops & -Desktops (Lenovo, Dell, HP usw.)",
-      "point2": "Individuell angefertigte PCs für Entwickler und Designer",
-      "point3": "Großbestellungen und B2B-Preisoptionen",
+    "subtitle": "Leistungsstarke Laptops, PCs und IT-Komponenten für Unternehmen und Privatanwender.",
+    "desc1": "Wir liefern zuverlässige, vorkonfigurierte und individuelle Hardwarelösungen, die exakt auf Ihre Anforderungen abgestimmt sind.",
+    "point1": "Business-Laptops und -Desktops (Lenovo, Dell, HP usw.)",
+    "point2": "Individuell gebaute PCs für Entwickler, Designer und Power-User",
+    "point3": "Großbestellungen, B2B-Preise und Unterstützung bei der Beschaffung",
       "back": "Zurück zu Hardwarelösungen"
     },
     "installation": {
       "title": "Installation & Einrichtung",
-      "subtitle": "Professionelle Installation und Konfiguration für Ihre gesamte IT-Ausrüstung.",
-      "desc1": "Unser Team sorgt für eine reibungslose Einrichtung Ihrer Arbeitsstationen, Netzwerke und Peripheriegeräte.",
-      "point1": "Vor-Ort-Installation und Tests",
-      "point2": "Netzwerk- und Druckerkonfiguration",
-      "point3": "Datenmigration und Betriebssysteminstallation",
+  "subtitle": "Professionelle Installation und Konfiguration Ihrer gesamten IT-Ausstattung.",
+  "desc1": "Wir sorgen für eine reibungslose Einrichtung Ihrer Arbeitsplätze, Netzwerke und Peripheriegeräte — vollständig optimiert und einsatzbereit.",
+  "point1": "Vor-Ort-Installation, Konfiguration und Funktionsprüfung",
+  "point2": "Netzwerk-, WLAN- und Druckereinrichtung",
+  "point3": "Datenmigration, Systemeinrichtung und Betriebssysteminstallation",
       "back": "Zurück zu Hardware-Lösungen"
     },
     "maintenance": {

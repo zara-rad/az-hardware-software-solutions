@@ -16,58 +16,58 @@
 
   "services": {
     "title": "Our Services",
-    "subtitle": "Complete IT, web, and hardware solutions — built for performance and growth.",
+  "subtitle": "Integrated IT, web development, and hardware solutions — designed for reliability, efficiency, and long-term growth.",
     "learnMore": "Learn More",
     "items": {
       "it": {
         "title": "IT Services",
-        "desc": "Comprehensive system administration, secure network architecture, and reliable IT support — ensuring your business operates smoothly and securely."
+      "desc": "End-to-end IT support including system administration, secure network architecture, infrastructure monitoring, and troubleshooting — ensuring stable, secure, and uninterrupted operations for your business."
       },
       "web": {
         "title": "Web & Software Development",
-        "desc": "Modern, scalable, and custom-built websites and software platforms — engineered to elevate your digital presence and automate your business workflows."
+      "desc": "Custom-built, scalable websites and software applications engineered with modern technologies — empowering your digital presence, automation, and business productivity."
       },
       "hardware": {
         "title": "Hardware Solutions",
-        "desc": "End-to-end hardware procurement, professional installation, and lifecycle maintenance — delivering reliable performance across your entire infrastructure. "
+      "desc": "Professional consulting, procurement, installation, and lifecycle management of hardware systems — delivering consistent performance, compatibility, and long-term reliability across your entire environment."
       }
     }
   },
 
   "overview": {
     "title": "Explore More",
-    "subtitle": "Learn more about our company, services, and how we empower your digital transformation.",
+  "subtitle": "Discover more about our mission, services, and how we support your digital success.",
     "about": {
       "title": "About Us",
-      "desc": "Discover who we are, what drives us, and how we deliver value through every project."
+    "desc": "Learn more about our vision, our expertise, and the values that guide every project we deliver."
     },
     "services": {
       "title": "Our Services",
-      "desc": "Explore our tailored IT, web development, and hardware solutions designed for your business."
+    "desc": "Explore our tailored IT, web development, and hardware solutions built to support your business."
     },
     "contact": {
       "title": "Contact",
-      "desc": "Reach out to discuss your project or request a personalized consultation."
+    "desc": "Get in touch to discuss your ideas or request a customized consultation."
     }
   },
 
   "hardware": {
     "deviceSales": {
       "title": "Device Sales",
-      "subtitle": "High-performance laptops, PCs, and IT components for business and home use.",
-      "desc1": "We source, configure, and deliver reliable hardware suited to your exact needs.",
-      "point1": "Business laptops & desktops (Lenovo, Dell, HP, etc.)",
-      "point2": "Custom-built PCs for developers and designers",
-      "point3": "Bulk orders and B2B pricing options",
+    "subtitle": "High-performance laptops, PCs, and IT components for business and home use.",
+    "desc1": "We provide reliable, pre-configured, and custom hardware solutions tailored to your exact requirements.",
+    "point1": "Business laptops and desktops (Lenovo, Dell, HP, etc.)",
+    "point2": "Custom-built PCs for developers, designers, and power users",
+    "point3": "Bulk orders, B2B pricing, and procurement support",
       "back": "Back to Hardware Solutions"
     },
     "installation": {
       "title": "Installation & Setup",
-      "subtitle": "Professional installation and configuration for all your IT equipment.",
-      "desc1": "Our team ensures smooth setup for your workstations, networks, and peripherals.",
-      "point1": "On-site installation and testing",
-      "point2": "Network and printer configuration",
-      "point3": "Data migration and OS installation",
+  "subtitle": "Professional installation and configuration for all your IT equipment.",
+  "desc1": "We ensure a seamless setup of your workstations, networks, and peripherals — fully optimized and ready to use.",
+  "point1": "On-site installation, configuration, and testing",
+  "point2": "Network, Wi-Fi, and printer setup",
+  "point3": "Data migration, system setup, and OS installation",
       "back": "Back to Hardware Solutions"
     },
     "maintenance": {
