@@ -7,64 +7,72 @@ export default function WorkstationSetup() {
   const { t } = useTranslation();
 
   return (
-    <div className="relative flex flex-col text-white overflow-hidden min-h-screen bg-transparent">
+    <div className="relative flex flex-col bg-[#0d1117] text-white overflow-hidden min-h-screen">
 
       {/* Background */}
-      <img
-        src="/images/services/serverroom.jpg"
-        className="absolute inset-0 w-full h-full object-cover brightness-[0.65]"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/85 via-[#0f1825]/60 to-[#0d1117]/90"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117] via-[#101820] to-[#0d1117]" />
 
       {/* HERO */}
-      <section className="relative z-10 flex flex-col items-center text-center h-[45vh] justify-center px-6">
-        <MonitorCheck className="w-16 h-16 text-gray-300 mb-4" />
+      <section className="relative z-10 flex flex-col items-center justify-center text-center h-[40vh] min-h-[300px] px-6">
+        <MonitorCheck className="w-16 h-16 text-gray-400 mb-4" />
 
-        <h1 className="text-4xl font-extrabold text-gray-200 mb-3">
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-4xl md:text-5xl font-extrabold mb-3 bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text"
+        >
           {t("it.workstationSetup.title")}
-        </h1>
+        </motion.h1>
 
-        <p className="text-gray-300 max-w-2xl text-lg">
+        <p className="text-gray-400 max-w-2xl">
           {t("it.workstationSetup.subtitle")}
         </p>
       </section>
 
       {/* MAIN CONTENT */}
-      <main className="relative z-10 max-w-6xl mx-auto px-6 pb-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <main className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 py-16 gap-10">
 
-          {/* TEXT SECTION */}
-          <div>
-            <p className="text-gray-300 text-lg leading-relaxed mb-6">
-              {t("it.workstationSetup.desc1")}
-            </p>
+        {/* IMAGE LEFT */}
+        <motion.div
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="md:w-1/2 w-full order-1 md:order-none"
+        >
+          <img
+            src="/images/services/workstation.jpg"
+            alt="Workstation"
+            className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
+          />
+        </motion.div>
 
-            <ul className="space-y-3 text-gray-300 text-base mb-8">
-              <li>• {t("it.workstationSetup.point1")}</li>
-              <li>• {t("it.workstationSetup.point2")}</li>
-              <li>• {t("it.workstationSetup.point3")}</li>
-            </ul>
+        {/* TEXT RIGHT */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="md:w-1/2 w-full text-gray-300 leading-relaxed space-y-4"
+        >
+          <p>{t("it.workstationSetup.desc1")}</p>
 
-            {/* BACK LINK */}
+          <ul className="list-disc list-inside space-y-2 text-gray-400">
+            <li>{t("it.workstationSetup.point1")}</li>
+            <li>{t("it.workstationSetup.point2")}</li>
+            <li>{t("it.workstationSetup.point3")}</li>
+          </ul>
+
+          <div className="pt-6">
             <Link
               to="/services/it"
-              className="flex items-center text-gray-400 gap-2 mt-6"
+              className="inline-flex items-center gap-2 text-gray-400 hover:text-gray-300 transition-all"
             >
-              <ArrowLeft className="w-5 h-5" /> {t("it.itSupport.back")}
+              <ArrowLeft className="w-5 h-5" /> {t("it.workstationSetup.back")}
             </Link>
           </div>
-
-          {/* IMAGE */}
-          <div>
-            <img
-              src="/images/services/workstation.jpg"
-              alt="Workstation Setup"
-              className="rounded-2xl shadow-lg shadow-black/40"
-            />
-          </div>
-
-        </div>
+        </motion.div>
       </main>
     </div>
   );
