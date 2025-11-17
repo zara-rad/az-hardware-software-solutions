@@ -47,7 +47,7 @@ export default function Maintenance() {
           className="md:w-1/2 w-full"
         >
           <img
-            src="/images/services/support.jpg"
+            src="/images/services/support1.png"
             alt="System Maintenance"
             className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
           />

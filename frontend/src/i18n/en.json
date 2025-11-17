@@ -193,6 +193,10 @@
   "point2": "Database design and optimization (MongoDB, PostgreSQL)",
   "point3": "Secure session handling & token-based authentication (JWT)",
   "point4": "Integration with third-party services, APIs, and automation workflows",
+  "ctaTitle": "Need a powerful and secure backend?",
+"ctaDesc": "Let’s build a scalable, high-performance backend optimized for security, reliability, and clean API architecture.",
+"ctaButton": "Get a Quote",
+
       "back": "Back to Web Development"
     },
      "overview": {

@@ -25,13 +25,13 @@ export default function About() {
         <div className="absolute inset-0 bg-[#0d1117]" />
 
         {/* تصویر پس‌زمینه */}
-        <img
+        {/* <img
           src="/images/about/about.jpg"
           alt="About Background"
           className="absolute inset-0 w-full h-full object-cover opacity-70 scale-105"
           fetchPriority="high"
           loading="eager"
-        />
+        /> */}
 
         {/* گرادیان پوشاننده */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/60 via-[#0d1117]/50 to-[#0d1117]/90" />

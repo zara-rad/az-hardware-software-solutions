@@ -195,6 +195,10 @@
   "point2": "Datenbankdesign und -optimierung (MongoDB, PostgreSQL)",
   "point3": "Sichere Sitzungsverwaltung & tokenbasierte Authentifizierung (JWT)",
   "point4": "Integration externer Dienste, APIs und Automatisierungsprozesse",
+  "ctaTitle": "Benötigen Sie ein leistungsstarkes und sicheres Backend?",
+"ctaDesc": "Lassen Sie uns ein skalierbares, leistungsstarkes Backend entwickeln – optimiert für Sicherheit, Zuverlässigkeit und eine saubere API-Architektur.",
+"ctaButton": "Angebot anfordern",
+
       "back": "Zurück zur Webentwicklung"
     },
      "overview": {

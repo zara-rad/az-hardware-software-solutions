@@ -17,11 +17,11 @@ export default function FrontendDev() {
     >
       {/* 🌌 Background like ServerAdmin */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/images/services/webdev-bg.jpg"
           alt="Frontend Development Background"
           className="w-full h-full object-cover opacity-80"
-        />
+        /> */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117]/70 via-[#0f1825]/50 to-[#0d1117]/90" />
       </div>
 
@@ -82,7 +82,7 @@ export default function FrontendDev() {
           className="md:w-1/2 w-full"
         >
           <img
-            src="/images/services/frontend.jpg"
+            src="/images/services/fullstack.jpg"
             alt="Frontend workspace"
             className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
           />

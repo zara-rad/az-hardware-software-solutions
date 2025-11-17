@@ -37,11 +37,11 @@ export default function WebDevelopment() {
       className="relative flex flex-col text-white overflow-hidden min-h-screen bg-transparent"
     >
       {/* Background */}
-      <img
+      {/* <img
         src="/images/services/bgdevelopment1.jpg"
         alt="Web Development Background"
         className="absolute inset-0 w-full h-full object-cover brightness-[0.65] contrast-[1.05] -z-30"
-      />
+      /> */}
 
       {/* Gradient Layers */}
       <div className="absolute inset-0 overflow-hidden -z-20">

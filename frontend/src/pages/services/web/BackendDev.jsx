@@ -18,11 +18,11 @@ export default function BackendDev() {
     >
       {/* 🖼️ Background */}
       <div className="absolute inset-0">
-        <img
+        {/* <img
           src="/images/services/backend-bg.jpg"
           alt="Backend Development Background"
           className="w-full h-full object-cover opacity-80"
-        />
+        /> */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0d1117]/70 via-[#0f1825]/50 to-[#0d1117]/90" />
       </div>
 
@@ -91,6 +91,24 @@ export default function BackendDev() {
         </motion.div>
 
       </main>
+       {/* CTA */}
+      <motion.div
+        className="relative z-10 text-center pb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-2xl font-bold mb-4 text-gray-400">
+          {t("web.backend.ctaTitle")}
+        </h2>
+        <p className="text-gray-400 mb-6">{t("web.backend.ctaDesc")}</p>
+        <a
+          href="/contact"
+          className="inline-block bg-gradient-to-r from-gray-500 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
+        >
+          {t("web.backend.ctaButton")}
+        </a>
+      </motion.div>
     </motion.div>
   );
 }

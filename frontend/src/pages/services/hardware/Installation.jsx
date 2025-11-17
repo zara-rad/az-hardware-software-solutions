@@ -46,7 +46,7 @@ export default function Installation() {
           className="md:w-1/2 w-full"
         >
           <img
-            src="/images/services/installation.jpg"
+            src="/images/services/setup.png"
             alt="Installation process"
             className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
           />
