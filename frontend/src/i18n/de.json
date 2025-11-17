@@ -117,6 +117,17 @@
   "networkText": "Sichere und skalierbare Netzwerkinfrastruktur — inklusive VPN, Firewall-Konfiguration sowie LAN/WAN-Einrichtung.",
     "supportTitle": "IT-Support & Wartung",
   "supportText": "Professioneller IT-Support vor Ort und per Remote, damit Ihre Systeme reibungslos und ohne Ausfälle laufen.",
+"cloudTitle": "Cloud & Backup",
+"cloudText": "Sichere Cloud-Integration, automatisierte Backups und Business-Continuity-Planung.",
+
+"workstationTitle": "Workstation-Einrichtung",
+"workstationText": "Professionelle Einrichtung, Konfiguration und Optimierung von Büro- und Remote-Arbeitsplätzen.",
+
+"consultingTitle": "IT-Beratung",
+"consultingText": "Strategische IT-Planung und professionelle Beratung zur Optimierung und Skalierung Ihrer Infrastruktur.",
+
+
+
     "learnMore": "Mehr erfahren",
   "ctaTitle": "Benötigen Sie zuverlässigen IT-Support?",
   "ctaDesc": "Gemeinsam optimieren wir Ihre Systeme und Netzwerke für maximale Performance, Stabilität und Sicherheit.",
@@ -139,69 +150,103 @@
   "point2": "Active Directory, DNS und DHCP — Konfiguration & Verwaltung",
   "point3": "Backup-Konzepte, Monitoring-Lösungen und Virtualisierung",
       "back": "Zurück zu IT-Dienstleistungen"
-    }
+    },
+    "cloudBackup": {
+  "title": "Cloud- & Backup-Lösungen",
+  "subtitle": "Sichere Cloud-Integration, automatisierte Backups und Disaster-Recovery-Strategien für einen unterbrechungsfreien Geschäftsbetrieb.",
+  "desc1": "Wir bieten zuverlässige Cloud- und Backup-Services, die Ihre Daten schützen, hohe Verfügbarkeit gewährleisten und die Business-Continuity sichern. Von Cloud-Migration bis hin zur automatisierten Datensicherung decken wir jede Ebene Ihrer Datenstrategie ab.",
+  "point1": "Cloud-Migration und sichere Integration von Cloud-Diensten",
+  "point2": "Automatisierte verschlüsselte Backups und Planung der Datenwiederherstellung",
+  "point3": "Business-Continuity- und Disaster-Recovery-Implementierung",
+  "back": "Zurück zu IT-Services"
+},
+
+"workstationSetup": {
+  "title": "Workstation-Einrichtung",
+  "subtitle": "Professionelle Installation, Konfiguration und Optimierung von Büro- und Remote-Arbeitsplätzen.",
+  "desc1": "Wir richten Workstations ein, die genau auf die Anforderungen Ihres Unternehmens zugeschnitten sind – mit höchster Performance, Sicherheit und Produktivität. Jede Installation wird für tägliche Workflows, Remote-Zugriff und Systemstabilität optimiert.",
+  "point1": "Installation und Konfiguration von Desktop-PCs, Laptops und Peripheriegeräten",
+  "point2": "Benutzerprofil-Einrichtung, Sicherheitsoptimierung und Remote-Zugriff",
+  "point3": "Performance-Tuning, Systemoptimierung und laufender Support",
+  "back": "Zurück zu IT-Services"
+},
+
+"itConsulting": {
+  "title": "IT-Beratung",
+  "subtitle": "Strategische IT-Planung und professionelle Beratung zur Verbesserung, Absicherung und Skalierung Ihrer Infrastruktur.",
+  "desc1": "Wir bieten professionelle IT-Beratung, um eine zuverlässige und skalierbare technologische Infrastruktur aufzubauen. Unsere Beratung stellt sicher, dass Ihre IT-Systeme moderne Standards erfüllen und optimal auf die Geschäftsziele abgestimmt sind.",
+  "point1": "Infrastruktur-Analyse und Performance-Bewertung",
+  "point2": "IT-Strategie, Modernisierungsplanung und Sicherheitsberatung",
+  "point3": "Technologie-Roadmap, Optimierung und langfristige Skalierungsplanung",
+  "back": "Zurück zu IT-Services"
+}
+
   },
+
+
+
 
   "web": {
     "backend": {
       "title": "Backend-Entwicklung",
-      "subtitle": "Sichere und skalierbare Backend-Systeme mit Node.js, Express und MongoDB.",
-      "desc1": "Wir entwerfen Backend-Architekturen, die Leistung, Datensicherheit und Integrität priorisieren.",
-      "point1": "RESTful APIs und Authentifizierungssysteme",
-      "point2": "Datenbankdesign und Optimierung (MongoDB, PostgreSQL)",
-      "point3": "Sichere Sitzungs- und Token-basierte Authentifizierung (JWT)",
-      "point4": "Integration mit Drittanbieter-Services und APIs",
+  "subtitle": "Sichere und skalierbare Backend-Systeme auf Basis moderner Technologien wie Node.js, Express und MongoDB.",
+  "desc1": "Wir entwickeln Backend-Architekturen mit Fokus auf Sicherheit, Leistung und Datenintegrität — für effiziente und stabile Anwendungen.",
+  "point1": "RESTful APIs, Authentifizierung und Benutzerverwaltung",
+  "point2": "Datenbankdesign und -optimierung (MongoDB, PostgreSQL)",
+  "point3": "Sichere Sitzungsverwaltung & tokenbasierte Authentifizierung (JWT)",
+  "point4": "Integration externer Dienste, APIs und Automatisierungsprozesse",
       "back": "Zurück zur Webentwicklung"
     },
      "overview": {
     "title": "Web- & Softwareentwicklung",
-    "subtitle": "Moderne, sichere und skalierbare Webanwendungen – maßgeschneidert für das Wachstum Ihres Unternehmens.",
+  "subtitle": "Moderne, sichere und skalierbare Webanwendungen — individuell auf das Wachstum Ihres Unternehmens abgestimmt.",
     "back": "Zurück zu den Dienstleistungen",
     "frontendTitle": "Frontend-Entwicklung",
-    "frontendText": "Atemberaubende, responsive und leistungsstarke Benutzeroberflächen mit React, Vite und TailwindCSS.",
+  "frontendText": "Schnelle, responsive und optisch hochwertige Benutzeroberflächen mit React, Vite und TailwindCSS.",
     "backendTitle": "Backend-Entwicklung",
-    "backendText": "Leistungsstarke, sichere und skalierbare APIs – entwickelt mit Node.js, Express und moderner Backend-Architektur für maximale Effizienz.",
+  "backendText": "Robuste, sichere und skalierbare Backends mit Node.js, Express und moderner API-Architektur.",
     "fullstackTitle": "Fullstack-Lösungen",
-    "fullstackText": "Komplette Fullstack-Entwicklung – nahtlose Integration vom Frontend bis zum Backend, von der Idee bis zur Bereitstellung.",
+  "fullstackText": "Komplette End-to-End-Weblösungen — perfekte Integration von Frontend bis Backend, von der Idee bis zum Deployment.",
     "learnMore": "Mehr erfahren",
-    "ctaTitle": "Benötigen Sie eine individuelle Website oder Software?",
-    "ctaDesc": "Lassen Sie uns Ihr nächstes digitales Produkt entwickeln – schnell, zuverlässig und optimiert für Ihren Erfolg.",
+  "ctaTitle": "Benötigen Sie eine individuelle Website oder Software?",
+  "ctaDesc": "Gemeinsam entwickeln wir Ihr nächstes digitales Produkt — sicher, skalierbar und für langfristigen Erfolg optimiert.",
     "ctaButton": "Angebot anfordern"
   },
     "frontend": {
       "title": "Frontend-Entwicklung",
-      "subtitle": "Moderne, reaktionsschnelle und ansprechende Benutzeroberflächen mit React, Vite und TailwindCSS.",
-      "desc1": "Unser Frontend-Entwicklungsprozess konzentriert sich auf visuell beeindruckende, schnelle und barrierefreie Web-Erlebnisse — mit pixelgenauer Präzision auf allen Geräten.",
-      "point1": "React + Vite Architektur für hohe Leistung",
-      "point2": "TailwindCSS für modernes responsives Design",
-      "point3": "Optimiertes SEO & Core Web Vitals",
-      "point4": "Wiederverwendbare komponentenbasierte UI für Skalierbarkeit",
+  "subtitle": "Moderne, responsive und ansprechende Benutzeroberflächen mit React, Vite und TailwindCSS.",
+  "desc1": "Wir entwickeln visuell hochwertige, schnelle und barrierearme Frontends — optimiert für beste Performance auf allen Geräten.",
+  "point1": "High-Performance-Architektur mit React + Vite",
+  "point2": "Modernes responsives Design mit TailwindCSS",
+  "point3": "SEO-Optimierung & Core Web Vitals",
+  "point4": "Wiederverwendbare, skalierbare komponentenbasierte UI",
       "back": "Zurück zur Webentwicklung",
-      "ctaTitle": "Benötigen Sie eine beeindruckende und schnelle Weboberfläche?",
-      "ctaDesc": "Lassen Sie uns eine nahtlose und schöne Benutzererfahrung für Ihre Website oder App schaffen — basierend auf modernen Frontend-Technologien.",
+  "ctaTitle": "Benötigen Sie ein modernes, schnelles Frontend?",
+  "ctaDesc": "Gemeinsam erstellen wir eine nahtlose, moderne und leistungsstarke Benutzererfahrung für Ihre Website oder App.",
       "ctaButton": "Angebot anfordern"
     },
     "fullstack": {
       "title": "Fullstack-Lösungen",
-      "subtitle": "Komplette End-to-End-Webanwendungen mit modernen Technologien.",
-      "desc1": "Unsere Fullstack-Dienste decken sowohl Frontend als auch Backend ab – für einen reibungslosen Datenfluss, hohe Leistung und moderne Architektur von Anfang bis Ende.",
-      "point1": "React + Node.js + MongoDB Fullstack-Architektur",
-      "point2": "API-Integration und Authentifizierungsabläufe",
+  "subtitle": "Komplette End-to-End-Anwendungen mit modernen Fullstack-Technologien.",
+  "desc1": "Wir entwickeln Fullstack-Lösungen, die leistungsstarke Backend-Systeme mit schnellen, benutzerfreundlichen Frontends verbinden — für nahtlose Funktionalität im gesamten Stack.",
+      "point1": "Moderne Fullstack-Architektur mit React, Vue oder Next.js in Kombination mit Node.js und MongoDB"
+,
+  "point2": "Vollständige API-Integration und Authentifizierungsprozesse",
       "point3": "Bereitstellung in der Cloud (Vercel, AWS, Render usw.)",
-      "point4": "Leistungs- und SEO-Optimierung",
+  "point4": "Performance-, Sicherheits- und SEO-Optimierung",
       "back": "Zurück zur Webentwicklung",
       "ctaTitle": "Suchen Sie nach einer vollständigen Fullstack-Lösung?",
-      "ctaDesc": "Von der Idee bis zur Bereitstellung – wir liefern zuverlässige, skalierbare und leistungsstarke Fullstack-Anwendungen.",
+  "ctaDesc": "Von der Idee bis zum Deployment — wir liefern skalierbare, sichere und leistungsstarke Fullstack-Anwendungen.",
       "ctaButton": "Angebot anfordern"
     }
   },
   "shop": {
   "title": "Unsere Produkte",
-  "orderInfoTitle": "So bestellen Sie Ihr Lieblingsprodukt",
-  "orderInfoText": "Jedes Produkt hat eine eigene Seriennummer. Um zu bestellen, kopieren Sie einfach die Seriennummer und fügen Sie sie in die Nachricht auf unserer Kontaktseite ein. Unser Team wird sich dann mit Ihnen in Verbindung setzen, um Ihre Bestellung zu bestätigen und die Lieferung zu arrangieren.",
-  "contactButton": "Kontaktieren Sie uns",
-  "noDetails": "Keine Details angegeben",
-  "noImage": "Kein Bild",
+  "orderInfoTitle": "So bestellen Sie Ihr gewünschtes Produkt",
+  "orderInfoText": "Jedes Produkt verfügt über eine eigene Seriennummer. Kopieren Sie einfach diese Nummer und senden Sie sie über unsere Kontaktseite. Nach Eingang Ihrer Anfrage bestätigt unser Team alle Details und organisiert die Lieferung.",
+  "contactButton": "Kontakt aufnehmen",
+  "noDetails": "Keine Angaben verfügbar",
+  "noImage": "Kein Bild verfügbar",
   "noProducts": "Keine Produkte gefunden."
 }
 ,

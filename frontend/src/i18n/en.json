@@ -116,6 +116,16 @@
   "networkText": "Secure and scalable network architecture — including VPN, firewall configuration, and LAN/WAN setup.",
     "supportTitle": "IT Support & Maintenance",
   "supportText": "Professional on-site and remote IT support to keep your systems running smoothly and without downtime.",
+
+   "cloudTitle": "Cloud & Backup",
+"cloudText": "Secure cloud integration, automated backups, and business continuity planning.",
+
+    "workstationTitle": "Workstation Setup",
+"workstationText": "Professional setup, configuration, and optimization of office and remote workstations.",
+
+    "consultingTitle": "IT Consulting",
+"consultingText": "Strategic IT planning and expert guidance to improve and scale your infrastructure.",
+
     "learnMore": "Learn More",
     "ctaTitle": "Need reliable IT support?",
   "ctaDesc": "Let’s optimize your systems and network for maximum performance, reliability, and security.",
@@ -139,68 +149,101 @@
   "point2": "Active Directory, DNS, DHCP configuration & administration",
   "point3": "Backup strategies, monitoring solutions, and virtualization setup",
       "back": "Back to IT Services"
-    }
+    },
+
+    "cloudBackup": {
+  "title": "Cloud & Backup Solutions",
+  "subtitle": "Secure cloud integration, automated backups, and disaster-recovery strategies for uninterrupted business operations.",
+  "desc1": "We deliver reliable cloud and backup services designed to protect your data, ensure high availability, and maintain business continuity. From cloud migration to continuous backup automation, we cover every layer of your data protection strategy.",
+  "point1": "Cloud migration and secure cloud service integration",
+  "point2": "Automated encrypted backups and data recovery planning",
+  "point3": "Business continuity and disaster-recovery implementation",
+  "back": "Back to IT Services"
+},
+"workstationSetup": {
+  "title": "Workstation Setup",
+  "subtitle": "Professional installation, configuration, and optimization of office and remote workstations.",
+  "desc1": "We prepare and configure workstations tailored to your business requirements — ensuring performance, security, and user productivity. Every setup is optimized for daily workflows, remote access, and system stability.",
+  "point1": "Installation and configuration of desktops, laptops, and peripherals",
+  "point2": "User profile setup, security hardening, and remote access configuration",
+  "point3": "Performance optimization, system tuning, and ongoing workstation support",
+  "back": "Back to IT Services"
+},
+"itConsulting": {
+  "title": "IT Consulting",
+  "subtitle": "Strategic IT planning and expert guidance to improve, secure, and scale your infrastructure.",
+  "desc1": "We provide professional IT consulting to help you build a reliable and scalable technology environment. Our consulting services ensure your systems align with business goals, security standards, and modern best practices.",
+  "point1": "Infrastructure assessment and performance analysis",
+  "point2": "IT strategy, modernization planning, and security advisory",
+  "point3": "Technology roadmap, optimization, and long-term scalability guidance",
+  "back": "Back to IT Services"
+}
+
+
+
+    
   },
 
   "web": {
     "backend": {
       "title": "Backend Development",
-      "subtitle": "Secure and scalable backend systems built with Node.js, Express, and MongoDB.",
-      "desc1": "We design backend architectures that prioritize performance, data integrity, and security for your applications.",
-      "point1": "RESTful API & authentication systems",
-      "point2": "Database design and optimization (MongoDB, PostgreSQL)",
-      "point3": "Secure session & token-based authentication (JWT)",
-      "point4": "Integration with third-party services and APIs",
+  "subtitle": "Secure and scalable backend systems built with modern technologies such as Node.js, Express, and MongoDB.",
+  "desc1": "We architect backend systems that prioritize security, performance, and data integrity — ensuring your application runs smoothly and efficiently.",
+  "point1": "RESTful APIs, authentication, and user management",
+  "point2": "Database design and optimization (MongoDB, PostgreSQL)",
+  "point3": "Secure session handling & token-based authentication (JWT)",
+  "point4": "Integration with third-party services, APIs, and automation workflows",
       "back": "Back to Web Development"
     },
      "overview": {
     "title": "Web & Software Development",
-    "subtitle": "Modern, secure, and scalable web applications — tailored for your business growth.",
+  "subtitle": "Modern, secure, and scalable web applications — tailored to support your business growth.",
     "back": "Back to Services",
     "frontendTitle": "Frontend Development",
-    "frontendText": "Stunning, responsive, and performance-driven user interfaces built with React, Vite, and TailwindCSS.",
+  "frontendText": "Fast, responsive, and visually refined interfaces built with React, Vite, and TailwindCSS.",
     "backendTitle": "Backend Development",
-    "backendText": "Powerful, secure, and scalable APIs designed with Node.js, Express, and modern backend architecture for maximum efficiency.",
+  "backendText": "Robust, secure, and scalable backend systems developed with Node.js, Express, and modern API architecture.",
     "fullstackTitle": "Fullstack Solutions",
-    "fullstackText": "Complete fullstack development — seamless integration from frontend to backend, concept to deployment.",
+  "fullstackText": "Complete end-to-end web solutions — seamless integration from frontend to backend, from concept to deployment.",
     "learnMore": "Learn More",
     "ctaTitle": "Need a custom website or software?",
-    "ctaDesc": "Let’s build your next digital product — fast, reliable, and optimized for success.",
+  "ctaDesc": "Let’s develop your next digital product — secure, scalable, and optimized for long-term success.",
     "ctaButton": "Get a Quote"
   },
     "frontend": {
       "title": "Frontend Development",
-      "subtitle": "Modern, responsive, and engaging user interfaces built with React, Vite, and TailwindCSS.",
-      "desc1": "Our frontend development process focuses on building visually stunning, fast, and accessible web experiences — ensuring pixel-perfect interfaces that perform beautifully on all devices.",
-      "point1": "React + Vite architecture for high performance",
-      "point2": "TailwindCSS for modern responsive design",
-      "point3": "Optimized SEO & Core Web Vitals",
-      "point4": "Reusable component-based UI for scalability",
+  "subtitle": "Modern, responsive, and engaging interfaces built with React, Vite, and TailwindCSS.",
+  "desc1": "Our frontend development focuses on building visually refined, fast, and accessible user experiences — optimized for performance across all devices.",
+  "point1": "High-performance React + Vite architecture",
+  "point2": "Modern responsive design with TailwindCSS",
+  "point3": "SEO and Core Web Vitals optimization",
+  "point4": "Reusable, scalable component-based UI",
       "back": "Back to Web Development",
       "ctaTitle": "Need a stunning and fast web interface?",
-      "ctaDesc": "Let’s create a seamless and beautiful user experience for your website or app — powered by modern frontend technologies.",
+  "ctaDesc": "Let’s build a seamless, modern, and high-performing user experience for your website or application.",
       "ctaButton": "Get a Quote"
     },
     "fullstack": {
       "title": "Fullstack Solutions",
-      "subtitle": "Complete end-to-end web applications built with modern technologies.",
-      "desc1": "Our fullstack services cover both frontend and backend — ensuring smooth data flow, strong performance, and modern architecture from start to finish.",
-      "point1": "React + Node.js + MongoDB fullstack architecture",
-      "point2": "API integration and authentication flows",
-      "point3": "Deployment to cloud (Vercel, AWS, Render, etc.)",
-      "point4": "Performance and SEO optimization",
+  "subtitle": "Complete end-to-end applications built with modern fullstack technologies.",
+  "desc1": "We deliver fullstack solutions combining robust backend systems with performant, user-friendly frontends — ensuring seamless operation across the entire stack.",
+  "point1": "Modern fullstack architecture using leading frontend and backend technologies"
+,
+  "point2": "Complete API integration and authentication flows",
+  "point3": "Cloud deployment (Vercel, AWS, Render, etc.)",
+  "point4": "Performance, security, and SEO optimization",
       "back": "Back to Web Development",
-      "ctaTitle": "Looking for a complete fullstack solution?",
-      "ctaDesc": "From concept to deployment — we deliver reliable, scalable, and high-performance fullstack applications.",
+  "ctaTitle": "Looking for a fullstack solution?",
+  "ctaDesc": "From concept to deployment — we deliver scalable, secure, and high-performance fullstack applications.",
       "ctaButton": "Get a Quote"
     }
   },"shop": {
   "title": "Our Products",
   "orderInfoTitle": "How to Order Your Favorite Product",
-  "orderInfoText": "Each product comes with its own unique Serial Number. To place an order, simply copy this serial number and include it in the message on our Contact Page. Once you send us your request, our team will reach out to confirm your order and arrange delivery.",
+  "orderInfoText": "Each product includes a unique Serial Number. To place an order, simply copy the serial number and send it to us through the Contact Page. After receiving your request, our team will confirm the details and arrange delivery.",
   "contactButton": "Contact Us",
-  "noDetails": "No details provided",
-  "noImage": "No Image",
+  "noDetails": "No details available",
+  "noImage": "No image available",
   "noProducts": "No products found."
 }
 ,

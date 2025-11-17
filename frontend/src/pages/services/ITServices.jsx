@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Server, Network, ShieldCheck, ArrowLeft } from "lucide-react";
+import { Server, Network, ArrowLeft,Headphones,CloudCog,MonitorCheck,BrainCircuit } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -20,11 +20,34 @@ export default function ITServices() {
       link: "/services/it/network",
     },
     {
-      icon: <ShieldCheck className="w-14 h-14 text-gray-400 mb-3" />,
+      icon: <Headphones className="w-14 h-14 text-gray-400 mb-3" />,
       title: t("it.itSupport.title"),
       text: t("it.itSupport.subtitle"),
       link: "/services/it/support",
     },
+
+ {
+    icon: <CloudCog className="w-14 h-14 text-gray-400 mb-3" />,
+    title: t("it.overview.cloudTitle"),
+    text: t("it.overview.cloudText"),
+    link: "/services/it/cloud",
+  },
+  {
+    icon: <MonitorCheck className="w-14 h-14 text-gray-400 mb-3" />,
+    title: t("it.overview.workstationTitle"),
+    text: t("it.overview.workstationText"),
+    link: "/services/it/workstation",
+  },
+  {
+    icon: <BrainCircuit className="w-14 h-14 text-gray-400 mb-3" />,
+    title: t("it.overview.consultingTitle"),
+    text: t("it.overview.consultingText"),
+    link: "/services/it/consulting",
+  }
+
+
+
+
   ];
 
   return (

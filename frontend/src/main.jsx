@@ -19,6 +19,7 @@ import HardwareSolutions from "./pages/services/HardwareSolutions";
 import ServerAdmin from "./pages/services/it/ServerAdmin";
 import NetworkSetup from "./pages/services/it/NetworkSetup";
 import ITSupport from "./pages/services/it/ITSupport";
+
 import FrontendDev from "./pages/services/web/FrontendDev";
 import BackendDev from "./pages/services/web/BackendDev";
 import FullstackSolutions from "./pages/services/web/FullstackSolutions";
@@ -32,6 +33,9 @@ import AdminProducts from "./pages/admin/AdminProducts.jsx";
 import ScrollToTop from "./components/ScrollToTop";
 import { ScrollProvider } from "./ScrollContext";
 import "./index.css";
+import WorkstationSetup from "./pages/services/it/WorkstationSetup.jsx";
+import ITConsulting from "./pages/services/it/ITConsulting.jsx";
+import CloudBackup from "./pages/services/it/CloudBackup.jsx";
 
 function RootApp() {
   const [ready, setReady] = useState(false);
@@ -61,7 +65,13 @@ function RootApp() {
   }
 
   return (
-    <Suspense fallback={<div className="text-center text-gray-400 mt-20">Loading translations...</div>}>
+    <Suspense
+      fallback={
+        <div className="text-center text-gray-400 mt-20">
+          Loading translations...
+        </div>
+      }
+    >
       <ScrollProvider>
         <HelmetProvider>
           <BrowserRouter>
@@ -76,16 +86,41 @@ function RootApp() {
                 <Route path="services/it/server" element={<ServerAdmin />} />
                 <Route path="services/it/network" element={<NetworkSetup />} />
                 <Route path="services/it/support" element={<ITSupport />} />
+                <Route path="/services/it/cloud" element={<CloudBackup />} />
+                <Route
+                  path="/services/it/workstation"
+                  element={<WorkstationSetup />}
+                />
+                <Route
+                  path="/services/it/consulting"
+                  element={<ITConsulting />}
+                />
+
                 <Route path="services/web" element={<WebDevelopment />} />
                 <Route path="services/web/frontend" element={<FrontendDev />} />
                 <Route path="services/web/backend" element={<BackendDev />} />
                 <Route path="/shop" element={<Shop />} />
                 <Route path="/admin/products" element={<AdminProducts />} />
-                <Route path="services/web/fullstack" element={<FullstackSolutions />} />
-                <Route path="services/hardware" element={<HardwareSolutions />} />
-                <Route path="services/hardware/sales" element={<DeviceSales />} />
-                <Route path="services/hardware/installation" element={<Installation />} />
-                <Route path="services/hardware/maintenance" element={<Maintenance />} />
+                <Route
+                  path="services/web/fullstack"
+                  element={<FullstackSolutions />}
+                />
+                <Route
+                  path="services/hardware"
+                  element={<HardwareSolutions />}
+                />
+                <Route
+                  path="services/hardware/sales"
+                  element={<DeviceSales />}
+                />
+                <Route
+                  path="services/hardware/installation"
+                  element={<Installation />}
+                />
+                <Route
+                  path="services/hardware/maintenance"
+                  element={<Maintenance />}
+                />
                 <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="contact" element={<Contact />} />
                 <Route path="impressum" element={<Impressum />} />
@@ -135,9 +170,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   </React.StrictMode>
 );
 
-
-
-
 // import React from "react";
 // import ReactDOM from "react-dom/client";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -175,7 +207,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // import AdminDashboard from "./pages/admin/AdminDashboard";
 // import Shop from "./pages/Shop";
 
-
 // // 📂 Components & Context
 // import ScrollToTop from "./components/ScrollToTop";
 // import { ScrollProvider } from "./ScrollContext";
@@ -203,7 +234,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //               <Route path="services/web/backend" element={<BackendDev />} />
 //               <Route path="/shop" element={<Shop />} />
 //               <Route path="/admin/products" element={<AdminProducts />} />
-
 
 //               <Route
 //                 path="services/web/fullstack"
@@ -268,8 +298,3 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 //     </ScrollProvider>
 //   </React.StrictMode>
 // );
-
-
-
-
-

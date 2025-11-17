@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowLeft, ShieldCheck } from "lucide-react";
+import { ArrowLeft,Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next"; // ✅ اضافه شد
 
@@ -13,7 +13,7 @@ export default function ITSupport() {
 
       {/* 🔹 Hero Section */}
       <section className="relative z-10 flex flex-col items-center justify-center text-center h-[40vh] min-h-[300px] px-6">
-        <ShieldCheck className="w-16 h-16 text-gray-400 mb-4" />
+        <Headphones className="w-16 h-16 text-gray-400 mb-4" />
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
