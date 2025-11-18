@@ -37,18 +37,20 @@ export default function ContactInfo() {
         </div>
 
         {/* 🟩 WhatsApp Contact */}
-        <div className="flex items-center gap-3 group cursor-pointer">
-          <MessageCircle className="text-gray-300 w-5 h-5 group-hover:text-green-400 transition" />
+       {/* 🟩 WhatsApp Contact */}
+<div className="flex items-center gap-3 group cursor-pointer">
+  <MessageCircle className="text-gray-300 w-5 h-5 group-hover:text-green-400 transition" />
 
-          <a
-            href="https://wa.me/4917636385183"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 group-hover:text-green-400 transition"
-          >
-            WhatsApp: +49 176 36385183
-          </a>
-        </div>
+  <a
+    href="https://wa.me/4917636385183"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-gray-300 group-hover:text-green-400 transition"
+  >
+    {t("contact.info.whatsapp")}
+  </a>
+</div>
+
       </div>
 
       <div className="pt-4 border-t border-gray-700 text-sm text-gray-500">
