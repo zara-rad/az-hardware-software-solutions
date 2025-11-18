@@ -36,25 +36,11 @@ export default function DeviceSales() {
 
       {/* 🔹 Content Section */}
       <main className="relative z-10 flex flex-col md:flex-row items-center justify-between max-w-6xl mx-auto px-6 py-16 gap-10">
-        
-        {/* 🖼️ Image */}
+      
+
+        {/* 📝 Text Left*/}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="md:w-1/2 w-full"
-        >
-          <img
-            src="/images/services/sales1.png"
-            alt="Device Sales - Hardware Products"
-            className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
-          />
-        </motion.div>
-
-        {/* 📝 Text */}
-        <motion.div
-          initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
@@ -68,6 +54,9 @@ export default function DeviceSales() {
             <li>{t("hardware.deviceSales.point3")}</li>
           </ul>
 
+
+          
+
           <div className="pt-6">
             <Link
               to="/services/hardware"
@@ -77,8 +66,40 @@ export default function DeviceSales() {
             </Link>
           </div>
         </motion.div>
+          
+        {/* 🖼️ Image right */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="md:w-1/2 w-full"
+        >
+          <img
+            src="/images/services/sales1.png"
+            alt="Device Sales - Hardware Products"
+            className="rounded-2xl shadow-[0_0_25px_rgba(200,200,200,0.15)] object-cover w-full h-[350px] md:h-[420px]"
+          />
+        </motion.div>
       </main>
-
+ {/* CTA */}
+      <motion.div
+        className="relative z-10 text-center pb-16"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <h2 className="text-2xl font-bold mb-4 text-gray-400">
+          {t("hardware.deviceSales.ctaTitle")}
+        </h2>
+        <p className="text-gray-400 mb-6">{t("hardware.deviceSales.ctaDesc")}</p>
+        <a
+          href="/contact"
+          className="inline-block bg-gradient-to-r from-gray-500 to-gray-500 hover:from-gray-400 hover:to-gray-400 text-white px-8 py-3 rounded-lg font-semibold shadow-lg shadow-gray-900/30 hover:shadow-gray-700/40 transition-all"
+        >
+          {t("hardware.deviceSales.ctaButton")}
+        </a>
+      </motion.div>
     </motion.div>
   );
 }

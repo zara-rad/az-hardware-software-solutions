@@ -59,6 +59,9 @@
     "point1": "Business laptops and desktops (Lenovo, Dell, HP, etc.)",
     "point2": "Custom-built PCs for developers, designers, and power users",
     "point3": "Bulk orders, B2B pricing, and procurement support",
+      "ctaTitle": "Need reliable and high-performance hardware?",
+ "ctaDesc": "Let’s build the perfect hardware setup for your business — optimized for speed, durability, and professional productivity.",
+  "ctaButton": "Get a Quote",
       "back": "Back to Hardware Solutions"
     },
     "installation": {
@@ -68,7 +71,11 @@
   "point1": "On-site installation, configuration, and testing",
   "point2": "Network, Wi-Fi, and printer setup",
   "point3": "Data migration, system setup, and OS installation",
-      "back": "Back to Hardware Solutions"
+      "back": "Back to Hardware Solutions",
+        "ctaTitle": "Want your IT setup handled professionally?",
+ "ctaDesc": "From workstations to full network environments, we take care of every installation step so your systems are ready to run from day one.",
+    "ctaButton": "Get a Quote"
+
     },
     "maintenance": {
       "title": "Maintenance & Support",
@@ -77,7 +84,11 @@
   "point1": "Hardware diagnostics, upgrades, and component replacement",
   "point2": "Remote troubleshooting, on-site repairs, and quick response support",
   "point3": "Regular performance audits, system cleaning, and optimization",
-      "back": "Back to Hardware Solutions"
+      "back": "Back to Hardware Solutions",
+        "ctaTitle": "Need dependable ongoing support for your systems?",
+  "ctaDesc": "From regular health checks to rapid troubleshooting, we keep your hardware running efficiently and minimize downtime with proactive monitoring.",
+  "ctaButton": "Get a Quote"
+
     },
     "overview": {
       "title": "Hardware Solutions",
@@ -104,6 +115,9 @@
     "point1": "Remote troubleshooting, helpdesk, and user support",
     "point2": "On-site maintenance, diagnostics, and repairs",
     "point3": "System monitoring, updates, and proactive performance optimization",
+     "ctaTitle": "Need fast and reliable IT support?",
+  "ctaDesc": "From remote troubleshooting to on-site diagnostics and continuous system monitoring — we provide responsive IT support to keep your operations running without interruption.",
+  "ctaButton": "Get a Quote",
       "back": "Back to IT Services"
     },
      "overview": {
@@ -138,6 +152,11 @@
   "point1": "LAN/WAN setup, optimization, and structured cabling",
   "point2": "VPN, VLAN, and enterprise Wi-Fi configuration",
   "point3": "Firewall management, endpoint protection, and network security policies",
+    "ctaTitle": "Need a secure and stable network setup?",
+      "ctaDesc": "Whether you need VPN access, firewall protection, or a fully optimized LAN/WAN infrastructure, we design and configure networks built for long-term reliability and security.",
+    "ctaButton": "Get a Quote",
+
+
       "back": "Back to IT Services"
     },
     "serverAdmin": {
@@ -148,6 +167,9 @@
   "point1": "Professional server installation & optimization (Linux / Windows)",
   "point2": "Active Directory, DNS, DHCP configuration & administration",
   "point3": "Backup strategies, monitoring solutions, and virtualization setup",
+   "ctaTitle": "Need expert management for your servers?",
+  "ctaDesc": "From deployment to security hardening and continuous monitoring, we ensure your servers stay fast, reliable, and fully optimized for business-critical operations.",
+  "ctaButton": "Get a Quote",
       "back": "Back to IT Services"
     },
 
@@ -158,7 +180,10 @@
   "point1": "Cloud migration and secure cloud service integration",
   "point2": "Automated encrypted backups and data recovery planning",
   "point3": "Business continuity and disaster-recovery implementation",
-  "back": "Back to IT Services"
+  "back": "Back to IT Services",
+  "ctaTitle": "Need dependable IT support?",
+  "ctaDesc": "We keep your systems stable, secure, and fully supported — with fast troubleshooting and ongoing monitoring whenever you need it.",
+  "ctaButton": "Get a Quote"
 },
 "workstationSetup": {
   "title": "Workstation Setup",
@@ -167,6 +192,9 @@
   "point1": "Installation and configuration of desktops, laptops, and peripherals",
   "point2": "User profile setup, security hardening, and remote access configuration",
   "point3": "Performance optimization, system tuning, and ongoing workstation support",
+   "ctaTitle": "Need fully optimized workstations?",
+  "ctaDesc": "We configure fast, secure, and productivity-ready workstations — tailored for smooth daily workflows and reliable long-term performance.",
+  "ctaButton": "Get a Quote",
   "back": "Back to IT Services"
 },
 "itConsulting": {
@@ -176,6 +204,9 @@
   "point1": "Infrastructure assessment and performance analysis",
   "point2": "IT strategy, modernization planning, and security advisory",
   "point3": "Technology roadmap, optimization, and long-term scalability guidance",
+   "ctaTitle": "Need strategic guidance for your IT decisions?",
+  "ctaDesc": "We help you plan, assess, and optimize your IT landscape — ensuring your infrastructure supports long-term growth and security.",
+  "ctaButton": "Get a Quote",
   "back": "Back to IT Services"
 }
 

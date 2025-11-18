@@ -60,7 +60,10 @@
     "point1": "Business-Laptops und -Desktops (Lenovo, Dell, HP usw.)",
     "point2": "Individuell gebaute PCs für Entwickler, Designer und Power-User",
     "point3": "Großbestellungen, B2B-Preise und Unterstützung bei der Beschaffung",
-      "back": "Zurück zu Hardwarelösungen"
+      "back": "Zurück zu Hardwarelösungen",
+      "ctaTitle": "Benötigen Sie zuverlässige und leistungsstarke Hardware?",
+  "ctaDesc": "Lassen Sie uns die ideale Hardware-Ausstattung für Ihr Unternehmen zusammenstellen – optimiert für Geschwindigkeit, Langlebigkeit und professionelle Produktivität.",
+  "ctaButton": "Angebot anfordern"
     },
     "installation": {
       "title": "Installation & Einrichtung",
@@ -69,7 +72,12 @@
   "point1": "Vor-Ort-Installation, Konfiguration und Funktionsprüfung",
   "point2": "Netzwerk-, WLAN- und Druckereinrichtung",
   "point3": "Datenmigration, Systemeinrichtung und Betriebssysteminstallation",
-      "back": "Zurück zu Hardware-Lösungen"
+      "back": "Zurück zu Hardware-Lösungen",
+       "ctaTitle": "Benötigen Sie eine professionelle Installation und Einrichtung?",
+  "ctaDesc": "Wir übernehmen die vollständige Installation, Konfiguration und Optimierung Ihrer IT-Systeme – schnell, zuverlässig und sofort einsatzbereit.",
+    "ctaButton": "Angebot anfordern"
+
+
     },
     "maintenance": {
       "title": "Wartung & Support",
@@ -78,7 +86,10 @@
   "point1": "Hardware-Diagnose, Upgrades und Austausch von Komponenten",
   "point2": "Remote-Support, Vor-Ort-Reparaturen und schnelle Reaktionszeiten",
   "point3": "Regelmäßige Leistungsanalysen, Systemreinigung und Optimierung",
-      "back": "Zurück zu Hardware-Lösungen"
+      "back": "Zurück zu Hardware-Lösungen",
+        "ctaTitle": "Benötigen Sie zuverlässige Betreuung für Ihre IT-Systeme?",
+    "ctaButton": "Angebot anfordern"
+
     },
     "overview": {
       "title": "Hardware-Lösungen",
@@ -105,6 +116,10 @@
     "point1": "Remote-Troubleshooting, Helpdesk und Benutzersupport",
     "point2": "Wartung, Diagnose und Reparaturen vor Ort",
     "point3": "Systemüberwachung, Updates und proaktive Leistungsoptimierung",
+     "ctaTitle": "Benötigen Sie schnellen und zuverlässigen IT-Support?",
+  "ctaDesc": "Ob Remote-Fehlerbehebung, Vor-Ort-Diagnose oder kontinuierliches Systemmonitoring – wir sorgen dafür, dass Ihre IT ohne Unterbrechungen läuft.",
+        "ctaButton": "Angebot anfordern",
+
       "back": "Zurück zu IT-Dienstleistungen"
     },
      "overview": {
@@ -140,6 +155,10 @@
   "point1": "LAN/WAN-Einrichtung, Optimierung und strukturierte Verkabelung",
   "point2": "VPN-, VLAN- und Enterprise-WLAN-Konfiguration",
   "point3": "Firewall-Management, Endpoint-Security und Sicherheitsrichtlinien",
+      "ctaButton": "Angebot anfordern",
+  "ctaTitle": "Benötigen Sie ein sicheres und stabiles Netzwerk?",
+  "ctaDesc": "Ob VPN, Firewall-Schutz oder eine optimierte LAN/WAN-Infrastruktur – wir planen und konfigurieren Netzwerke, die langfristige Sicherheit und Zuverlässigkeit gewährleisten.",
+
       "back": "Zurück zu IT-Dienstleistungen"
     },
     "serverAdmin": {
@@ -149,6 +168,10 @@
   "point1": "Professionelle Serverinstallation & Optimierung (Linux / Windows)",
   "point2": "Active Directory, DNS und DHCP — Konfiguration & Verwaltung",
   "point3": "Backup-Konzepte, Monitoring-Lösungen und Virtualisierung",
+    "ctaTitle": "Benötigen Sie professionelle Verwaltung Ihrer Server?",
+  "ctaDesc": "از راه‌اندازی و بهینه‌سازی امنیتی تا مانیتورینگ مداوم، همه مراحل را انجام می‌دهیم تا سرورهایت سریع، پایدار و آماده پردازش‌های حساس کسب‌وکار باشند.",
+    "ctaButton": "Angebot anfordern",
+
       "back": "Zurück zu IT-Dienstleistungen"
     },
     "cloudBackup": {
@@ -158,7 +181,11 @@
   "point1": "Cloud-Migration und sichere Integration von Cloud-Diensten",
   "point2": "Automatisierte verschlüsselte Backups und Planung der Datenwiederherstellung",
   "point3": "Business-Continuity- und Disaster-Recovery-Implementierung",
-  "back": "Zurück zu IT-Services"
+  "back": "Zurück zu IT-Services",
+          "ctaButton": "Angebot anfordern",
+  "ctaTitle": "Sie suchen zuverlässigen IT-Support?",
+  "ctaDesc": "Wir halten Ihre Systeme stabil, sicher und bestens betreut – mit schneller Fehleranalyse und kontinuierlichem Monitoring, genau dann, wenn Sie es brauchen."
+
 },
 
 "workstationSetup": {
@@ -168,7 +195,10 @@
   "point1": "Installation und Konfiguration von Desktop-PCs, Laptops und Peripheriegeräten",
   "point2": "Benutzerprofil-Einrichtung, Sicherheitsoptimierung und Remote-Zugriff",
   "point3": "Performance-Tuning, Systemoptimierung und laufender Support",
-  "back": "Zurück zu IT-Services"
+  "back": "Zurück zu IT-Services",
+   "ctaTitle": "Benötigen Sie optimal eingerichtete Workstations?",
+  "ctaDesc": "Wir richten schnelle, sichere und produktivitätsbereite Arbeitsplätze ein – perfekt abgestimmt auf tägliche Abläufe und langfristige Stabilität.",
+  "ctaButton": "Angebot anfordern"
 },
 
 "itConsulting": {
@@ -178,6 +208,10 @@
   "point1": "Infrastruktur-Analyse und Performance-Bewertung",
   "point2": "IT-Strategie, Modernisierungsplanung und Sicherheitsberatung",
   "point3": "Technologie-Roadmap, Optimierung und langfristige Skalierungsplanung",
+  "ctaTitle": "Benötigen Sie strategische IT-Beratung?",
+  "ctaDesc": "Wir unterstützen Sie bei Planung, Analyse und Optimierung Ihrer IT-Landschaft – für nachhaltiges Wachstum und maximale Sicherheit.",
+    "ctaButton": "Angebot anfordern"
+,
   "back": "Zurück zu IT-Services"
 }
 
