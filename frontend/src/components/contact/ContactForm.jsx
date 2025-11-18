@@ -1,12 +1,12 @@
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
-import CustomSelect from "./CustomSelect"; // ← اضافه شد
+import CustomSelect from "./CustomSelect";
 
 export default function ContactForm() {
   const { t } = useTranslation();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,19 +16,22 @@ export default function ContactForm() {
     serialNumber: "",
     message: "",
   });
+
   const [loading, setLoading] = useState(false);
 
-  // 🔄 هندل تغییرات مثل قبل
+  // 🔄 Handle changes
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "service" && value !== t("contact.form.select.shop")) {
-      setFormData({ ...formData, [name]: value, serialNumber: "" });
+    // اگر سرویس shop نباشه → serial پاک میشه
+    if (name === "service" && value !== "shop") {
+      setFormData({ ...formData, service: value, serialNumber: "" });
     } else {
       setFormData({ ...formData, [name]: value });
     }
   };
 
+  // 📩 Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -57,6 +60,7 @@ export default function ContactForm() {
 
       if (data.success) {
         toast.success(t("contact.form.toast.success"), { id: "contact" });
+
         setFormData({
           name: "",
           email: "",
@@ -90,6 +94,7 @@ export default function ContactForm() {
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
+      {/* Name */}
       <InputField
         label={t("contact.form.name")}
         name="name"
@@ -99,6 +104,7 @@ export default function ContactForm() {
         required
       />
 
+      {/* Email */}
       <InputField
         label={t("contact.form.email")}
         name="email"
@@ -109,6 +115,7 @@ export default function ContactForm() {
         required
       />
 
+      {/* Phone */}
       <InputField
         label={t("contact.form.phone")}
         name="phone"
@@ -117,7 +124,7 @@ export default function ContactForm() {
         placeholder={t("contact.form.placeholder.phone")}
       />
 
-      {/* 🔹 Service Dropdown (Custom Select جایگزین شد) */}
+      {/* Service Dropdown */}
       <CustomSelect
         label={t("contact.form.service")}
         value={formData.service}
@@ -125,14 +132,15 @@ export default function ContactForm() {
           handleChange({ target: { name: "service", value: val } })
         }
         options={[
-          t("contact.form.select.default"),
-          t("contact.form.select.it"),
-          t("contact.form.select.web"),
-          t("contact.form.select.hardware"),
-          t("contact.form.select.shop"),
+          { label: t("contact.form.select.default"), value: "" },
+          { label: t("contact.form.select.it"), value: "it" },
+          { label: t("contact.form.select.web"), value: "web" },
+          { label: t("contact.form.select.hardware"), value: "hardware" },
+          { label: t("contact.form.select.shop"), value: "shop" },
         ]}
       />
 
+      {/* Budget */}
       <InputField
         label={t("contact.form.budget")}
         name="budget"
@@ -141,7 +149,8 @@ export default function ContactForm() {
         placeholder={t("contact.form.placeholder.budget")}
       />
 
-      {formData.service === t("contact.form.select.shop") && (
+      {/* Serial Number → فقط وقتی shop انتخاب بشه */}
+      {formData.service === "shop" && (
         <InputField
           label={t("contact.form.serialNumber")}
           name="serialNumber"
@@ -151,6 +160,7 @@ export default function ContactForm() {
         />
       )}
 
+      {/* Message */}
       <InputField
         label={t("contact.form.message")}
         name="message"
@@ -160,6 +170,7 @@ export default function ContactForm() {
         placeholder={t("contact.form.placeholder.message")}
       />
 
+      {/* Button */}
       <motion.button
         type="submit"
         disabled={loading}

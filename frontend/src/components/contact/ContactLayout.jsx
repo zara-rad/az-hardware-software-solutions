@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 export default function ContactLayout() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <motion.div
@@ -42,12 +42,17 @@ export default function ContactLayout() {
           viewport={{ once: true }}
           transition={{ duration: 0.9 }}
         >
-          <h1
-            className="mt-8 text-4xl md:text-5xl font-extrabold text-center mb-12 
-            bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text"
-          >
-            {t("contact.layout.title")}
-          </h1>
+         <h1
+  className={`
+    mt-8 
+    ${i18n.language === "de" ? "text-3xl md:text-4xl" : "text-4xl md:text-5xl"}
+    font-extrabold text-center mb-12 
+    bg-gradient-to-r from-gray-200 to-gray-400 text-transparent bg-clip-text
+  `}
+>
+  {t("contact.layout.title")}
+</h1>
+
 
           <p className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
             {t("contact.layout.subtitle")}
