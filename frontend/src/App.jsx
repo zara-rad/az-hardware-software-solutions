@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Outlet, useLocation } from "react-router-dom";
@@ -23,18 +22,32 @@ export default function App() {
       {/* 🔹 گرادیان ثابت پس‌زمینه سایت */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-[#0d1117] via-[#0f1620] to-[#0d1117]" />
 
-      {/* 🔹 ناوبار ثابت */}
+      {/* 🔹 ناوبار */}
       <Navbar />
+
+      {/* 🔹 دکمه شناور واتس‌اپ */}
+      <a
+        href="https://wa.me/4917636385183"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white 
+          w-14 h-14 rounded-full flex items-center justify-center shadow-lg z-50"
+      >
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+          alt="WhatsApp"
+          className="w-8 h-8"
+        />
+      </a>
 
       {/* 🔹 محتوای صفحات */}
       <main className="flex-grow">
         <AnimatePresence mode="wait" initial={false}>
-          {/* فقط Outlet باید انیمیشن صفحه بخورد */}
           <Outlet key={location.pathname} />
         </AnimatePresence>
       </main>
 
-      {/* 🔹 فوتر ثابت */}
+      {/* 🔹 فوتر */}
       <Footer />
     </div>
   );
