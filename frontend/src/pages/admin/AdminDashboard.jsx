@@ -126,7 +126,7 @@ export default function AdminDashboard() {
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-end mb-6">
             <button
-              onClick={() => (window.location.href = "/admin/products")}
+              onClick={() => (window.location.href = "/aqbitz-admin-9823/products")}
               className="px-5 py-2 bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white rounded-lg font-semibold shadow-md transition-all"
             >
               🛍️ Manage Products

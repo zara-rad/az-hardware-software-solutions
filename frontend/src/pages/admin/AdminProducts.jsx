@@ -36,11 +36,21 @@ export default function AdminProducts() {
   };
 
   const handleDelete = async (id) => {
-    if (!window.confirm("Are you sure you want to delete this product?")) return;
+    if (!window.confirm("Are you sure you want to delete this product?"))
+      return;
     try {
+      const token = localStorage.getItem("adminToken");
+
       const res = await fetch(`http://localhost:5050/api/products/${id}`, {
         method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
       });
+
+      // const res = await fetch(`http://localhost:5050/api/products/${id}`, {
+      //   method: "DELETE",
+      // });
       if (res.ok) {
         setProducts((prev) => prev.filter((p) => p._id !== id));
         toast.success("🗑️ Product deleted");
@@ -70,9 +80,21 @@ export default function AdminProducts() {
 
       const method = selectedProduct ? "PUT" : "POST";
 
-      const res = await fetch(url, { method, body: formData });
+      //const res = await fetch(url, { method, body: formData });
+      const token = localStorage.getItem("adminToken");
+
+      const res = await fetch(url, {
+        method,
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        body: formData,
+      });
+
       if (res.ok) {
-        toast.success(selectedProduct ? "✅ Product updated" : "🆕 Product added");
+        toast.success(
+          selectedProduct ? "✅ Product updated" : "🆕 Product added"
+        );
         setModalOpen(false);
         fetchProducts();
       } else {
@@ -89,7 +111,7 @@ export default function AdminProducts() {
       {/* 🔹 Header Controls */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4 text-center sm:text-left">
         <button
-          onClick={() => navigate("/admin")}
+          onClick={() => navigate("/aqbitz-admin-9823")}
           className="bg-gray-700 hover:bg-gray-600 text-white px-4 py-2 rounded-lg shadow w-full sm:w-auto"
         >
           ← Back to Dashboard
@@ -110,12 +132,24 @@ export default function AdminProducts() {
         <table className="w-full border border-gray-800 rounded-lg overflow-hidden text-sm md:text-base">
           <thead className="bg-[#121a24] text-gray-300 uppercase text-xs md:text-sm">
             <tr>
-              <th className="p-3 border-b border-gray-700 text-left w-[20%]">Title</th>
-              <th className="p-3 border-b border-gray-700 text-left w-[15%]">Category</th>
-              <th className="p-3 border-b border-gray-700 text-left w-[10%]">Price</th>
-              <th className="p-3 border-b border-gray-700 text-left w-[10%]">Old Price</th>
-              <th className="p-3 border-b border-gray-700 text-left w-[15%]">Serial</th>
-              <th className="p-3 border-b border-gray-700 text-center w-[30%]">Actions</th>
+              <th className="p-3 border-b border-gray-700 text-left w-[20%]">
+                Title
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[15%]">
+                Category
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[10%]">
+                Price
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[10%]">
+                Old Price
+              </th>
+              <th className="p-3 border-b border-gray-700 text-left w-[15%]">
+                Serial
+              </th>
+              <th className="p-3 border-b border-gray-700 text-center w-[30%]">
+                Actions
+              </th>
             </tr>
           </thead>
 
@@ -188,7 +222,9 @@ export default function AdminProducts() {
             >
               <div className="flex justify-between items-center mb-2">
                 <h2 className="font-semibold text-lg">{p.title}</h2>
-                <span className="text-green-400 font-bold text-sm">€{p.price}</span>
+                <span className="text-green-400 font-bold text-sm">
+                  €{p.price}
+                </span>
               </div>
               <p className="text-gray-400 text-sm mb-2">
                 {p.category} —{" "}
@@ -241,7 +277,6 @@ export default function AdminProducts() {
     </div>
   );
 }
-
 
 // import { useEffect, useState } from "react";
 // import { motion } from "framer-motion";
@@ -472,9 +507,3 @@ export default function AdminProducts() {
 //     </div>
 //   );
 // }
-
-
-
-
-
-

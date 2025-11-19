@@ -41,6 +41,7 @@ import Maintenance from "./pages/services/hardware/Maintenance";
 // Admin
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import AdminProducts from "./pages/admin/AdminProducts.jsx";
+import ProtectedRoute from "./components/ProtectedRoute.jsx";
 
 // Shop
 import Shop from "./pages/Shop";
@@ -62,14 +63,12 @@ function RootApp() {
 
     // 🔧 Initial direction + language
     document.documentElement.lang = i18n.language || "en";
-    document.documentElement.dir =
-      i18n.language === "fa" ? "rtl" : "ltr";
+    document.documentElement.dir = i18n.language === "fa" ? "rtl" : "ltr";
 
     // 🔧 Update direction on language change
     i18n.on("languageChanged", (lng) => {
       document.documentElement.lang = lng;
-      document.documentElement.dir =
-        lng === "fa" ? "rtl" : "ltr";
+      document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
     });
   }, []);
 
@@ -84,9 +83,7 @@ function RootApp() {
   return (
     <Suspense
       fallback={
-        <div className="text-center text-gray-400 mt-20">
-          Loading...
-        </div>
+        <div className="text-center text-gray-400 mt-20">Loading...</div>
       }
     >
       <ScrollProvider>
@@ -147,8 +144,21 @@ function RootApp() {
 
                 {/* Shop + Admin */}
                 <Route path="/shop" element={<Shop />} />
-                <Route path="/admin" element={<AdminDashboard />} />
-                <Route path="/admin/products" element={<AdminProducts />} />
+                {/* <Route path="/admin" element={<AdminDashboard />} />
+                <Route path="/admin/products" element={<AdminProducts />} /> */}
+                {/* Secure Admin Paths */}
+                {/* Admin Login */}
+                <Route path="/aqbitz-admin-9823" element={<AdminDashboard />} />
+
+                {/* Protected Admin Routes */}
+                <Route
+                  path="/aqbitz-admin-9823/products"
+                  element={
+                    <ProtectedRoute>
+                      <AdminProducts />
+                    </ProtectedRoute>
+                  }
+                />
 
                 {/* Legal */}
                 <Route path="impressum" element={<Impressum />} />
@@ -193,15 +203,7 @@ function RootApp() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <RootApp />
-);
-
-
-
-
-
-
+ReactDOM.createRoot(document.getElementById("root")).render(<RootApp />);
 
 // import React, { Suspense, useState, useEffect } from "react";
 // import ReactDOM from "react-dom/client";
@@ -372,6 +374,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 // ReactDOM.createRoot(document.getElementById("root")).render(
 //   // <React.StrictMode>
 //     <RootApp />
-//   //</React.StrictMode> 
+//   //</React.StrictMode>
 // );
-
