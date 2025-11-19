@@ -1,7 +1,7 @@
 //admin protection
 import express from "express";
 import multer from "multer";
-import { protect } from "../middleware/authMiddleware.js"; // 🔥 اضافه کن
+import { protect } from "../middleware/authMiddleware.js";
 import { adminOnly } from "../middleware/adminMiddleware.js";
 
 import {
@@ -13,32 +13,51 @@ import {
 
 const router = express.Router();
 
-// 🖼️ پیکربندی Multer برای آپلود عکس
+/* ---------------------- 🛡 Secure File Upload ---------------------- */
+
+// Storage + Safe File Names
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "uploads/");
   },
   filename: (req, file, cb) => {
-    cb(null, Date.now() + "-" + file.originalname);
+    // جلوگیری از نام‌های خطرناک
+    const safeName = Date.now() + "-" + file.originalname.replace(/[^a-zA-Z0-9.\-_]/g, "_");
+    cb(null, safeName);
   },
 });
 
-const upload = multer({ storage });
+// Only allow images
+function imageFilter(req, file, cb) {
+  if (!file.mimetype.startsWith("image/")) {
+    return cb(new Error("Only image files are allowed!"), false);
+  }
+  cb(null, true);
+}
 
-// 📦 مسیرها
+// Limit: Max 3MB per image
+const upload = multer({
+  storage,
+  fileFilter: imageFilter,
+  limits: { fileSize: 3 * 1024 * 1024 }, // 3MB
+});
 
-// 🟢 نمایش محصولات → همه دسترسی دارند
+/* ------------------------------------------------------------------- */
+
+// 🟢 Public — Everyone can SEE products
 router.get("/", getProducts);
 
-// 🔒 فقط Admin → نیاز به توکن JWT
+// 🔐 Secure — Only Admin can CREATE
 router.post("/", protect, adminOnly, upload.array("images", 5), createProduct);
 
+// 🔐 Secure — Only Admin can UPDATE
 router.put("/:id", protect, adminOnly, upload.array("images", 5), updateProduct);
 
+// 🔐 Secure — Only Admin can DELETE
 router.delete("/:id", protect, adminOnly, deleteProduct);
 
-
 export default router;
+
 
 // import express from "express";
 // import multer from "multer";

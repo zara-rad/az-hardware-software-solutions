@@ -12,6 +12,27 @@ import path from "path";
 import { fileURLToPath } from "url";
 import fs from "fs";
 import helmet from "helmet";
+import rateLimit from "express-rate-limit";
+const loginLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 دقیقه
+  max: 5, // هر IP فقط 5 بار تلاش
+  message: {
+    success: false,
+    message: "Too many login attempts. Try again in 15 minutes."
+  }
+});
+const contactLimiter = rateLimit({
+  windowMs: 60 * 1000, // 1 دقیقه
+  max: 3, // هر IP فقط ۳ پیام در دقیقه
+  message: {
+    success: false,
+    message: "Too many requests. Try again later."
+  }
+});
+const apiLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 دقیقه
+  max: 500, // در ۱۵ دقیقه فقط ۵۰۰ درخواست
+});
 
 // Load environment variables
 dotenv.config();
@@ -74,6 +95,7 @@ if (!fs.existsSync(uploadPath)) {
 }
 
 app.use("/uploads", express.static(uploadPath));
+app.use("/api/", apiLimiter);
 
 // API Routes
 app.use("/api/auth", authRoutes);
