@@ -4,12 +4,11 @@ const contactMessageSchema = new mongoose.Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true },
-        phone: { type: String }, // ✅ optional field
-
+    phone: { type: String },
     service: { type: String },
     budget: { type: String },
     message: { type: String, required: true },
-        serialNumber: { type: String },
+    serialNumber: { type: String },
   },
   { timestamps: true }
 );

@@ -4,7 +4,6 @@ import User from "../models/User.js";
 export const protect = async (req, res, next) => {
   let token = null;
 
-  // Expect header: Authorization: Bearer <token>
   if (
     req.headers.authorization &&
     req.headers.authorization.startsWith("Bearer ")
@@ -36,5 +35,3 @@ export const protect = async (req, res, next) => {
     return res.status(401).json({ message: "Invalid token" });
   }
 };
-
-

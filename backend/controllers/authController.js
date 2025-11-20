@@ -59,12 +59,10 @@ export const createAdmin = async (req, res) => {
     const user = new User({ name, email, password: hashed, role: "admin" });
     await user.save();
 
-    res
-      .status(201)
-      .json({
-        message: "Admin created",
-        user: { id: user._id, email: user.email, name: user.name },
-      });
+    res.status(201).json({
+      message: "Admin created",
+      user: { id: user._id, email: user.email, name: user.name },
+    });
   } catch (err) {
     console.error("createAdmin error:", err);
     res.status(500).json({ message: "Server error" });

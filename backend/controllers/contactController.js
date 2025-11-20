@@ -60,7 +60,7 @@ export const sendContactForm = async (req, res) => {
 
     // send email to admin
     await transporter.sendMail({
-      from: `"AZ Hardware & Software Solutions" <${process.env.CONTACT_EMAIL}>`,
+      from: `"AQBITZ-Hardware & Software Solutions" <${process.env.CONTACT_EMAIL}>`,
       to: process.env.CONTACT_RECEIVER,
       subject: `📩 New Contact Message from ${name}`,
       html: `
@@ -109,13 +109,13 @@ export const sendContactForm = async (req, res) => {
           <p style="font-size:15px;line-height:1.6;">
             If your inquiry is urgent, please reach out directly via:
             <br/>📞 +176 3638 5183
-            <br/>📧 <a href="mailto:info@az-hardware.de" style="color:#7a7a7a
-            ;text-decoration:none;">info@az-hardware.de</a>
+            <br/>📧 <a href="mailto:zahra.rafieirad1980@gmail.com" style="color:#7a7a7a
+            ;text-decoration:none;">zahra.rafieirad1980@gmail.com.de</a>
           </p>
 
         <div style="margin-top:32px;text-align:center;">
   <a 
-    href="https://az-hardware.de"
+    href="https://aqbitz.de"
     style="
       display:inline-block;
       padding:12px 30px;
@@ -134,7 +134,7 @@ export const sendContactForm = async (req, res) => {
           <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
           <p style="font-size:12px;color:#7a7a7a;text-align:center;">
             This is an automated message — please do not reply directly.<br/>
-            © ${new Date().getFullYear()} AZ Hardware & Software Solutions, Berlin.
+            © ${new Date().getFullYear()} AQBITZ –Hardware & Software Solutions, Berlin.
           </p>
         </div>
       </body>

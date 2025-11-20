@@ -1,6 +1,5 @@
 export const adminOnly = (req, res, next) => {
   try {
-    // باید protect قبلش اجرا شده باشه، پس req.user وجود دارد
     if (!req.user) {
       return res.status(401).json({ message: "Not authorized" });
     }

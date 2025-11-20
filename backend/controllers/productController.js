@@ -2,16 +2,13 @@ import Product from "../models/Product.js";
 import fs from "fs";
 import path from "path";
 
-// 🔹 تابع تولید سریال‌نامبر
 function generateSerial(category, title) {
-  const cat = (category || "XX").slice(0, 2).toUpperCase(); // مثل LA برای Laptop
-  const tit = (title || "YY").slice(0, 2).toLowerCase();   // مثل as برای asus
-  const random = Math.floor(100000 + Math.random() * 900000); // عدد رندوم 6 رقمی
+  const cat = (category || "XX").slice(0, 2).toUpperCase();
+  const tit = (title || "YY").slice(0, 2).toLowerCase();
+  const random = Math.floor(100000 + Math.random() * 900000);
   return `${cat}${tit}${random}`;
 }
 
-
-// 📦 گرفتن همه محصولات
 export const getProducts = async (req, res) => {
   try {
     const products = await Product.find().sort({ createdAt: -1 });
@@ -21,12 +18,12 @@ export const getProducts = async (req, res) => {
   }
 };
 
-// ➕ افزودن محصول جدید
 export const createProduct = async (req, res) => {
   try {
-    const images = req.files ? req.files.map((file) => `/uploads/${file.filename}`) : [];
+    const images = req.files
+      ? req.files.map((file) => `/uploads/${file.filename}`)
+      : [];
 
-    // 🔸 تولید سریال یکتا بر اساس دسته و عنوان
     const serialNumber = generateSerial(req.body.category, req.body.title);
 
     const newProduct = new Product({
@@ -41,7 +38,6 @@ export const createProduct = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
-// ✏️ ویرایش محصول (نسخه کامل و جدید)
 export const updateProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -50,18 +46,12 @@ export const updateProduct = async (req, res) => {
       return res.status(404).json({ message: "Product not found" });
     }
 
-    // -----------------------------
-    // 1) فیلدهای ساده را آپدیت کن
-    // -----------------------------
     product.title = req.body.title;
     product.category = req.body.category;
     product.description = req.body.description;
     product.price = req.body.price;
     product.oldPrice = req.body.oldPrice;
 
-    // -----------------------------
-    // 2) عکس‌هایی که حذف شده‌اند
-    // -----------------------------
     const deletedImages = req.body.deletedImages
       ? JSON.parse(req.body.deletedImages)
       : [];
@@ -71,46 +61,37 @@ export const updateProduct = async (req, res) => {
         const fullPath = path.join(process.cwd(), imgPath);
 
         if (fs.existsSync(fullPath)) {
-          fs.unlinkSync(fullPath); // حذف فایل فیزیکی
+          fs.unlinkSync(fullPath);
         }
       });
 
-      // حذف از لیست عکس‌های محصول
       product.images = product.images.filter(
         (img) => !deletedImages.includes(img)
       );
     }
 
-    // -----------------------------
-    // 3) عکس‌های جدید
-    // -----------------------------
     if (req.files && req.files.length > 0) {
-      const newImages = req.files.map(
-        (file) => `/uploads/${file.filename}`
-      );
+      const newImages = req.files.map((file) => `/uploads/${file.filename}`);
       product.images.push(...newImages);
     }
 
-    // -----------------------------
-    // 4) ذخیره نهایی
-    // -----------------------------
     await product.save();
 
     return res.json(product);
-
   } catch (err) {
     console.error("Update Product Error:", err);
     res.status(500).json({ message: "Server error" });
   }
 };
 
-// ❌ حذف محصول
 export const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
 
     if (!product) {
-      return res.status(404).json({ success: false, message: "Product not found" });
+      return res
+        .status(404)
+        .json({ success: false, message: "Product not found" });
     }
 
     // 🗑 حذف عکس‌های محصول از پوشه uploads
@@ -127,78 +108,8 @@ export const deleteProduct = async (req, res) => {
     await product.deleteOne();
 
     res.json({ success: true, message: "Product deleted successfully" });
-
   } catch (error) {
     console.error("Delete product error:", error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
-
-
-
-
-
-
-// ✏️ ویرایش محصول
-// export const updateProduct = async (req, res) => {
-//   try {
-//     const images = req.files ? req.files.map((file) => `/uploads/${file.filename}`) : [];
-
-//     const updatedData = {
-//       title: req.body.title,
-//       category: req.body.category,
-//       description: req.body.description,
-//       price: req.body.price,
-//       oldPrice: req.body.oldPrice,
-//     };
-
-//     // فقط اگر عکس جدید فرستاده شده بود
-//     if (images.length > 0) updatedData.images = images;
-
-//     const updatedProduct = await Product.findByIdAndUpdate(
-//       req.params.id,
-//       updatedData,
-//       { new: true }
-//     );
-
-//     if (!updatedProduct)
-//       return res.status(404).json({ message: "Product not found" });
-
-//     res.json(updatedProduct);
-//   } catch (err) {
-//     res.status(500).json({ message: err.message });
-//   }
-// };
-
-// // ❌ حذف محصول
-// export const deleteProduct = async (req, res) => {
-//   try {
-//     const product = await Product.findById(req.params.id);
-
-//     if (!product) {
-//       return res.status(404).json({ success: false, message: "Product not found" });
-//     }
-
-//     // 🗑 حذف عکس‌های محصول از پوشه uploads
-//     if (product.images && product.images.length > 0) {
-//       product.images.forEach((imgPath) => {
-//         const fullPath = path.join(process.cwd(), imgPath);
-
-//         if (fs.existsSync(fullPath)) {
-//           fs.unlinkSync(fullPath);
-//         }
-//       });
-//     }
-
-//     await product.deleteOne();
-
-//     res.json({ success: true, message: "Product deleted successfully" });
-
-//   } catch (error) {
-//     console.error("Delete product error:", error);
-//     res.status(500).json({ success: false, message: "Server error" });
-//   }
-// };
-
-
-
