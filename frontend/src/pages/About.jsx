@@ -19,10 +19,10 @@ export default function About() {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className="relative min-h-[100dvh] flex flex-col text-white overflow-hidden"
     >
-      <Helmet>
+      {/* <Helmet> */}
         {/* <title>{t("about.title")} — AZ Hardware</title> */}
         <meta name="description" content={t("about.subtitle")} />
-      </Helmet>
+      {/* </Helmet> */}
 
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-[#0d1117]" />

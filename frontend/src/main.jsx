@@ -87,7 +87,7 @@ function RootApp() {
       }
     >
       <ScrollProvider>
-        <HelmetProvider>
+        {/* <HelmetProvider> */}
           <BrowserRouter>
             <ScrollToTop />
 
@@ -197,7 +197,7 @@ function RootApp() {
               }}
             />
           </BrowserRouter>
-        </HelmetProvider>
+        {/* </HelmetProvider> */}
       </ScrollProvider>
     </Suspense>
   );

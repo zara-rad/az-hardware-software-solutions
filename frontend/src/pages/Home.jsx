@@ -20,13 +20,13 @@ export default function Home() {
       transition={{ duration: 0.35, ease: "easeInOut" }}
       className="relative min-h-screen flex flex-col text-white overflow-hidden bg-[#0d1117]"
     >
-      <Helmet>
+      {/* <Helmet>
         <meta
           name="description"
           content="Professional IT services, web and software development, and hardware solutions in Berlin. Reliable, fast, and tailored to your business needs."
         />
         <link rel="preload" as="image" href="/images/about/about.jpg" />
-      </Helmet>
+      </Helmet> */}
 
       {/* 🔹 Hero با بک‌گراند خودش */}
       <section className="relative z-20 bg-[#0d1117]">
