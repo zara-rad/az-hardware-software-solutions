@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+//import { Helmet } from "react-helmet-async";
 import Hero from "../components/Hero";
 
 const Services = lazy(() => import("./Services"));
