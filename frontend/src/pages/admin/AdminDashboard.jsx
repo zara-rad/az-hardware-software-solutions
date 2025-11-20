@@ -4,6 +4,7 @@ import toast from "react-hot-toast";
 import AdminHeader from "../../components/admin/AdminHeader";
 import AdminTable from "../../components/admin/AdminTable";
 import MessageModal from "../../components/admin/MessageModal";
+import { API_BASE } from "../../config";
 
 export default function AdminDashboard() {
   const [messages, setMessages] = useState([]);
@@ -16,7 +17,6 @@ export default function AdminDashboard() {
     direction: "desc",
   });
 
-  // 🟢 در زمان mount، تاریخ چاپ رو در body قرار بده و پیام‌ها رو واکشی کن
   useEffect(() => {
     document.body.setAttribute("data-print-date", new Date().toLocaleString());
 
@@ -24,11 +24,10 @@ export default function AdminDashboard() {
     if (token) fetchMessages(token);
   }, []);
 
-  // 📥 دریافت پیام‌ها از سرور
   const fetchMessages = async (token) => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5050/api/contact/admin", {
+      const res = await fetch(`${API_BASE}/api/contact/admin`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -46,7 +45,6 @@ export default function AdminDashboard() {
     }
   };
 
-  // 📊 مرتب‌سازی
   const handleSort = (key) => {
     setSortConfig((prev) =>
       prev.key === key
@@ -55,13 +53,12 @@ export default function AdminDashboard() {
     );
   };
 
-  // 🗑 حذف پیام
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this message?"))
       return;
     const token = localStorage.getItem("adminToken");
     try {
-      const res = await fetch(`http://localhost:5050/api/contact/admin/${id}`, {
+      const res = await fetch(`${API_BASE}/api/contact/admin/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -77,30 +74,25 @@ export default function AdminDashboard() {
     }
   };
 
-  // 🔄 بروزرسانی دستی
   const handleRefresh = () => {
     const token = localStorage.getItem("adminToken");
     if (token) fetchMessages(token);
   };
 
-  // 🚪 خروج از حساب
   const handleLogout = () => {
     localStorage.removeItem("adminToken");
     window.location.reload();
   };
 
-  // 🔍 فیلتر بر اساس نام، ایمیل و سرویس
   const filteredMessages = messages.filter((m) => {
     const matchesText =
       m.name?.toLowerCase().includes(filter.toLowerCase()) ||
-      m.email?.toLowerCase().includes(filter.toLowerCase())||
-        m.serialNumber?.toLowerCase().includes(filter.toLowerCase());
-;
+      m.email?.toLowerCase().includes(filter.toLowerCase()) ||
+      m.serialNumber?.toLowerCase().includes(filter.toLowerCase());
     const matchesService = !serviceFilter || m.service === serviceFilter;
     return matchesText && matchesService;
   });
 
-  // 🔽 مرتب‌سازی پیام‌ها
   const sortedMessages = [...filteredMessages].sort((a, b) => {
     const { key, direction } = sortConfig;
     const order = direction === "asc" ? 1 : -1;
@@ -126,7 +118,9 @@ export default function AdminDashboard() {
         <div className="max-w-6xl mx-auto">
           <div className="flex justify-end mb-6">
             <button
-              onClick={() => (window.location.href = "/aqbitz-admin-9823/products")}
+              onClick={() =>
+                (window.location.href = "/aqbitz-admin-9823/products")
+              }
               className="px-5 py-2 bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 text-white rounded-lg font-semibold shadow-md transition-all"
             >
               🛍️ Manage Products

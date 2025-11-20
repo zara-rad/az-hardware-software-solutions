@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
+import { API_BASE } from "../../config";
 
 export default function AdminLogin({ onLogin }) {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -17,7 +18,7 @@ export default function AdminLogin({ onLogin }) {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:5050/api/auth/login", {
+      const res = await fetch(`${API_BASE}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -27,7 +28,7 @@ export default function AdminLogin({ onLogin }) {
 
       if (res.ok && data.token) {
         localStorage.setItem("adminToken", data.token);
-        onLogin(data.user); // فرستادن اطلاعات کاربر به والد
+        onLogin(data.user);
       } else {
         setError(data.message || "Login failed");
       }
@@ -52,7 +53,6 @@ export default function AdminLogin({ onLogin }) {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Email */}
         <input
           type="email"
           name="email"
@@ -83,7 +83,6 @@ export default function AdminLogin({ onLogin }) {
           </button>
         </div>
 
-        {/* Submit */}
         <button
           type="submit"
           disabled={loading}

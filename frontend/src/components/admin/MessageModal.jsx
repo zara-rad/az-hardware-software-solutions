@@ -1,4 +1,3 @@
-// MessageModal.jsx
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function MessageModal({ selectedMsg, onClose }) {
@@ -24,15 +23,30 @@ export default function MessageModal({ selectedMsg, onClose }) {
               Message Details
             </h3>
             <div className="space-y-2 text-gray-300">
-              <p><strong>Name:</strong> {selectedMsg.name}</p>
-              <p><strong>Email:</strong> {selectedMsg.email}</p>
-              <p><strong>Service:</strong> {selectedMsg.service || "-"}</p>
-                <p><strong>Serial Number:</strong> {selectedMsg.serialNumber || "N/A"}</p>
+              <p>
+                <strong>Name:</strong> {selectedMsg.name}
+              </p>
+              <p>
+                <strong>Email:</strong> {selectedMsg.email}
+              </p>
+              <p>
+                <strong>Service:</strong> {selectedMsg.service || "-"}
+              </p>
+              <p>
+                <strong>Serial Number:</strong>{" "}
+                {selectedMsg.serialNumber || "N/A"}
+              </p>
 
-              <p><strong>Budget:</strong> {selectedMsg.budget || "-"}</p>
-              <p><strong>Date:</strong> {new Date(selectedMsg.createdAt).toLocaleString()}</p>
+              <p>
+                <strong>Budget:</strong> {selectedMsg.budget || "-"}
+              </p>
+              <p>
+                <strong>Date:</strong>{" "}
+                {new Date(selectedMsg.createdAt).toLocaleString()}
+              </p>
               <p className="pt-2 border-t border-gray-700">
-                <strong>Message:</strong><br />
+                <strong>Message:</strong>
+                <br />
                 {selectedMsg.message}
               </p>
             </div>

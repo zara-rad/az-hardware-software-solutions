@@ -19,29 +19,28 @@ export default function AdminHeader({
           <span className="text-green-400 font-semibold">{messagesCount}</span>{" "}
           message{messagesCount !== 1 ? "s" : ""}
         </p>
-{/* 🔍 Search + Filter با فاصله درست در همه‌ی اندازه‌ها */}
-<div className="flex flex-col md:flex-row md:items-center md:gap-4 mt-3 space-y-3 md:space-y-0">
-        <input
-          type="text"
-          placeholder="Filter by name,email or serial..."
-          value={filter}
-          onChange={(e) => setFilter(e.target.value)}
-    className="w-full md:w-72 px-3 py-2 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 focus:ring-2 focus:ring-green-500 outline-none"
-        />
+        <div className="flex flex-col md:flex-row md:items-center md:gap-4 mt-3 space-y-3 md:space-y-0">
+          <input
+            type="text"
+            placeholder="Filter by name,email or serial..."
+            value={filter}
+            onChange={(e) => setFilter(e.target.value)}
+            className="w-full md:w-72 px-3 py-2 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 focus:ring-2 focus:ring-green-500 outline-none"
+          />
 
-        <select
-          value={serviceFilter}
-          onChange={(e) => setServiceFilter(e.target.value)}
-    className="w-full md:w-72 px-3 py-2 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 focus:ring-2 focus:ring-cyan-500 outline-none md:ml-3"
-        >
-          <option value="">All Services</option>
-          <option value="IT Services">IT Services</option>
-          <option value="Web & Software Development">
-            Web & Software Development
-          </option>
-          <option value="Hardware Solutions">Hardware Solutions</option>
-          <option value="Shop Product">Shop Product</option> {/* ✅ اضافه شد */}
-        </select>
+          <select
+            value={serviceFilter}
+            onChange={(e) => setServiceFilter(e.target.value)}
+            className="w-full md:w-72 px-3 py-2 rounded-lg bg-[#0d1117] border border-gray-700 text-gray-200 focus:ring-2 focus:ring-cyan-500 outline-none md:ml-3"
+          >
+            <option value="">All Services</option>
+            <option value="IT Services">IT Services</option>
+            <option value="Web & Software Development">
+              Web & Software Development
+            </option>
+            <option value="Hardware Solutions">Hardware Solutions</option>
+            <option value="Shop Product">Shop Product</option>
+          </select>
         </div>
       </div>
 

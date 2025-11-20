@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { API_BASE } from "../../config";
 
 export default function AdminProductModal({ show, onClose, onSave, product }) {
   const [form, setForm] = useState({
@@ -15,7 +16,6 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
   const [previews, setPreviews] = useState([]);
   const [deletedImages, setDeletedImages] = useState([]);
 
-  // 🟢 وقتی محصول انتخاب میشه (برای ویرایش)
   useEffect(() => {
     if (product) {
       setForm({
@@ -42,40 +42,32 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
     }
   }, [product]);
 
-  // 🧩 هندل تغییر مقادیر ورودی
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 🖼️ انتخاب عکس و ساخت preview
   const handleImageChange = (e) => {
-  const files = Array.from(e.target.files);
+    const files = Array.from(e.target.files);
 
-  // ساخت blob های جدید
-  const newPreviews = files.map((file) => URL.createObjectURL(file));
+    const newPreviews = files.map((file) => URL.createObjectURL(file));
 
-  // اضافه کردن عکس‌های جدید روی عکس‌های قبلی
-  setPreviews((prev) => [...prev, ...newPreviews]);
+    setPreviews((prev) => [...prev, ...newPreviews]);
 
-  // ذخیره فایل‌های جدید
-  setForm((prev) => ({
-    ...prev,
-    images: [...prev.images, ...files],
-  }));
-};
+    setForm((prev) => ({
+      ...prev,
+      images: [...prev.images, ...files],
+    }));
+  };
 
   const handleRemoveImage = (src) => {
-    // اگر عکس قدیمی بود (از دیتابیس)
     if (!src.startsWith("blob")) {
       setDeletedImages((prev) => [...prev, src]);
     }
 
-    // حذف از previews
     setPreviews((prev) => prev.filter((img) => img !== src));
   };
 
-  // 💾 ارسال فرم
   const handleSubmit = (e) => {
     e.preventDefault();
     onSave({ ...form, deletedImages });
@@ -106,7 +98,6 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* 🔹 عنوان و دسته‌بندی */}
               <div className="grid grid-cols-2 gap-4">
                 <input
                   name="title"
@@ -126,7 +117,6 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
                 />
               </div>
 
-              {/* 🔹 توضیحات */}
               <textarea
                 name="description"
                 placeholder="Description"
@@ -135,7 +125,6 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
                 className="w-full p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200 min-h-[80px]"
               />
 
-              {/* 🔹 قیمت‌ها */}
               <div className="grid grid-cols-2 gap-4">
                 <input
                   type="number"
@@ -156,7 +145,6 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
                 />
               </div>
 
-              {/* 🔹 شماره سریال */}
               <input
                 name="serialNumber"
                 placeholder="Serial Number"
@@ -165,7 +153,6 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
                 className="w-full p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200"
               />
 
-              {/* 🔹 آپلود عکس */}
               <div>
                 <label className="block text-gray-300 mb-1">
                   Upload up to 5 images
@@ -184,15 +171,12 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
                       <div key={i} className="relative">
                         <img
                           src={
-                            src.startsWith("blob")
-                              ? src
-                              : `http://localhost:5050${src}`
+                            src.startsWith("blob") ? src : `${API_BASE}${src}`
                           }
                           alt="preview"
                           className="w-20 h-20 object-cover rounded border border-gray-700"
                         />
 
-                        {/* دکمه حذف عکس */}
                         <button
                           type="button"
                           onClick={() => handleRemoveImage(src)}
@@ -204,26 +188,8 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
                     ))}
                   </div>
                 )}
-
-                {/* {previews.length > 0 && (
-                  <div className="flex gap-3 mt-3 flex-wrap">
-                    {previews.map((src, i) => (
-                      <img
-                        key={i}
-                        src={
-                          src.startsWith("blob")
-                            ? src
-                            : `http://localhost:5050${src}`
-                        }
-                        alt="preview"
-                        className="w-20 h-20 object-cover rounded border border-gray-700"
-                      />
-                    ))}
-                  </div>
-                )} */}
               </div>
 
-              {/* 🔹 دکمه‌ها */}
               <div className="flex justify-end gap-3 mt-4">
                 <button
                   type="button"
@@ -246,203 +212,3 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
     </AnimatePresence>
   );
 }
-
-
-
-
-
-
-
-
-
-// import { useState, useEffect } from "react";
-// import { motion, AnimatePresence } from "framer-motion";
-
-// export default function AdminProductModal({ show, onClose, onSave, product }) {
-//   const [form, setForm] = useState({
-//     title: "",
-//     category: "",
-//     description: "",
-//     price: "",
-//     oldPrice: "",
-//     images: [],
-//   });
-
-//   const [previews, setPreviews] = useState([]);
-
-//   // 🟢 وقتی محصول انتخاب می‌شه (ویرایش)، فرم و preview پر می‌شن
-//   useEffect(() => {
-//     if (product) {
-//       setForm({
-//         title: product.title || "",
-//         category: product.category || "",
-//         description: product.description || "",
-//         price: product.price || "",
-//         oldPrice: product.oldPrice || "",
-//         images: [],
-//       });
-
-//       // preview از سرور
-//       setPreviews(product.images || []);
-//     } else {
-//       setForm({
-//         title: "",
-//         category: "",
-//         description: "",
-//         price: "",
-//         oldPrice: "",
-//         images: [],
-//       });
-//       setPreviews([]);
-//     }
-//   }, [product]);
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setForm((prev) => ({ ...prev, [name]: value }));
-//   };
-
-//   const handleImageChange = (e) => {
-//     const files = Array.from(e.target.files);
-//     setForm((prev) => ({ ...prev, images: files }));
-
-//     // 🖼️ preview محلی عکس‌های جدید
-//     const newPreviews = files.map((file) => URL.createObjectURL(file));
-//     setPreviews(newPreviews);
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     onSave(form); // ارسال کل فرم به AdminProducts.jsx
-//   };
-
-//   if (!show) return null;
-
-//   return (
-//     <AnimatePresence>
-//       {show && (
-//         <motion.div
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           exit={{ opacity: 0 }}
-//           className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50"
-//           onClick={onClose}
-//         >
-//           <motion.div
-//             initial={{ scale: 0.9, opacity: 0 }}
-//             animate={{ scale: 1, opacity: 1 }}
-//             exit={{ scale: 0.9, opacity: 0 }}
-//             transition={{ duration: 0.3 }}
-//             onClick={(e) => e.stopPropagation()}
-//             className="bg-[#161b22] border border-gray-700 rounded-2xl p-6 max-w-xl w-[90%] shadow-[0_0_25px_rgba(0,255,180,0.1)]"
-//           >
-//             <h2 className="text-2xl font-bold text-cyan-400 mb-4 text-center">
-//               {product ? "✏️ Edit Product" : "➕ Add New Product"}
-//             </h2>
-
-//             <form onSubmit={handleSubmit} className="space-y-4">
-//               {/* 🔹 عنوان و دسته‌بندی */}
-//               <div className="grid grid-cols-2 gap-4">
-//                 <input
-//                   name="title"
-//                   placeholder="Title"
-//                   value={form.title}
-//                   onChange={handleChange}
-//                   className="p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200"
-//                   required
-//                 />
-//                 <input
-//                   name="category"
-//                   placeholder="Category"
-//                   value={form.category}
-//                   onChange={handleChange}
-//                   className="p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200"
-//                   required
-//                 />
-//               </div>
-
-//               {/* 🔹 توضیحات */}
-//               <textarea
-//                 name="description"
-//                 placeholder="Description"
-//                 value={form.description}
-//                 onChange={handleChange}
-//                 className="w-full p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200 min-h-[80px]"
-//               />
-
-//               {/* 🔹 قیمت‌ها */}
-//               <div className="grid grid-cols-2 gap-4">
-//                 <input
-//                   type="number"
-//                   name="price"
-//                   placeholder="Price (€)"
-//                   value={form.price}
-//                   onChange={handleChange}
-//                   className="p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200"
-//                   required
-//                 />
-//                 <input
-//                   type="number"
-//                   name="oldPrice"
-//                   placeholder="Old Price (€)"
-//                   value={form.oldPrice}
-//                   onChange={handleChange}
-//                   className="p-2 bg-[#0d1117] border border-gray-700 rounded text-gray-200"
-//                 />
-//               </div>
-
-//               {/* 🔹 آپلود عکس */}
-//               <div>
-//                 <label className="block text-gray-300 mb-1">
-//                   Upload up to 5 images
-//                 </label>
-//                 <input
-//                   type="file"
-//                   multiple
-//                   accept="image/*"
-//                   onChange={handleImageChange}
-//                   className="block w-full text-gray-300 border border-gray-700 rounded p-2 cursor-pointer bg-[#0d1117]"
-//                 />
-
-//                 {/* 🔹 پیش‌نمایش عکس‌ها */}
-//                 {previews.length > 0 && (
-//                   <div className="flex gap-3 mt-3 flex-wrap">
-//                     {previews.map((src, i) => (
-//                       <img
-//                         key={i}
-//                         src={
-//                           src.startsWith("blob")
-//                             ? src
-//                             : `http://localhost:5050${src}`
-//                         }
-//                         alt="preview"
-//                         className="w-20 h-20 object-cover rounded border border-gray-700"
-//                       />
-//                     ))}
-//                   </div>
-//                 )}
-//               </div>
-
-//               {/* 🔹 دکمه‌ها */}
-//               <div className="flex justify-end gap-3 mt-4">
-//                 <button
-//                   type="button"
-//                   onClick={onClose}
-//                   className="px-4 py-2 bg-gray-600 hover:bg-gray-500 rounded text-white"
-//                 >
-//                   Cancel
-//                 </button>
-//                 <button
-//                   type="submit"
-//                   className="px-4 py-2 bg-gradient-to-r from-green-500 to-cyan-500 hover:from-green-400 hover:to-cyan-400 rounded text-white font-semibold"
-//                 >
-//                   {product ? "Save Changes" : "Add Product"}
-//                 </button>
-//               </div>
-//             </form>
-//           </motion.div>
-//         </motion.div>
-//       )}
-//     </AnimatePresence>
-//   );
-// }

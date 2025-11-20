@@ -20,7 +20,7 @@ export default function Footer() {
   const links = [
     { label: t("footer.home"), path: "/" },
     { label: t("footer.services"), path: "/services" },
-    { label: t("footer.shop"), path: "/shop" }, // 🟩 اضافه شد
+    { label: t("footer.shop"), path: "/shop" },
     { label: t("footer.about"), path: "/about" },
     { label: t("footer.contact"), path: "/contact" },
     { label: t("footer.privacy"), path: "/datenschutz" },
@@ -42,7 +42,6 @@ export default function Footer() {
         ))}
       </nav>
 
-      {/* 🔹 Copyright */}
       <p className="text-sm text-gray-500">
         © {new Date().getFullYear()}{" "}
         <span className="text-white font-semibold">
