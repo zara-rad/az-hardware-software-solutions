@@ -17,12 +17,12 @@ export const sendContactForm = async (req, res) => {
     if (!email || !emailRegex.test(email)) {
       return res.status(400).json({
         success: false,
-        message: "Please enter a valid email address.",
+        message: "Please enter a valid email.",
       });
     }
 
-    // ----- STORE IN DATABASE -----
-    const newMessage = new ContactMessage({
+    // ----- SAVE MESSAGE IN DATABASE -----
+    await new ContactMessage({
       name,
       email,
       phone,
@@ -30,20 +30,20 @@ export const sendContactForm = async (req, res) => {
       budget,
       message,
       serialNumber,
-    });
+    }).save();
 
-    await newMessage.save();
-
-    // ----- RESEND SETUP -----
+    // ----- RESEND CLIENT -----
     const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // --- SEND EMAIL TO ADMIN ---
+    // ===============================
+    //   SEND EMAIL TO ADMIN
+    // ===============================
     await resend.emails.send({
       from: "AQBITZ Contact <onboarding@resend.dev>",
       to: process.env.CONTACT_RECEIVER,
-      subject: `📩 New Contact Message from ${name}`,
+      subject: `📩 New Contact Message – ${name}`,
       html: `
-        <h2>New Contact Message</h2>
+        <h2 style="font-family:sans-serif;color:#555;">New Contact Message</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
@@ -54,36 +54,75 @@ export const sendContactForm = async (req, res) => {
       `,
     });
 
-    // --- AUTO-REPLY TO CUSTOMER ---
+    // ===============================
+    //   AUTO-REPLY TO CUSTOMER
+    // ===============================
     await resend.emails.send({
       from: "AQBITZ Support <onboarding@resend.dev>",
       to: email,
-      subject: `We've received your message, ${name}!`,
+      subject: `Thanks for reaching out, ${name}!`,
       html: `
-        <h3>Thank you for contacting AQBITZ</h3>
-        <p>Hello <strong>${name}</strong>,</p>
-        <p>We’ve received your message and will get back to you within <strong>48 hours</strong>.</p>
-        <p>If it’s urgent, you can call us:</p>
-        <p>📞 +49 176 3638 5183</p>
-        <p>📧 zahra.rafieirad1980@gmail.com</p>
-        <br/>
-        <a href="https://aqbitz.de" style="padding:10px 20px;background:#ccc;color:#000;border-radius:8px;text-decoration:none;">
-          Visit AQBITZ Website
-        </a>
+      <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
+        <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
+          
+          <div style="text-align:center;margin-bottom:24px;">
+            <h2 style="color:#7a7a7a;margin:0;">AZ Hardware & Software Solutions</h2>
+          </div>
+
+          <p style="font-size:16px;line-height:1.6;">Hello <strong>${name}</strong>,</p>
+          ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+
+          <p style="font-size:15px;line-height:1.6;">
+            Thank you for contacting <strong>AZ Hardware & Software Solutions</strong>.<br/>
+            We’ve successfully received your message ${
+              service ? ` about <b>${service}</b>` : ""
+            }.
+          </p>
+
+          <p style="font-size:15px;line-height:1.6;">
+            Our team will review your request and get back to you within <strong>48 hours</strong>.
+          </p>
+
+          <p style="font-size:15px;line-height:1.6;">
+            If your inquiry is urgent, please reach out directly:<br/>
+            📞 +49 176 3638 5183<br/>
+            📧 zahra.rafieirad1980@gmail.com
+          </p>
+
+          <div style="margin-top:32px;text-align:center;">
+            <a 
+              href="https://aqbitz.de"
+              style="
+                display:inline-block;
+                padding:12px 30px;
+                background:linear-gradient(90deg,#bfc3c7,#9fa4a8);
+                color:#000;
+                text-decoration:none;
+                border-radius:8px;
+                font-weight:600;
+              ">
+              Visit Our Website
+            </a>
+          </div>
+
+          <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
+          <p style="font-size:12px;color:#7a7a7a;text-align:center;">
+            This is an automated message — please do not reply directly.<br/>
+            © ${new Date().getFullYear()} AQBITZ – Hardware & Software Solutions, Berlin.
+          </p>
+        </div>
+      </body>
       `,
     });
 
-    return res.json({ success: true, message: "Emails sent successfully" });
+    return res.json({ success: true, message: "Emails sent (admin + auto-reply)" });
 
   } catch (error) {
     console.error("❌ ERROR SENDING EMAIL:", error);
-    return res.status(500).json({
-      success: false,
-      message: "Failed to send email",
-      error: error.message,
-    });
+    return res.status(500).json({ success: false, message: "Failed to send email", error });
   }
 };
+
 
 
 
