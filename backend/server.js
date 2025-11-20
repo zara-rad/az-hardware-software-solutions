@@ -12,21 +12,17 @@ import { fileURLToPath } from "url";
 import fs from "fs";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
+
+// Rate limiters...
 const loginLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 5,
-  message: {
-    success: false,
-    message: "Too many login attempts. Try again in 15 minutes.",
-  },
+  message: { success: false, message: "Too many login attempts." },
 });
 const contactLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 3,
-  message: {
-    success: false,
-    message: "Too many requests. Try again later.",
-  },
+  message: { success: false, message: "Too many requests." },
 });
 const apiLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -34,10 +30,12 @@ const apiLimiter = rateLimit({
 });
 
 dotenv.config();
-
 connectDB();
 
 const app = express();
+
+// ⭐ مهم: این خط باید باشد
+app.set("trust proxy", 1);
 
 app.get("/favicon.ico", (req, res) => res.status(204).end());
 
@@ -53,9 +51,9 @@ app.use(
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
       if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
+        callback(null, true);
       } else {
-        return callback(new Error("Not allowed by CORS"));
+        callback(new Error("Not allowed by CORS: " + origin));
       }
     },
     credentials: true,
@@ -80,12 +78,12 @@ const __dirname = path.dirname(__filename);
 const uploadPath = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadPath)) {
   fs.mkdirSync(uploadPath);
-  console.log("📁 'uploads' folder created automatically.");
 }
 
 app.use("/uploads", express.static(uploadPath));
 app.use("/api/", apiLimiter);
 
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/quote", quoteRoutes);
@@ -101,10 +99,6 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5050;
-app.listen(PORT, () =>
-  console.log(
-    `🚀 Server running in ${
-      process.env.NODE_ENV || "development"
-    } mode on port ${PORT}`
-  )
-);
+app.listen(PORT, () => {
+  console.log(`🚀 Server running on port ${PORT}`);
+});
