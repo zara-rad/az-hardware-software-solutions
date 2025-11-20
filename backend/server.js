@@ -40,9 +40,10 @@ app.set("trust proxy", 1);
 app.get("/favicon.ico", (req, res) => res.status(204).end());
 
 const allowedOrigins = [
-  "https://aqbitz.de",
+   "https://aqbitz.de",
   "https://www.aqbitz.de",
   "https://az-hardware-software-solutions.vercel.app",
+  "https://az-hardware-software-solutions.onrender.com",
   "http://localhost:5173",
 ];
 
