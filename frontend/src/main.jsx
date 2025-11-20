@@ -106,7 +106,7 @@ function RootApp() {
                 element={<Maintenance />}
               />
               {/* Shop + Admin */}
-              <Route path="/shop" element={<Shop />} />
+              <Route path="shop" element={<Shop />} />
               {/* <Route path="/admin" element={<AdminDashboard />} />
                 <Route path="/admin/products" element={<AdminProducts />} /> */}
               <Route path="/aqbitz-admin-9823" element={<AdminDashboard />} />
