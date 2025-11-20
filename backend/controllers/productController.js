@@ -1,4 +1,6 @@
 import Product from "../models/Product.js";
+import fs from "fs";
+import path from "path";
 
 // 🔹 تابع تولید سریال‌نامبر
 function generateSerial(category, title) {
@@ -74,11 +76,32 @@ export const updateProduct = async (req, res) => {
 // ❌ حذف محصول
 export const deleteProduct = async (req, res) => {
   try {
-    await Product.findByIdAndDelete(req.params.id);
-    res.json({ message: "Product deleted successfully" });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+    const product = await Product.findById(req.params.id);
+
+    if (!product) {
+      return res.status(404).json({ success: false, message: "Product not found" });
+    }
+
+    // 🗑 حذف عکس‌های محصول از پوشه uploads
+    if (product.images && product.images.length > 0) {
+      product.images.forEach((imgPath) => {
+        const fullPath = path.join(process.cwd(), imgPath);
+
+        if (fs.existsSync(fullPath)) {
+          fs.unlinkSync(fullPath);
+        }
+      });
+    }
+
+    await product.deleteOne();
+
+    res.json({ success: true, message: "Product deleted successfully" });
+
+  } catch (error) {
+    console.error("Delete product error:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
 
 

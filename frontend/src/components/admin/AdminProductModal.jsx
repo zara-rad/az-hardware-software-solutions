@@ -13,6 +13,7 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
   });
 
   const [previews, setPreviews] = useState([]);
+const [deletedImages, setDeletedImages] = useState([]);
 
   // 🟢 وقتی محصول انتخاب میشه (برای ویرایش)
   useEffect(() => {

@@ -51,10 +51,13 @@ export default function AdminProducts() {
       // const res = await fetch(`http://localhost:5050/api/products/${id}`, {
       //   method: "DELETE",
       // });
+     
       if (res.ok) {
-        setProducts((prev) => prev.filter((p) => p._id !== id));
-        toast.success("🗑️ Product deleted");
-      } else {
+  setProducts((prev) => prev.filter((p) => p._id !== id));
+  localStorage.setItem("productsUpdated", Date.now()); // 🔥 EVENT
+  toast.success("🗑️ Product deleted");
+}
+ else {
         toast.error("❌ Failed to delete product");
       }
     } catch (err) {
@@ -96,6 +99,8 @@ export default function AdminProducts() {
           selectedProduct ? "✅ Product updated" : "🆕 Product added"
         );
         setModalOpen(false);
+          localStorage.setItem("productsUpdated", Date.now()); // 🔥 اضافه شد
+
         fetchProducts();
       } else {
         toast.error("❌ Failed to save product");

@@ -7,6 +7,30 @@ export default function Shop() {
   const [products, setProducts] = useState([]);
   const [activeImageIndex, setActiveImageIndex] = useState({});
   const { t } = useTranslation();
+//after edditing refresh by itself
+useEffect(() => {
+  const onUpdate = () => {
+    fetch("http://localhost:5050/api/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setProducts(data);
+        const active = {};
+        data.forEach((p) => (active[p._id] = 0));
+        setActiveImageIndex(active);
+      });
+  };
+
+  window.addEventListener("storage", onUpdate);
+
+  return () => {
+    window.removeEventListener("storage", onUpdate);
+  };
+}, []);
+
+
+
+
+
 
   useEffect(() => {
     fetch("http://localhost:5050/api/products")
