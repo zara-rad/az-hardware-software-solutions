@@ -106,6 +106,12 @@ app.use("/api/auth", authRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/quote", quoteRoutes);
 app.use("/api/products", productRoutes);
+// 🔥 Test Route (برای چک کردن اتصال)
+
+app.get("/api/test", (req, res) => {
+  res.json({ message: "Backend is running" });
+});
+
 
 app.get("/", (req, res) => {
   res.send("✅ API is running successfully...");
