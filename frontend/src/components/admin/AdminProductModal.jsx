@@ -13,7 +13,7 @@ export default function AdminProductModal({ show, onClose, onSave, product }) {
   });
 
   const [previews, setPreviews] = useState([]);
-const [deletedImages, setDeletedImages] = useState([]);
+  const [deletedImages, setDeletedImages] = useState([]);
 
   // 🟢 وقتی محصول انتخاب میشه (برای ویرایش)
   useEffect(() => {
@@ -50,17 +50,35 @@ const [deletedImages, setDeletedImages] = useState([]);
 
   // 🖼️ انتخاب عکس و ساخت preview
   const handleImageChange = (e) => {
-    const files = Array.from(e.target.files);
-    setForm((prev) => ({ ...prev, images: files }));
+  const files = Array.from(e.target.files);
 
-    const newPreviews = files.map((file) => URL.createObjectURL(file));
-    setPreviews(newPreviews);
+  // ساخت blob های جدید
+  const newPreviews = files.map((file) => URL.createObjectURL(file));
+
+  // اضافه کردن عکس‌های جدید روی عکس‌های قبلی
+  setPreviews((prev) => [...prev, ...newPreviews]);
+
+  // ذخیره فایل‌های جدید
+  setForm((prev) => ({
+    ...prev,
+    images: [...prev.images, ...files],
+  }));
+};
+
+  const handleRemoveImage = (src) => {
+    // اگر عکس قدیمی بود (از دیتابیس)
+    if (!src.startsWith("blob")) {
+      setDeletedImages((prev) => [...prev, src]);
+    }
+
+    // حذف از previews
+    setPreviews((prev) => prev.filter((img) => img !== src));
   };
 
   // 💾 ارسال فرم
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSave(form);
+    onSave({ ...form, deletedImages });
   };
 
   if (!show) return null;
@@ -163,6 +181,33 @@ const [deletedImages, setDeletedImages] = useState([]);
                 {previews.length > 0 && (
                   <div className="flex gap-3 mt-3 flex-wrap">
                     {previews.map((src, i) => (
+                      <div key={i} className="relative">
+                        <img
+                          src={
+                            src.startsWith("blob")
+                              ? src
+                              : `http://localhost:5050${src}`
+                          }
+                          alt="preview"
+                          className="w-20 h-20 object-cover rounded border border-gray-700"
+                        />
+
+                        {/* دکمه حذف عکس */}
+                        <button
+                          type="button"
+                          onClick={() => handleRemoveImage(src)}
+                          className="absolute -top-2 -right-2 bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                {/* {previews.length > 0 && (
+                  <div className="flex gap-3 mt-3 flex-wrap">
+                    {previews.map((src, i) => (
                       <img
                         key={i}
                         src={
@@ -175,7 +220,7 @@ const [deletedImages, setDeletedImages] = useState([]);
                       />
                     ))}
                   </div>
-                )}
+                )} */}
               </div>
 
               {/* 🔹 دکمه‌ها */}
@@ -201,6 +246,13 @@ const [deletedImages, setDeletedImages] = useState([]);
     </AnimatePresence>
   );
 }
+
+
+
+
+
+
+
 
 
 // import { useState, useEffect } from "react";

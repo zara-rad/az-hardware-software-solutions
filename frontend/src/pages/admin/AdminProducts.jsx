@@ -51,13 +51,12 @@ export default function AdminProducts() {
       // const res = await fetch(`http://localhost:5050/api/products/${id}`, {
       //   method: "DELETE",
       // });
-     
+
       if (res.ok) {
-  setProducts((prev) => prev.filter((p) => p._id !== id));
-  localStorage.setItem("productsUpdated", Date.now()); // 🔥 EVENT
-  toast.success("🗑️ Product deleted");
-}
- else {
+        setProducts((prev) => prev.filter((p) => p._id !== id));
+        localStorage.setItem("productsUpdated", Date.now()); // 🔥 EVENT
+        toast.success("🗑️ Product deleted");
+      } else {
         toast.error("❌ Failed to delete product");
       }
     } catch (err) {
@@ -69,10 +68,17 @@ export default function AdminProducts() {
   const handleSave = async (form) => {
     try {
       const formData = new FormData();
+
+      // همه فیلدها را اضافه کن
       Object.entries(form).forEach(([key, value]) => {
         if (key === "images") {
+          // عکس‌های جدید
           value.forEach((file) => formData.append("images", file));
+        } else if (key === "deletedImages") {
+          // لیست عکس‌هایی که حذف شده‌اند (باید JSON شود)
+          formData.append("deletedImages", JSON.stringify(value));
         } else {
+          // فیلدهای عادی
           formData.append(key, value);
         }
       });
@@ -83,7 +89,6 @@ export default function AdminProducts() {
 
       const method = selectedProduct ? "PUT" : "POST";
 
-      //const res = await fetch(url, { method, body: formData });
       const token = localStorage.getItem("adminToken");
 
       const res = await fetch(url, {
@@ -99,7 +104,8 @@ export default function AdminProducts() {
           selectedProduct ? "✅ Product updated" : "🆕 Product added"
         );
         setModalOpen(false);
-          localStorage.setItem("productsUpdated", Date.now()); // 🔥 اضافه شد
+
+        localStorage.setItem("productsUpdated", Date.now());
 
         fetchProducts();
       } else {
@@ -110,6 +116,51 @@ export default function AdminProducts() {
       toast.error("⚠️ Error saving product");
     }
   };
+
+  // const handleSave = async (form) => {
+  //   try {
+  //     const formData = new FormData();
+  //     Object.entries(form).forEach(([key, value]) => {
+  //       if (key === "images") {
+  //         value.forEach((file) => formData.append("images", file));
+  //       } else {
+  //         formData.append(key, value);
+  //       }
+  //     });
+
+  //     const url = selectedProduct
+  //       ? `http://localhost:5050/api/products/${selectedProduct._id}`
+  //       : "http://localhost:5050/api/products";
+
+  //     const method = selectedProduct ? "PUT" : "POST";
+
+  //     //const res = await fetch(url, { method, body: formData });
+  //     const token = localStorage.getItem("adminToken");
+
+  //     const res = await fetch(url, {
+  //       method,
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //       body: formData,
+  //     });
+
+  //     if (res.ok) {
+  //       toast.success(
+  //         selectedProduct ? "✅ Product updated" : "🆕 Product added"
+  //       );
+  //       setModalOpen(false);
+  //         localStorage.setItem("productsUpdated", Date.now()); // 🔥 اضافه شد
+
+  //       fetchProducts();
+  //     } else {
+  //       toast.error("❌ Failed to save product");
+  //     }
+  //   } catch (err) {
+  //     console.error(err);
+  //     toast.error("⚠️ Error saving product");
+  //   }
+  // };
 
   return (
     <div className="min-h-screen bg-[#0d1117] text-white px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32">
@@ -282,6 +333,11 @@ export default function AdminProducts() {
     </div>
   );
 }
+ 
+
+
+
+
 
 // import { useEffect, useState } from "react";
 // import { motion } from "framer-motion";

@@ -41,35 +41,66 @@ export const createProduct = async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 };
-
-// ✏️ ویرایش محصول
+// ✏️ ویرایش محصول (نسخه کامل و جدید)
 export const updateProduct = async (req, res) => {
   try {
-    const images = req.files ? req.files.map((file) => `/uploads/${file.filename}`) : [];
+    const product = await Product.findById(req.params.id);
 
-    const updatedData = {
-      title: req.body.title,
-      category: req.body.category,
-      description: req.body.description,
-      price: req.body.price,
-      oldPrice: req.body.oldPrice,
-    };
-
-    // فقط اگر عکس جدید فرستاده شده بود
-    if (images.length > 0) updatedData.images = images;
-
-    const updatedProduct = await Product.findByIdAndUpdate(
-      req.params.id,
-      updatedData,
-      { new: true }
-    );
-
-    if (!updatedProduct)
+    if (!product) {
       return res.status(404).json({ message: "Product not found" });
+    }
 
-    res.json(updatedProduct);
+    // -----------------------------
+    // 1) فیلدهای ساده را آپدیت کن
+    // -----------------------------
+    product.title = req.body.title;
+    product.category = req.body.category;
+    product.description = req.body.description;
+    product.price = req.body.price;
+    product.oldPrice = req.body.oldPrice;
+
+    // -----------------------------
+    // 2) عکس‌هایی که حذف شده‌اند
+    // -----------------------------
+    const deletedImages = req.body.deletedImages
+      ? JSON.parse(req.body.deletedImages)
+      : [];
+
+    if (deletedImages.length > 0) {
+      deletedImages.forEach((imgPath) => {
+        const fullPath = path.join(process.cwd(), imgPath);
+
+        if (fs.existsSync(fullPath)) {
+          fs.unlinkSync(fullPath); // حذف فایل فیزیکی
+        }
+      });
+
+      // حذف از لیست عکس‌های محصول
+      product.images = product.images.filter(
+        (img) => !deletedImages.includes(img)
+      );
+    }
+
+    // -----------------------------
+    // 3) عکس‌های جدید
+    // -----------------------------
+    if (req.files && req.files.length > 0) {
+      const newImages = req.files.map(
+        (file) => `/uploads/${file.filename}`
+      );
+      product.images.push(...newImages);
+    }
+
+    // -----------------------------
+    // 4) ذخیره نهایی
+    // -----------------------------
+    await product.save();
+
+    return res.json(product);
+
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error("Update Product Error:", err);
+    res.status(500).json({ message: "Server error" });
   }
 };
 
@@ -102,6 +133,72 @@ export const deleteProduct = async (req, res) => {
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
+
+
+
+
+
+
+// ✏️ ویرایش محصول
+// export const updateProduct = async (req, res) => {
+//   try {
+//     const images = req.files ? req.files.map((file) => `/uploads/${file.filename}`) : [];
+
+//     const updatedData = {
+//       title: req.body.title,
+//       category: req.body.category,
+//       description: req.body.description,
+//       price: req.body.price,
+//       oldPrice: req.body.oldPrice,
+//     };
+
+//     // فقط اگر عکس جدید فرستاده شده بود
+//     if (images.length > 0) updatedData.images = images;
+
+//     const updatedProduct = await Product.findByIdAndUpdate(
+//       req.params.id,
+//       updatedData,
+//       { new: true }
+//     );
+
+//     if (!updatedProduct)
+//       return res.status(404).json({ message: "Product not found" });
+
+//     res.json(updatedProduct);
+//   } catch (err) {
+//     res.status(500).json({ message: err.message });
+//   }
+// };
+
+// // ❌ حذف محصول
+// export const deleteProduct = async (req, res) => {
+//   try {
+//     const product = await Product.findById(req.params.id);
+
+//     if (!product) {
+//       return res.status(404).json({ success: false, message: "Product not found" });
+//     }
+
+//     // 🗑 حذف عکس‌های محصول از پوشه uploads
+//     if (product.images && product.images.length > 0) {
+//       product.images.forEach((imgPath) => {
+//         const fullPath = path.join(process.cwd(), imgPath);
+
+//         if (fs.existsSync(fullPath)) {
+//           fs.unlinkSync(fullPath);
+//         }
+//       });
+//     }
+
+//     await product.deleteOne();
+
+//     res.json({ success: true, message: "Product deleted successfully" });
+
+//   } catch (error) {
+//     console.error("Delete product error:", error);
+//     res.status(500).json({ success: false, message: "Server error" });
+//   }
+// };
 
 
 
