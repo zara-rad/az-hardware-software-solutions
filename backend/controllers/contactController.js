@@ -3,7 +3,8 @@ import ContactMessage from "../models/ContactMessage.js";
 
 export const sendContactForm = async (req, res) => {
   try {
-    const { name, email, phone, service, budget, serialNumber, message } = req.body;
+    const { name, email, phone, service, budget, serialNumber, message } =
+      req.body;
 
     // ----- VALIDATION -----
     if (!name || name.trim().length < 5) {
@@ -32,15 +33,15 @@ export const sendContactForm = async (req, res) => {
       serialNumber,
     }).save();
 
-    // ----- RESEND CLIENT -----
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     // ===============================
-    //   SEND EMAIL TO ADMIN
+    //     EMAIL TO ADMIN
     // ===============================
     await resend.emails.send({
-      from: "AQBITZ Contact <onboarding@resend.dev>",
+      from: "AQBITZ Contact <contact@aqbitz.de>",
       to: process.env.CONTACT_RECEIVER,
+      reply_to: "contact@aqbitz.de",
       subject: `📩 New Contact Message – ${name}`,
       html: `
         <h2 style="font-family:sans-serif;color:#555;">New Contact Message</h2>
@@ -55,26 +56,26 @@ export const sendContactForm = async (req, res) => {
     });
 
     // ===============================
-    //   AUTO-REPLY TO CUSTOMER
+    //     AUTO-REPLY TO CUSTOMER
     // ===============================
     await resend.emails.send({
-      from: "AQBITZ Support <onboarding@resend.dev>",
+      from: "AQBITZ Support <contact@aqbitz.de>",
       to: email,
-      subject: `Thanks for reaching out, ${name}!`,
+      reply_to: "contact@aqbitz.de",
+      subject: `Thanks for reaching AQBITZ, ${name}!`,
       html: `
       <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
         <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
           
           <div style="text-align:center;margin-bottom:24px;">
-            <h2 style="color:#7a7a7a;margin:0;">AZ Hardware & Software Solutions</h2>
+            <h2 style="color:#7a7a7a;margin:0;">AQBITZ Hardware & Software Solutions</h2>
           </div>
 
           <p style="font-size:16px;line-height:1.6;">Hello <strong>${name}</strong>,</p>
-          ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
 
           <p style="font-size:15px;line-height:1.6;">
-            Thank you for contacting <strong>AZ Hardware & Software Solutions</strong>.<br/>
-            We’ve successfully received your message ${
+            Thank you for contacting <strong>AQBITZ Hardware & Software Solutions</strong>.<br/>
+            We’ve successfully received your message${
               service ? ` about <b>${service}</b>` : ""
             }.
           </p>
@@ -86,23 +87,26 @@ export const sendContactForm = async (req, res) => {
           <p style="font-size:15px;line-height:1.6;">
             If your inquiry is urgent, please reach out directly:<br/>
             📞 +49 176 3638 5183<br/>
-            📧 zahra.rafieirad1980@gmail.com
+            📧 contact@aqbitz.de
           </p>
 
           <div style="margin-top:32px;text-align:center;">
-            <a 
-              href="https://aqbitz.de"
-              style="
-                display:inline-block;
-                padding:12px 30px;
-                background:linear-gradient(90deg,#bfc3c7,#9fa4a8);
-                color:#000;
-                text-decoration:none;
-                border-radius:8px;
-                font-weight:600;
-              ">
-              Visit Our Website
-            </a>
+           <a 
+          href="https://aqbitz.de"
+          style="
+          padding:14px 32px;
+          display:inline-block;
+          border-radius:10px;
+          background:#00e2ad;
+          color:#000;
+          font-weight:600;
+          font-family:Arial, Helvetica, sans-serif;
+          text-decoration:none;
+           box-shadow:0 4px 15px rgba(0,255,200,0.4);
+          "
+          >
+         🌐 Visit Our Website
+          </a>
           </div>
 
           <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
@@ -115,17 +119,19 @@ export const sendContactForm = async (req, res) => {
       `,
     });
 
-    return res.json({ success: true, message: "Emails sent (admin + auto-reply)" });
-
+    return res.json({
+      success: true,
+      message: "Emails sent (admin + auto-reply)",
+    });
   } catch (error) {
     console.error("❌ ERROR SENDING EMAIL:", error);
-    return res.status(500).json({ success: false, message: "Failed to send email", error });
+    return res.status(500).json({
+      success: false,
+      message: "Failed to send email",
+      error,
+    });
   }
 };
-
-
-
-
 
 // import nodemailer from "nodemailer";
 // import dns from "dns";
@@ -203,7 +209,6 @@ export const sendContactForm = async (req, res) => {
 //         <p><strong>Message:</strong><br/>${message}</p>
 //         <hr style="border:none;border-top:1px solid #ccc;margin-top:20px;">
 //         <p style="color:#888;">This message was sent via AZ Hardware & Software Solutions contact form.</p>
-        
 
 //       `,
 //     });
@@ -217,7 +222,7 @@ export const sendContactForm = async (req, res) => {
 //       <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
 //         <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
 //           <div style="text-align:center;margin-bottom:24px;">
-           
+
 //             <h2 style="color:#7a7a7a;margin:0;">AZ Hardware & Software Solutions</h2>
 //           </div>
 
@@ -243,7 +248,7 @@ export const sendContactForm = async (req, res) => {
 //           </p>
 
 //         <div style="margin-top:32px;text-align:center;">
-//   <a 
+//   <a
 //     href="https://aqbitz.de"
 //     style="
 //       display:inline-block;
@@ -258,7 +263,6 @@ export const sendContactForm = async (req, res) => {
 //     Visit Our Website
 //   </a>
 // </div>
-
 
 //           <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
 //           <p style="font-size:12px;color:#7a7a7a;text-align:center;">
