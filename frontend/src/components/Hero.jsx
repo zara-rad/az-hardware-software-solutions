@@ -9,7 +9,8 @@ export default function Hero() {
     <section
       className="relative z-10 flex flex-col items-center justify-center text-center
              py-14 md:py-16 lg:py-20 px-6 sm:px-10
-             bg-transparent text-white overflow-hidden min-h-[45vh] md:min-h-[42vh] lg:min-h-[40vh]"
+             bg-transparent text-white overflow-hidden min-h-[60vh] md:min-h-[45vh] lg:min-h-[40vh]
+"
     >
       <motion.div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
@@ -21,7 +22,7 @@ export default function Hero() {
       />
 
       <motion.h1
-        className="text-2xl sm:text-3xl lg:text-5xl font-extrabold mb-4 leading-tight 
+        className="text-xl sm:text-3xl lg:text-4xl font-extrabold mb-4 leading-tight 
         text-gray-300 drop-shadow-[0_0_15px_rgba(255,255,255,0.05)]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

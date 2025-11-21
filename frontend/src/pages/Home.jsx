@@ -6,10 +6,10 @@ const Services = lazy(() => import("./Services"));
 const OverviewLinks = lazy(() => import("../components/OverviewLinks"));
 
 export default function Home() {
-  useEffect(() => {
-    import("./Services");
-    import("../components/OverviewLinks");
-  }, []);
+  // useEffect(() => {
+  //   import("./Services");
+  //   import("../components/OverviewLinks");
+  // }, []);
 
   return (
     <motion.div
@@ -27,9 +27,8 @@ export default function Home() {
         <div className="absolute inset-0 -z-10">
           <img
             src="/images/home/home3.png"
-            alt="Data Center Background"
-            className="w-full h-full object-cover opacity-75 scale-105"
-            fetchPriority="high"
+            className="w-full h-full object-cover opacity-60"
+            loading="lazy"
           />
         </div>
 

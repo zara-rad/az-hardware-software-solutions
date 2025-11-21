@@ -52,7 +52,8 @@ export default function Impressum() {
               href="mailto:info@az-hardware.de"
               className="text-gray-400 hover:underline"
             >
-              zahra.rafieirad1980@gmail.com
+              contact@aqbitz.de
+
             </a>{" "}
             <br />
             {/* <strong>{t("impressum.vat")}</strong> DE123456789 <br /> */}

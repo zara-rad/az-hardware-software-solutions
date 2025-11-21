@@ -9,24 +9,24 @@ export default function Shop() {
   const [activeImageIndex, setActiveImageIndex] = useState({});
   const { t } = useTranslation();
   //after edditing refresh by itself
-  useEffect(() => {
-    const onUpdate = () => {
-      fetch(`${API_BASE}/api/products`)
-        .then((res) => res.json())
-        .then((data) => {
-          setProducts(data);
-          const active = {};
-          data.forEach((p) => (active[p._id] = 0));
-          setActiveImageIndex(active);
-        });
-    };
+  // useEffect(() => {
+  //   const onUpdate = () => {
+  //     fetch(`${API_BASE}/api/products`)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         setProducts(data);
+  //         const active = {};
+  //         data.forEach((p) => (active[p._id] = 0));
+  //         setActiveImageIndex(active);
+  //       });
+  //   };
 
-    window.addEventListener("storage", onUpdate);
+  //   window.addEventListener("storage", onUpdate);
 
-    return () => {
-      window.removeEventListener("storage", onUpdate);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("storage", onUpdate);
+  //   };
+  // }, []);
 
   useEffect(() => {
     fetch(`${API_BASE}/api/products`)
@@ -101,6 +101,7 @@ export default function Shop() {
                   {hasImages ? (
                     <AnimatePresence mode="wait">
                       <motion.img
+                        loading="lazy"
                         key={currentIndex}
                         src={`${API_BASE}${p.images[currentIndex]}`}
                         alt={p.title}
