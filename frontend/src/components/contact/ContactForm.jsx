@@ -4,9 +4,10 @@ import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
 import CustomSelect from "./CustomSelect";
 import { API_BASE } from "../../config";
+console.log("THIS IS NEW VERSION");
 
 export default function ContactForm() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -48,10 +49,18 @@ export default function ContactForm() {
     toast.loading(t("contact.form.toast.loading"), { id: "contact" });
 
     try {
+      console.log("FRONTEND SENT LANGUAGE:", i18n.language);
+      console.log("API_BASE during runtime:", API_BASE);
+
       const res = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          language: i18n.language,
+        }),
+
+        // body: JSON.stringify(formData),
       });
 
       const data = await res.json();

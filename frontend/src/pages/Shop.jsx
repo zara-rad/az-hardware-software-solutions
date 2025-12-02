@@ -88,7 +88,7 @@ export default function Shop() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="group bg-[#121a24]/80 border border-gray-800 rounded-2xl overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.3)] hover:border-gray-400 transition-all duration-300"
+                className="group bg-[#121a24]/80 rounded-2xl border-2 border-gray-800  overflow-hidden shadow-[0_0_25px_rgba(0,0,0,0.3)] hover:border-gray-400 transition-all duration-300"
               >
                 <div className="px-4 pt-4 pb-2 text-center border-b border-gray-800">
                   <p className="text-sm text-gray-300 font-medium tracking-wide uppercase">
