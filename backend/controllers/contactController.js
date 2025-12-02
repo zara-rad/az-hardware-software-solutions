@@ -13,24 +13,39 @@ export const sendContactForm = async (req, res) => {
       message,
       language = "en",
     } = req.body;
-console.log("BACKEND RECEIVED LANGUAGE:", language);
+    //console.log("BACKEND RECEIVED LANGUAGE:", language);
 
-    // ===============================
     //   1) MULTI-LANGUAGE TEMPLATES
-    // ===============================
 
     const autoReplyTemplates = {
       en: {
         subject: (name) => `Thanks for reaching AQBITZ, ${name}!`,
-        html: (name, service) => `
-          <p>Hello <strong>${name}</strong>,</p>
-          <p>Thank you for contacting AQBITZ Hardware & Software Solutions.</p>
-          <p>Your message${
-            service ? ` about <b>${service}</b>` : ""
-          } has been received.</p>
-          <p>We will reply within 48 hours.</p>
-          <p>Regards,<br/>AQBITZ Support Team</p>
-        `,
+       html: (name, service) => `
+<!-- force-refresh-v3 -->
+<div style="line-height:1.7;font-size:15px;color:#e0e0e0;">
+
+  <p>Hello <strong>${name}</strong>,</p>
+
+  <p>
+    Thank you for contacting <strong>AQBITZ Hardware & Software Solutions</strong>.<br/>
+    We’ve successfully received your message${
+      service ? ` about <b>${service}</b>` : ""
+    }.
+  </p>
+
+  <p>We will reply within <strong>48 hours</strong>.</p>
+
+  <div style="margin-top:10px;">
+    If your inquiry is urgent, please reach out directly:<br/>
+    📞 +49 176 3638 5183<br/>
+    📧 contact@aqbitz.de
+  </div>
+
+  <p style="margin-top:15px;">Regards,<br/>AQBITZ Support Team</p>
+
+</div>
+`,
+
       },
 
       de: {
@@ -42,21 +57,54 @@ console.log("BACKEND RECEIVED LANGUAGE:", language);
             service ? ` bezüglich <b>${service}</b>` : ""
           } erhalten.</p>
           <p>Unser Team meldet sich innerhalb von 48 Stunden.</p>
+          <p>
+         Falls Ihre Anfrage dringend ist, kontaktieren Sie uns bitte direkt:<br/>
+         📞 +49 176 3638 5183<br/>
+         📧 contact@aqbitz.de
+          </p>
+
           <p>Mit freundlichen Grüßen,<br/>AQBITZ Support Team</p>
+          
         `,
       },
 
       fa: {
-        subject: (name) => `پیام شما دریافت شد ${name}!`,
+        subject: (name) => `${name} عزیز، پیام شما دریافت شد`,
+
         html: (name, service) => `
-          <p><strong>${name}</strong> عزیز،</p>
-          <p>از تماس شما با AQBITZ Hardware & Software Solutions سپاسگزاریم.</p>
-          <p>پیام شما${
-            service ? ` در مورد <b>${service}</b>` : ""
-          } با موفقیت دریافت شد.</p>
-          <p>تیم ما ظرف ۴۸ ساعت آینده با شما تماس خواهد گرفت.</p>
-          <p>با احترام<br/>تیم پشتیبانی AQBITZ</p>
-        `,
+    <div style="direction: rtl; text-align: right; font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.9; font-size: 16px; color: #e0e0e0;">
+
+      <p><strong>${name}</strong> عزیز،</p>
+
+      <p>
+        از تماس شما با 
+        <strong>AQBITZ Hardware & Software Solutions</strong> 
+        سپاسگزاریم.
+      </p>
+
+      <p>
+        پیام شما 
+        ${service ? ` درباره <strong>${service}</strong>` : ""}
+        با موفقیت دریافت شد.
+      </p>
+
+      <p>
+        تیم ما درخواست شما را بررسی کرده و حداکثر تا 
+        <strong>۴۸ ساعت آینده</strong> 
+        با شما تماس خواهد گرفت.
+      </p>
+
+      <p>
+        در صورتی که موضوع شما فوری است، لطفاً از طریق اطلاعات زیر با ما در ارتباط باشید:
+        <br />
+        📞  +49 176 3638 5183 <br />
+        📧  contact@aqbitz.de
+      </p>
+
+      <p>با احترام<br/>تیم پشتیبانی AQBITZ</p>
+
+    </div>
+  `,
       },
     };
 
@@ -121,14 +169,14 @@ console.log("BACKEND RECEIVED LANGUAGE:", language);
     //     AUTO-REPLY TO CUSTOMER
     // ===============================
     // ===============================
-//     AUTO-REPLY TO CUSTOMER
-// ===============================
-await resend.emails.send({
-  from: "AQBITZ Support <contact@aqbitz.de>",
-  to: email,
-  reply_to: "contact@aqbitz.de",
-  subject: template.subject(name),
-  html: `
+    //     AUTO-REPLY TO CUSTOMER
+    // ===============================
+    await resend.emails.send({
+      from: "AQBITZ Support <contact@aqbitz.de>",
+      to: email,
+      reply_to: "contact@aqbitz.de",
+      subject: template.subject(name),
+      html: `
     <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
       <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
 
@@ -163,14 +211,12 @@ await resend.emails.send({
       </div>
     </body>
   `,
-});
-
+    });
 
     return res.json({
       success: true,
       message: "Emails sent (admin + auto-reply)",
     });
-
   } catch (error) {
     console.error("❌ ERROR SENDING EMAIL:", error);
     return res.status(500).json({
@@ -180,17 +226,6 @@ await resend.emails.send({
     });
   }
 };
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Resend } from "resend";
 // import ContactMessage from "../models/ContactMessage.js";
@@ -268,7 +303,7 @@ await resend.emails.send({
 //       html: `
 //       <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
 //         <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
-          
+
 //           <div style="text-align:center;margin-bottom:24px;">
 //             <h2 style="color:#7a7a7a;margin:0;">AQBITZ Hardware & Software Solutions</h2>
 //           </div>
@@ -293,7 +328,7 @@ await resend.emails.send({
 //           </p>
 
 //           <div style="margin-top:32px;text-align:center;">
-//            <a 
+//            <a
 //           href="https://aqbitz.de"
 //           style="
 //           padding:14px 32px;
