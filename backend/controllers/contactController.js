@@ -3,10 +3,69 @@ import ContactMessage from "../models/ContactMessage.js";
 
 export const sendContactForm = async (req, res) => {
   try {
-    const { name, email, phone, service, budget, serialNumber, message } =
-      req.body;
+    const {
+      name,
+      email,
+      phone,
+      service,
+      budget,
+      serialNumber,
+      message,
+      language = "en",
+    } = req.body;
+console.log("BACKEND RECEIVED LANGUAGE:", language);
 
-    // ----- VALIDATION -----
+    // ===============================
+    //   1) MULTI-LANGUAGE TEMPLATES
+    // ===============================
+
+    const autoReplyTemplates = {
+      en: {
+        subject: (name) => `Thanks for reaching AQBITZ, ${name}!`,
+        html: (name, service) => `
+          <p>Hello <strong>${name}</strong>,</p>
+          <p>Thank you for contacting AQBITZ Hardware & Software Solutions.</p>
+          <p>Your message${
+            service ? ` about <b>${service}</b>` : ""
+          } has been received.</p>
+          <p>We will reply within 48 hours.</p>
+          <p>Regards,<br/>AQBITZ Support Team</p>
+        `,
+      },
+
+      de: {
+        subject: (name) => `Danke für Ihre Nachricht, ${name}!`,
+        html: (name, service) => `
+          <p>Hallo <strong>${name}</strong>,</p>
+          <p>Vielen Dank für Ihre Kontaktaufnahme mit AQBITZ Hardware & Software Solutions.</p>
+          <p>Wir haben Ihre Nachricht${
+            service ? ` bezüglich <b>${service}</b>` : ""
+          } erhalten.</p>
+          <p>Unser Team meldet sich innerhalb von 48 Stunden.</p>
+          <p>Mit freundlichen Grüßen,<br/>AQBITZ Support Team</p>
+        `,
+      },
+
+      fa: {
+        subject: (name) => `پیام شما دریافت شد ${name}!`,
+        html: (name, service) => `
+          <p><strong>${name}</strong> عزیز،</p>
+          <p>از تماس شما با AQBITZ Hardware & Software Solutions سپاسگزاریم.</p>
+          <p>پیام شما${
+            service ? ` در مورد <b>${service}</b>` : ""
+          } با موفقیت دریافت شد.</p>
+          <p>تیم ما ظرف ۴۸ ساعت آینده با شما تماس خواهد گرفت.</p>
+          <p>با احترام<br/>تیم پشتیبانی AQBITZ</p>
+        `,
+      },
+    };
+
+    // قالب درست را انتخاب کن (اگر نبود → انگلیسی)
+    const template = autoReplyTemplates[language] || autoReplyTemplates.en;
+
+    // ===============================
+    //     VALIDATION
+    // ===============================
     if (!name || name.trim().length < 5) {
       return res.status(400).json({
         success: false,
@@ -22,7 +81,10 @@ export const sendContactForm = async (req, res) => {
       });
     }
 
-    // ----- SAVE MESSAGE IN DATABASE -----
+    // ===============================
+    //     SAVE MESSAGE IN DB
+    // ===============================
+
     await new ContactMessage({
       name,
       email,
@@ -58,71 +120,57 @@ export const sendContactForm = async (req, res) => {
     // ===============================
     //     AUTO-REPLY TO CUSTOMER
     // ===============================
-    await resend.emails.send({
-      from: "AQBITZ Support <contact@aqbitz.de>",
-      to: email,
-      reply_to: "contact@aqbitz.de",
-      subject: `Thanks for reaching AQBITZ, ${name}!`,
-      html: `
-      <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
-        <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
-          
-          <div style="text-align:center;margin-bottom:24px;">
-            <h2 style="color:#7a7a7a;margin:0;">AQBITZ Hardware & Software Solutions</h2>
-          </div>
+    // ===============================
+//     AUTO-REPLY TO CUSTOMER
+// ===============================
+await resend.emails.send({
+  from: "AQBITZ Support <contact@aqbitz.de>",
+  to: email,
+  reply_to: "contact@aqbitz.de",
+  subject: template.subject(name),
+  html: `
+    <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
+      <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
 
-          <p style="font-size:16px;line-height:1.6;">Hello <strong>${name}</strong>,</p>
-
-          <p style="font-size:15px;line-height:1.6;">
-            Thank you for contacting <strong>AQBITZ Hardware & Software Solutions</strong>.<br/>
-            We’ve successfully received your message${
-              service ? ` about <b>${service}</b>` : ""
-            }.
-          </p>
-
-          <p style="font-size:15px;line-height:1.6;">
-            Our team will review your request and get back to you within <strong>48 hours</strong>.
-          </p>
-
-          <p style="font-size:15px;line-height:1.6;">
-            If your inquiry is urgent, please reach out directly:<br/>
-            📞 +49 176 3638 5183<br/>
-            📧 contact@aqbitz.de
-          </p>
-
-          <div style="margin-top:32px;text-align:center;">
-           <a 
-          href="https://aqbitz.de"
-          style="
-          padding:14px 32px;
-          display:inline-block;
-          border-radius:10px;
-          background:#00e2ad;
-          color:#000;
-          font-weight:600;
-          font-family:Arial, Helvetica, sans-serif;
-          text-decoration:none;
-           box-shadow:0 4px 15px rgba(0,255,200,0.4);
-          "
-          >
-         🌐 Visit Our Website
-          </a>
-          </div>
-
-          <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
-          <p style="font-size:12px;color:#7a7a7a;text-align:center;">
-            This is an automated message — please do not reply directly.<br/>
-            © ${new Date().getFullYear()} AQBITZ – Hardware & Software Solutions, Berlin.
-          </p>
+        <div style="text-align:center;margin-bottom:24px;">
+          <h2 style="color:#7a7a7a;margin:0;">AQBITZ Hardware & Software Solutions</h2>
         </div>
-      </body>
-      `,
-    });
+
+        <!-- INSERT TRANSLATED TEMPLATE HERE -->
+        ${template.html(name, service)}
+
+        <div style="margin-top:32px;text-align:center;">
+          <a href="https://aqbitz.de"
+            style="
+              padding:14px 32px;
+              display:inline-block;
+              border-radius:10px;
+              background:#00e2ad;
+              color:#000;
+              font-weight:600;
+              text-decoration:none;
+              box-shadow:0 4px 15px rgba(0,255,200,0.4);
+            ">
+            🌐 Visit Our Website
+          </a>
+        </div>
+
+        <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
+        <p style="font-size:12px;color:#7a7a7a;text-align:center;">
+          This is an automated message — please do not reply directly.<br/>
+          © ${new Date().getFullYear()} AQBITZ – Hardware & Software Solutions, Berlin.
+        </p>
+      </div>
+    </body>
+  `,
+});
+
 
     return res.json({
       success: true,
       message: "Emails sent (admin + auto-reply)",
     });
+
   } catch (error) {
     console.error("❌ ERROR SENDING EMAIL:", error);
     return res.status(500).json({
@@ -133,14 +181,34 @@ export const sendContactForm = async (req, res) => {
   }
 };
 
-// import nodemailer from "nodemailer";
-// import dns from "dns";
+
+
+
+
+
+
+
+
+
+
+
+// import { Resend } from "resend";
 // import ContactMessage from "../models/ContactMessage.js";
 
 // export const sendContactForm = async (req, res) => {
 //   try {
-//     const { name, email, phone, service, budget, serialNumber, message } =
-//       req.body;
+//     const {
+//       name,
+//       email,
+//       phone,
+//       service,
+//       budget,
+//       serialNumber,
+//       message,
+//       language = "en",
+//     } = req.body;
+
+//     // ----- VALIDATION -----
 //     if (!name || name.trim().length < 5) {
 //       return res.status(400).json({
 //         success: false,
@@ -152,54 +220,33 @@ export const sendContactForm = async (req, res) => {
 //     if (!email || !emailRegex.test(email)) {
 //       return res.status(400).json({
 //         success: false,
-//         message: "Please enter a valid email address.",
+//         message: "Please enter a valid email.",
 //       });
 //     }
 
-//     // (MX Record)
-//     const domain = email.split("@")[1];
-//     const mxRecords = await new Promise((resolve, reject) => {
-//       dns.resolveMx(domain, (err, addresses) => {
-//         if (err || !addresses || addresses.length === 0) return reject();
-//         resolve(addresses);
-//       });
-//     }).catch(() => null);
-
-//     if (!mxRecords) {
-//       return res.status(400).json({
-//         success: false,
-//         message: "Email domain is invalid or unreachable.",
-//       });
-//     }
-
-//     // save in db
-//     const newMessage = new ContactMessage({
+//     // ----- SAVE MESSAGE IN DATABASE -----
+//     await new ContactMessage({
 //       name,
 //       email,
-//       phone, // ✅ optional
-
+//       phone,
 //       service,
 //       budget,
 //       message,
 //       serialNumber,
-//     });
-//     await newMessage.save();
+//     }).save();
 
-//     const transporter = nodemailer.createTransport({
-//       service: "gmail",
-//       auth: {
-//         user: process.env.CONTACT_EMAIL,
-//         pass: process.env.CONTACT_PASS,
-//       },
-//     });
+//     const resend = new Resend(process.env.RESEND_API_KEY);
 
-//     // send email to admin
-//     await transporter.sendMail({
-//       from: `"AQBITZ-Hardware & Software Solutions" <${process.env.CONTACT_EMAIL}>`,
+//     // ===============================
+//     //     EMAIL TO ADMIN
+//     // ===============================
+//     await resend.emails.send({
+//       from: "AQBITZ Contact <contact@aqbitz.de>",
 //       to: process.env.CONTACT_RECEIVER,
-//       subject: `📩 New Contact Message from ${name}`,
+//       reply_to: "contact@aqbitz.de",
+//       subject: `📩 New Contact Message – ${name}`,
 //       html: `
-//         <h2 style="font-family:sans-serif;color:#7a7a7a;">New Contact Message Received</h2>
+//         <h2 style="font-family:sans-serif;color:#555;">New Contact Message</h2>
 //         <p><strong>Name:</strong> ${name}</p>
 //         <p><strong>Email:</strong> ${email}</p>
 //         <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
@@ -207,76 +254,83 @@ export const sendContactForm = async (req, res) => {
 //         <p><strong>Budget:</strong> ${budget}</p>
 //         <p><strong>Serial Number:</strong> ${serialNumber || "Not provided"}</p>
 //         <p><strong>Message:</strong><br/>${message}</p>
-//         <hr style="border:none;border-top:1px solid #ccc;margin-top:20px;">
-//         <p style="color:#888;">This message was sent via AZ Hardware & Software Solutions contact form.</p>
-
 //       `,
 //     });
 
-//     // Auto-Reply
-//     await transporter.sendMail({
-//       from: `"AZ Hardware & Software Solutions" <${process.env.CONTACT_EMAIL}>`,
+//     // ===============================
+//     //     AUTO-REPLY TO CUSTOMER
+//     // ===============================
+//     await resend.emails.send({
+//       from: "AQBITZ Support <contact@aqbitz.de>",
 //       to: email,
-//       subject: `Thanks for reaching out, ${name}!`,
+//       reply_to: "contact@aqbitz.de",
+//       subject: `Thanks for reaching AQBITZ, ${name}!`,
 //       html: `
 //       <body style="margin:0;padding:0;font-family:Segoe UI,Roboto,Arial,sans-serif;background-color:#0d1117;color:#e0e0e0;">
 //         <div style="max-width:600px;margin:40px auto;background:#111820;border-radius:12px;padding:32px;border:1px solid #1f2a35;">
+          
 //           <div style="text-align:center;margin-bottom:24px;">
-
-//             <h2 style="color:#7a7a7a;margin:0;">AZ Hardware & Software Solutions</h2>
+//             <h2 style="color:#7a7a7a;margin:0;">AQBITZ Hardware & Software Solutions</h2>
 //           </div>
 
 //           <p style="font-size:16px;line-height:1.6;">Hello <strong>${name}</strong>,</p>
-//           ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
 
 //           <p style="font-size:15px;line-height:1.6;">
-//             Thank you for contacting <strong>AZ Hardware & Software Solutions</strong>.<br/>
+//             Thank you for contacting <strong>AQBITZ Hardware & Software Solutions</strong>.<br/>
 //             We’ve successfully received your message${
 //               service ? ` about <b>${service}</b>` : ""
 //             }.
 //           </p>
 
 //           <p style="font-size:15px;line-height:1.6;">
-//             Our team will carefully review your request and get back to you within <strong>48 hours</strong>.
+//             Our team will review your request and get back to you within <strong>48 hours</strong>.
 //           </p>
 
 //           <p style="font-size:15px;line-height:1.6;">
-//             If your inquiry is urgent, please reach out directly via:
-//             <br/>📞 +176 3638 5183
-//             <br/>📧 <a href="mailto:zahra.rafieirad1980@gmail.com" style="color:#7a7a7a
-//             ;text-decoration:none;">zahra.rafieirad1980@gmail.com.de</a>
+//             If your inquiry is urgent, please reach out directly:<br/>
+//             📞 +49 176 3638 5183<br/>
+//             📧 contact@aqbitz.de
 //           </p>
 
-//         <div style="margin-top:32px;text-align:center;">
-//   <a
-//     href="https://aqbitz.de"
-//     style="
-//       display:inline-block;
-//       padding:12px 30px;
-//       background:linear-gradient(90deg,#bfc3c7,#9fa4a8);
-//       color:#000;
-//       text-decoration:none;
-//       border-radius:8px;
-//       font-weight:600;
-//     "
-//   >
-//     Visit Our Website
-//   </a>
-// </div>
+//           <div style="margin-top:32px;text-align:center;">
+//            <a 
+//           href="https://aqbitz.de"
+//           style="
+//           padding:14px 32px;
+//           display:inline-block;
+//           border-radius:10px;
+//           background:#00e2ad;
+//           color:#000;
+//           font-weight:600;
+//           font-family:Arial, Helvetica, sans-serif;
+//           text-decoration:none;
+//            box-shadow:0 4px 15px rgba(0,255,200,0.4);
+//           "
+//           >
+//          🌐 Visit Our Website
+//           </a>
+//           </div>
 
 //           <hr style="margin:40px 0;border:none;border-top:1px solid #1f2a35;">
 //           <p style="font-size:12px;color:#7a7a7a;text-align:center;">
 //             This is an automated message — please do not reply directly.<br/>
-//             © ${new Date().getFullYear()} AQBITZ –Hardware & Software Solutions, Berlin.
+//             © ${new Date().getFullYear()} AQBITZ – Hardware & Software Solutions, Berlin.
 //           </p>
 //         </div>
 //       </body>
 //       `,
 //     });
 
-//     res.status(200).json({ success: true, message: "Email sent successfully" });
+//     return res.json({
+//       success: true,
+//       message: "Emails sent (admin + auto-reply)",
+//     });
 //   } catch (error) {
-//     console.error("❌ Error sending email:", error);
-//     res.status(500).json({ success: false, message: "Failed to send email" });
+//     console.error("❌ ERROR SENDING EMAIL:", error);
+//     return res.status(500).json({
+//       success: false,
+//       message: "Failed to send email",
+//       error,
+//     });
 //   }
 // };
