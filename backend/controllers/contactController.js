@@ -190,7 +190,7 @@ export const sendContactForm = async (req, res) => {
               text-decoration:none;
               box-shadow:0 4px 15px rgba(0,255,200,0.4);
             ">
-            🌐 Visit Our Website
+             Visit Our Website
           </a>
         </div>
 
