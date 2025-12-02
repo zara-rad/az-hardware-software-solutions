@@ -106,6 +106,23 @@ export const sendContactForm = async (req, res) => {
   <p>با احترام<br/>تیم پشتیبانی AQBITZ</p>
 
 </div>
+<!-- BUTTON MUST BE OUTSIDE RTL BLOCK -->
+<div style="text-align:center; margin-top:32px; direction:ltr;">
+  <a href="https://aqbitz.de"
+     style="
+       padding:14px 32px;
+       display:inline-block;
+       border-radius:10px;
+       background:#00e2ad;
+       color:#000;
+       font-weight:600;
+       text-decoration:none;
+       box-shadow:0 4px 15px rgba(0,255,200,0.4);
+     ">
+    Visit Our Website
+  </a>
+</div>
+
 `,
 },
 
