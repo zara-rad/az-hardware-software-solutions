@@ -1,4 +1,3 @@
-
 import React, { Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -73,14 +72,15 @@ function RootApp() {
 
   return (
     <Suspense
-      fallback={<div className="text-center text-gray-400 mt-20">Loading...</div>}
+      fallback={
+        <div className="text-center text-gray-400 mt-20">Loading...</div>
+      }
     >
       <ScrollProvider>
         <BrowserRouter>
           <ScrollToTop />
 
           <Routes>
-
             {/* ================= PUBLIC WEBSITE ================= */}
             <Route path="/" element={<App />}>
               <Route index element={<Home />} />
@@ -93,20 +93,32 @@ function RootApp() {
               <Route path="services/it/network" element={<NetworkSetup />} />
               <Route path="services/it/support" element={<ITSupport />} />
               <Route path="services/it/cloud" element={<CloudBackup />} />
-              <Route path="services/it/workstation" element={<WorkstationSetup />} />
+              <Route
+                path="services/it/workstation"
+                element={<WorkstationSetup />}
+              />
               <Route path="services/it/consulting" element={<ITConsulting />} />
 
               {/* Web Services */}
               <Route path="services/web" element={<WebDevelopment />} />
               <Route path="services/web/frontend" element={<FrontendDev />} />
               <Route path="services/web/backend" element={<BackendDev />} />
-              <Route path="services/web/fullstack" element={<FullstackSolutions />} />
+              <Route
+                path="services/web/fullstack"
+                element={<FullstackSolutions />}
+              />
 
               {/* Hardware Services */}
               <Route path="services/hardware" element={<HardwareSolutions />} />
               <Route path="services/hardware/sales" element={<DeviceSales />} />
-              <Route path="services/hardware/installation" element={<Installation />} />
-              <Route path="services/hardware/maintenance" element={<Maintenance />} />
+              <Route
+                path="services/hardware/installation"
+                element={<Installation />}
+              />
+              <Route
+                path="services/hardware/maintenance"
+                element={<Maintenance />}
+              />
 
               {/* Shop */}
               <Route path="shop" element={<Shop />} />
@@ -118,7 +130,8 @@ function RootApp() {
             </Route>
 
             {/* ================= ADMIN AUTH ================= */}
-            <Route path="/admin/login" element={<AdminLogin />} />
+            {/* <Route path="/admin/login" element={<AdminLogin />} /> */}
+            <Route path="/aqbitz-admin-9823/login" element={<AdminLogin />} />
 
             {/* ================= PROTECTED ADMIN AREA ================= */}
             <Route
@@ -174,12 +187,6 @@ function RootApp() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<RootApp />);
-
-
-
-
-
-
 
 // import React, { Suspense, useState, useEffect } from "react";
 // import ReactDOM from "react-dom/client";
