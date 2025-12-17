@@ -11,16 +11,34 @@ export default function AdminProducts() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
 
+  // const fetchProducts = async () => {
+  //   try {
+  //     const res = await fetch(`${API_BASE}/api/products`);
+  //     const data = await res.json();
+  //     setProducts(data);
+  //   } catch (err) {
+  //     console.error("❌ Fetch error:", err);
+  //     toast.error("Failed to load products");
+  //   }
+  // };
   const fetchProducts = async () => {
-    try {
-      const res = await fetch(`${API_BASE}/api/products`);
-      const data = await res.json();
-      setProducts(data);
-    } catch (err) {
-      console.error("❌ Fetch error:", err);
-      toast.error("Failed to load products");
-    }
-  };
+  try {
+    const token = localStorage.getItem("adminToken");
+
+    const res = await fetch(`${API_BASE}/api/products`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+
+    const data = await res.json();
+    setProducts(data);
+  } catch (err) {
+    console.error("❌ Fetch error:", err);
+    toast.error("Failed to load products");
+  }
+};
+
 
   useEffect(() => {
     fetchProducts();
@@ -129,6 +147,12 @@ export default function AdminProducts() {
         >
           🛠️ Manage Products
         </motion.h1>
+         <button
+    onClick={handleAdd}
+    className="bg-green-600 hover:bg-green-500 text-white px-4 py-2 rounded-lg shadow"
+  >
+    ➕ Add Product
+  </button>
       </div>
 
       {/* ✅ Desktop Table */}
