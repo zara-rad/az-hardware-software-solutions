@@ -13,6 +13,12 @@ export default function AdminLogin({ onLogin }) {
   };
 
   const handleSubmit = async (e) => {
+    console.log("SUBMIT CLICKED", {
+  form,
+  API_BASE,
+  fetchType: typeof fetch,
+});
+
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -30,6 +36,7 @@ export default function AdminLogin({ onLogin }) {
         localStorage.setItem("adminToken", data.token);
         // onLogin(data.user);
         console.log("LOGIN OK", data.user);
+console.log("AFTER LOGIN BLOCK");
 
       } else {
         setError(data.message || "Login failed");
