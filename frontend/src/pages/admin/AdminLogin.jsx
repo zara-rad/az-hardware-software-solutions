@@ -28,7 +28,9 @@ export default function AdminLogin({ onLogin }) {
 
       if (res.ok && data.token) {
         localStorage.setItem("adminToken", data.token);
-        onLogin(data.user);
+        // onLogin(data.user);
+        console.log("LOGIN OK", data.user);
+
       } else {
         setError(data.message || "Login failed");
       }
