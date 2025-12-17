@@ -35,8 +35,9 @@ export default function AdminLogin({ onLogin }) {
       if (res.ok && data.token) {
         localStorage.setItem("adminToken", data.token);
         // onLogin(data.user);
-        console.log("LOGIN OK", data.user);
-console.log("AFTER LOGIN BLOCK");
+          window.location.href = "/aqbitz-admin-9823";
+
+ 
 
       } else {
         setError(data.message || "Login failed");
