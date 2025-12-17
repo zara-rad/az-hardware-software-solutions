@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Eye, EyeOff } from "lucide-react";
+//import { Eye, EyeOff } from "lucide-react";
 import { API_BASE } from "../../config";
 
 export default function AdminLogin({ onLogin }) {
@@ -83,13 +83,21 @@ console.log("AFTER LOGIN BLOCK");
             required
             className="w-full p-3 pr-10 rounded bg-[#0d1117] border border-gray-700 text-gray-200"
           />
-          <button
+          {/* <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-3 text-gray-400 hover:text-green-400"
           >
             {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-          </button>
+          </button> */}
+          <button
+  type="button"
+  onClick={() => setShowPassword(!showPassword)}
+  className="absolute right-3 top-3 text-gray-400 hover:text-green-400"
+>
+  {showPassword ? "Hide" : "Show"}
+</button>
+
         </div>
 
         <button
